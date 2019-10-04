@@ -1,0 +1,34 @@
+.body-container {
+    background: linear-gradient(#83317e, #e72284);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    text-align: center;
+}
+
+.white-container{
+    list-style-type: none;
+    background: white;
+    border-radius: 8px;
+    margin: 15%;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 0 30px 0 rgba(160, 160, 160, 0.6);
+}
+
+.error-title{
+    font-size: 5em;
+    font-family:  MinecraftiaRegular, sans-serif;
+    color: #d83133;
+    margin: 0;
+}
+
+.error-text{
+    font-family:  MinecraftiaRegular, sans-serif;
+    color: black;
+    font-size: 1.5em;
+}
+
