@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Projet MoodBoard
+
+Projet MoodBoard initier par la meilleures team d'inter co de SII (Loïc, Clément, Pénélope et Valentin), nom de team les Beatles du pauvres !
+
+Ce projet à pour but de créer une application web de moodboard pour les personnes en inter-contrat chez SII Niort.
 
 ## Available Scripts
 
