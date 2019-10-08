@@ -1,7 +1,8 @@
 import React, {Component}  from 'react';
 import '../../App.scss';
+import Week from "../../components/week.jsx";
 
-export default class Accueil extends Component {
+export default class MoodBoard extends Component {
     render() {
         return (
             <div className="App">
@@ -9,7 +10,8 @@ export default class Accueil extends Component {
                     <h1>Moodboard</h1>
                 </header>
                 <body className="App-header">
-
+                  <h1>Here is the component page.</h1>
+                  <Week/>
                 </body>
             </div>
         );
