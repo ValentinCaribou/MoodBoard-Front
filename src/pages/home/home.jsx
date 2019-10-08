@@ -13,7 +13,7 @@ export default class Home extends Component {
                     <span className="oval">#MOOD</span>
                     <span>GENIEUR</span>
                 </div>
-                    <a className="bouton-accueil" href="/accueil"><input className="image" type="image" src={Soucoupe}/></a>
+                    <a className="bouton-accueil" href="/moodboard"><input className="image" type="image" src={Soucoupe}/></a>
                 </body>
             </div>
         );
