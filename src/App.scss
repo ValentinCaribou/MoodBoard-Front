@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "bebas_neue";
+  src: url("font/bebas_neue/BebasNeue-Regular.ttf") format("truetype"),
+  url("font/bebas_neue/BebasNeue-Regular.ttf") format("truetype");
+}
+
 .App {
   text-align: center;
 }
@@ -12,8 +18,57 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
+
+  .title {
+    color: white;
+    font-family: bebas_neue;
+    margin-top: 2em;
+    margin-left: 1em;
+    font-size: 5em;
+
+    .oval {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      width: 200px;
+      height: 100px;
+      border: 2px solid white;
+      color: #83317e;
+      background: white;
+      border-radius: 50%
+    }
+  }
+
+  .bouton-accueil {
+    position: relative;
+    margin-top: 5em;
+    margin-left: 35em;
+    height: 200px;
+
+    .image {
+       height: 200px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .title {
+      color: white;
+      font-family: bebas_neue;
+      margin-top: 2em;
+      margin-left: 0;
+      font-size: 4em;
+    }
+
+    .bouton-accueil {
+      position: relative;
+      margin-top: 15em;
+      margin-left: 7em;
+
+      .image {
+        height: 150px;
+      }
+    }
+  }
 }
 
 .App-link {

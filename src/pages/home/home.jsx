@@ -1,25 +1,20 @@
 import React, {Component}  from 'react';
 import '../../App.scss';
-import logo from "../../logo.svg";
+import Soucoupe from "../../assets/app_launch_button3.png"
 
 export default class Home extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
+                <header>
                 </header>
+                <body className="App-header">
+                <div className="title">
+                    <span className="oval">#MOOD</span>
+                    <span>GENIEUR</span>
+                </div>
+                    <a className="bouton-accueil" href="/accueil"><input className="image" type="image" src={Soucoupe}/></a>
+                </body>
             </div>
         );
     }

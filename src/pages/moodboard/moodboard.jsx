@@ -2,13 +2,18 @@ import React, {Component}  from 'react';
 import '../../App.scss';
 import Week from "../../components/week.jsx";
 
-export default class MoodBoard extends Component{
-    render(){
+export default class MoodBoard extends Component {
+    render() {
         return (
-            <div>
-                <h1>Here is the component page.</h1>
-                <Week/>
+            <div className="App">
+                <header>
+                    <h1>Moodboard</h1>
+                </header>
+                <body className="App-header">
+                  <h1>Here is the component page.</h1>
+                  <Week/>
+                </body>
             </div>
-        )
+        );
     }
-}
+};
