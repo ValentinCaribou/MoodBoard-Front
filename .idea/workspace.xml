@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/About.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/About.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/BebasNeue-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/BebasNeue-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/BebasNeue-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/BebasNeue-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/BebasNeue-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/OFL-FAQ.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/OFL.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/font/bebas_neue/Try_BebasNeuePro.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/moodboard.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/app_launch_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/app_launch_button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +31,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/error" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
@@ -72,6 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570113404680</updated>
       <workItem from="1570113411115" duration="24368000" />
+      <workItem from="1570524985303" duration="1383000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1570115203556</created>
@@ -133,7 +133,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

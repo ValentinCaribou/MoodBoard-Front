@@ -51,10 +51,22 @@
   }
 
   @media screen and (max-width: 800px) {
+    .title {
+      color: white;
+      font-family: bebas_neue;
+      margin-top: 2em;
+      margin-left: 0;
+      font-size: 4em;
+    }
+
     .bouton-accueil {
       position: relative;
-      margin-top: 22em;
+      margin-top: 15em;
       margin-left: 7em;
+
+      .image {
+        height: 150px;
+      }
     }
   }
 }
