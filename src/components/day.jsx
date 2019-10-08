@@ -1,3 +1,4 @@
+import React, {Component} from 'react';
 import HalfDay from './half-day.jsx';
 
 export default class Day extends Component{
