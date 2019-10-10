@@ -9,10 +9,10 @@ export default class Home extends Component {
                 <header>
                 </header>
                 <body className="App-header">
-                <div className="title">
-                    <span className="oval">#MOOD</span>
-                    <span>GENIEUR</span>
-                </div>
+                    <div className="title">
+                        <span className="oval">#MOOD</span>
+                        <span>GENIEUR</span>
+                    </div>
                     <a className="bouton-accueil" href="/moodboard"><input className="image" type="image" src={Soucoupe}/></a>
                 </body>
             </div>
