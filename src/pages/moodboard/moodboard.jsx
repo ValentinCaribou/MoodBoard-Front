@@ -27,28 +27,28 @@ export default class MoodBoard extends Component {
     transformIdToEmojis = (id) => {
         let emojisFinal;
         switch (id) {
-            case "1":
+            case "smile":
                 emojisFinal = "😄";
                 break;
-            case "2":
+            case "unamused":
                 emojisFinal = "😒";
                 break;
-            case "3":
+            case "dizzy_face":
                 emojisFinal = "😵";
                 break;
-            case "4":
+            case "cold_sweat":
                 emojisFinal = "😰";
                 break;
-            case "5":
+            case "angry":
                 emojisFinal = "😠";
                 break;
-            case "6":
+            case "sob":
                 emojisFinal = "😭";
                 break;
-            case "7":
+            case "normal":
                 emojisFinal = "🙂";
                 break;
-            case "8":
+            case "upside-down":
                 emojisFinal = "🙃";
                 break;
         }
@@ -58,7 +58,8 @@ export default class MoodBoard extends Component {
     validateButton = () => {
         let idEmojis = this.state.tempValue;
         let emojisFinal = this.transformIdToEmojis(idEmojis);
-        this.setState({ValueEmojis: emojisFinal})
+        this.setState({ValueEmojis: emojisFinal});
+        this.setState({isHide: !this.state.isHide});
     };
 
     render() {
@@ -79,37 +80,37 @@ export default class MoodBoard extends Component {
                                   </div>
                                   <div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="1" onClick={this.handleClick}>😄</div>
+                                          <div className="emojis" id="smile" onClick={this.handleClick}>😄</div>
                                           <span className="tooltiptext">Content / Heureux</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="2" onClick={this.handleClick}>😒</div>
+                                          <div className="emojis" id="unamused" onClick={this.handleClick}>😒</div>
                                           <span className="tooltiptext">Pas Content</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="3" onClick={this.handleClick}>😵</div>
+                                          <div className="emojis" id="dizzy_face" onClick={this.handleClick}>😵</div>
                                           <span className="tooltiptext">Sous l'eau</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="4" onClick={this.handleClick}>😰</div>
+                                          <div className="emojis" id="cold_sweat" onClick={this.handleClick}>😰</div>
                                           <span className="tooltiptext">Stresser</span>
                                       </div>
                                   </div>
                                   <div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="5" onClick={this.handleClick}>😠</div>
+                                          <div className="emojis" id="angry" onClick={this.handleClick}>😠</div>
                                           <span className="tooltiptext">En colère</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="6" onClick={this.handleClick}>😭</div>
+                                          <div className="emojis" id="sob" onClick={this.handleClick}>😭</div>
                                           <span className="tooltiptext">Triste</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="7" onClick={this.handleClick}>🙂</div>
+                                          <div className="emojis" id="normal" onClick={this.handleClick}>🙂</div>
                                           <span className="tooltiptext">Normal</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="8" onClick={this.handleClick}>🙃</div>
+                                          <div className="emojis" id="upside-down" onClick={this.handleClick}>🙃</div>
                                           <span className="tooltiptext">Blasé sarcastique</span>
                                       </div>
                                   </div>
