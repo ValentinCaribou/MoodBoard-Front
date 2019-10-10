@@ -9,10 +9,10 @@ export default class MoodBoard extends Component {
                 <header>
                     <h1>Moodboard</h1>
                 </header>
-                <body className="App-header">
+                <div className="App-header">
                   <h1>Here is the component page.</h1>
                   <Week/>
-                </body>
+                </div>
             </div>
         );
     }
