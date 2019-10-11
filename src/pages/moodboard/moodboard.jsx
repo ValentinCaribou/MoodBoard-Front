@@ -1,11 +1,13 @@
 import React, {Component}  from 'react';
+import Moment from 'react-moment';
 import '../../App.scss';
 import './moodboard.scss'
 import Week from "../../components/week.jsx";
+import Fungenieur from "../../assets/logo_fungenieur.png"
 
 export default class MoodBoard extends Component {
 
-    constructor(props) {
+  constructor(props) {
         super(props);
         this.state = {
             isHide : true,
@@ -17,6 +19,25 @@ export default class MoodBoard extends Component {
         }
     }
 
+    getStartofWeek = () => {
+        //Les jours ouvrés sont compris entre 0 et 5 (Lundi à Vendredi) samedi et dimanche sont exclus
+        let date = new Date();
+        let dayNumber = date.getDay();
+        let dayDate = date.getDate();
+        let month = date.getMonth()+1;
+        let formattedDate = dayDate-dayNumber+"/"+month;
+        return formattedDate;
+    }
+
+    getEndOfWeek = () => {
+        let date = new Date();
+        let dayNumber = date.getDay();
+        let dayDate = date.getDate();
+        let month = date.getMonth()+1;
+        let formattedDate = (5-dayNumber)+dayDate+"/"+month;
+        return formattedDate;
+    }
+    
     changeHide = () => {
         this.setState({isHide: !this.state.isHide});
         this.setState({tempValue: ""})
@@ -80,11 +101,12 @@ export default class MoodBoard extends Component {
         let {isHide, ValueEmojis} = this.state;
         return (
             <div className="App">
-                <body className="App-header">
-                  <h1>Here is the component page.</h1>
+                <div className="App-header">
+                <img src={Fungenieur} height="280px" width="650px"/>
+                <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
                   <Week
-                      addMood={this.selectEmojis}
-                      row={this.state.row}
+                    addMood={this.selectEmojis}
+                    row={this.state.row}
                   />
                   <button onClick={this.changeHide}>Test Modal</button>
                   {
@@ -140,7 +162,7 @@ export default class MoodBoard extends Component {
                       ValueEmojis !== "" &&
                           <div>{ValueEmojis}</div>
                   }
-                </body>
+                </div>
             </div>
         );
     }
