@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/week.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/week.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="US3_AjouterFenetreMood" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -117,14 +118,7 @@
       <option name="project" value="LOCAL" />
       <updated>1570453936637</updated>
     </task>
-    <task id="LOCAL-00008" summary="Redirection du bonton">
-      <created>1570543898385</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1570543898386</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +146,6 @@
     <MESSAGE value="Passage au format jsx + ajout des composants et des pages" />
     <MESSAGE value="Ajout des du système de route et de la page 404" />
     <MESSAGE value="Page d'acceuil fonctionnel" />
-    <MESSAGE value="Redirection du bonton" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redirection du bonton" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page d'acceuil fonctionnel" />
   </component>
 </project>

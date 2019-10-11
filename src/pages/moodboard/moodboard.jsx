@@ -10,7 +10,10 @@ export default class MoodBoard extends Component {
         this.state = {
             isHide : true,
             tempValue: "",
-            ValueEmojis: ""
+            ValueEmojis: "",
+            row: [],
+            keyName: "",
+            cellule: "",
         }
     }
 
@@ -21,6 +24,7 @@ export default class MoodBoard extends Component {
 
     handleClick = (e) => {
         const target = e.currentTarget;
+        console.log(target.id);
         this.setState({tempValue: target.id});
     };
 
@@ -55,10 +59,20 @@ export default class MoodBoard extends Component {
         return emojisFinal;
     };
 
-    validateButton = () => {
+    selectEmojis = (cellule, row) => {
+        this.setState({isHide: !this.state.isHide});
+        this.setState({cellule});
+        this.setState({row});
+    };
+
+    validateButton = (id, keyName) => {
+        let {cellule, row} = this.state;
         let idEmojis = this.state.tempValue;
         let emojisFinal = this.transformIdToEmojis(idEmojis);
-        this.setState({ValueEmojis: emojisFinal});
+        row[cellule] = emojisFinal;
+        this.setState({keyName});
+        this.setState({row});
+        this.setState({idDay: id});
         this.setState({isHide: !this.state.isHide});
     };
 
@@ -68,7 +82,10 @@ export default class MoodBoard extends Component {
             <div className="App">
                 <body className="App-header">
                   <h1>Here is the component page.</h1>
-                  <Week/>
+                  <Week
+                      addMood={this.selectEmojis}
+                      row={this.state.row}
+                  />
                   <button onClick={this.changeHide}>Test Modal</button>
                   {
                       !isHide &&
