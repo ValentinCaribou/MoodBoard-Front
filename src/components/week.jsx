@@ -84,9 +84,13 @@ export default class Week extends Component{
 
     render(){
         return (
-            <div name="moodboard_root">
+            <div name="moodboard_root" className="Moodboard">
                 <div name="addRow">
-                    <input type="submit" name="add" onClick={this.createRow} value="Ajouter une ligne"/>
+                    <input type="submit" 
+                            name="add" 
+                            onClick={this.createRow} 
+                            value="Ajouter une ligne"
+                            className="AddRowButton"/>
                 </div>
                 <table className="Moodboard-table">
                     <tbody>
