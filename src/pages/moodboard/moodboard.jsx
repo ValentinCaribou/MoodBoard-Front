@@ -108,7 +108,6 @@ export default class MoodBoard extends Component {
                     addMood={this.selectEmojis}
                     row={this.state.row}
                   />
-                  <button onClick={this.changeHide}>Test Modal</button>
                   {
                       !isHide &&
                       <div id="myModal" className="modal">
