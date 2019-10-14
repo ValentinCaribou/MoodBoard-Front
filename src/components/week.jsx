@@ -23,32 +23,25 @@ export default class Week extends Component{
     }
 
     createRow = () => {
-        let {addMood, emojis} = this.props;
+
         let rowsCreated = this.state.currentRows;
+        let newRowList =  {
+            collabName: "",
+            mondayNoonMood: "",
+            mondayAfternoonMood: "",
+            tuesdayNoonMood: "",
+            tuesdayAfterNoonMood: "",
+            wednesdayNoonMood: "",
+            wednesdayAfterNoonMood: "",
+            thursdayNoonMood: "",
+            thursdayAfterNoonMood: "",
+            fridayNoonMood: "",
+            fridayAfterNoonMood: "",
+        };
         let keyName = 'row_'+rowsCreated;
         let stateRowList = this.state.rowList;
-        let row = <tr key={keyName} name={keyName}>
-                    {/** nom du collab */}
-                    <td></td>
-                    {/** Jours */}
-                    {/** Lundi */}
-                    <td></td>
-                    <td></td>
-                    {/** Mardi */}
-                    <td></td>
-                    <td></td>
-                    {/** Mercredi */}
-                    <td></td>
-                    <td></td>
-                    {/** Jeudi */}
-                    <td></td>
-                    <td></td>
-                    {/** Vendredi */}
-                    <td></td>
-                    <td></td>
-                </tr>
-        
-        stateRowList.push(row);
+
+        stateRowList.push(newRowList);
         rowsCreated+=1;
 
         //update props
@@ -56,14 +49,11 @@ export default class Week extends Component{
         this.setState({currentRows: rowsCreated});
     };
 
-    transformToEmojis = () => {
-
-    };
-
     renderRows = () => {
         let {addMood} = this.props;
         return this.state.rowList.map((row, i) => {
             let keyName = "row_"+i;
+            let rowList = this.state.rowList;
             return (
             <tr key={keyName} name={keyName}>
                 <td><input type="text" value={row.collabName}/></td>
