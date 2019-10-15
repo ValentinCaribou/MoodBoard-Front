@@ -45,7 +45,6 @@ export default class MoodBoard extends Component {
 
     handleClick = (e) => {
         const target = e.currentTarget;
-        console.log(target.id);
         this.setState({tempValue: target.id});
     };
 
