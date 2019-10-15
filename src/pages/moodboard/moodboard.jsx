@@ -36,7 +36,7 @@ export default class MoodBoard extends Component {
         let month = date.getMonth()+1;
         let formattedDate = (5-dayNumber)+dayDate+"/"+month;
         return formattedDate;
-    }
+    };
     
     changeHide = () => {
         this.setState({isHide: !this.state.isHide});
