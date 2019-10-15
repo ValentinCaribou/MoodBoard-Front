@@ -49,16 +49,16 @@ export default class Week extends Component{
         this.setState({currentRows: rowsCreated});
     };
 
+    // Méthode permettant de récupérer la valeur contenue dans le champ, la ligne ainsi que l'index de la ligne
     handleOnChange = (e, row, i) => {
         const target = e.currentTarget;
-        console.log("index Row : ", i);
         row[target.name] = target.value;
         this.persistName(target.name, target.value, i);
     };
 
+    // Méthode persiste name qui va permettre de faire persister la valeur contenue dans le champ avec un setState
     persistName = (name, value, indexRow) => {
         const rowList = this.state.rowList;
-        console.log("RowList départ : ",rowList);
         let currentRow = rowList[indexRow];
         rowList.map((row, index) => {
             if(index === indexRow){
@@ -66,9 +66,6 @@ export default class Week extends Component{
             }
         });
         this.setState({rowList});
-        console.log("CurrentRow liste : ", currentRow);
-
-        // this.setState({rowList});
     };
 
     renderRows = () => {
