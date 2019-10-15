@@ -49,6 +49,25 @@ export default class Week extends Component{
         this.setState({currentRows: rowsCreated});
     };
 
+    // Méthode permettant de récupérer la valeur contenue dans le champ, la ligne ainsi que l'index de la ligne
+    handleOnChange = (e, row, i) => {
+        const target = e.currentTarget;
+        row[target.name] = target.value;
+        this.persistName(target.name, target.value, i);
+    };
+
+    // Méthode persiste name qui va permettre de faire persister la valeur contenue dans le champ avec un setState
+    persistName = (name, value, indexRow) => {
+        const rowList = this.state.rowList;
+        let currentRow = rowList[indexRow];
+        rowList.map((row, index) => {
+            if(index === indexRow){
+                row = currentRow;
+            }
+        });
+        this.setState({rowList});
+    };
+
     renderRows = () => {
         let {addMood} = this.props;
         return this.state.rowList.map((row, i) => {
@@ -56,7 +75,7 @@ export default class Week extends Component{
             let rowList = this.state.rowList;
             return (
             <tr key={keyName} name={keyName}>
-                <td><input type="text" value={row.collabName}/></td>
+                <td><input type="text" onChange={(e) => this.handleOnChange(e, row, i)} name="collabName" value={row.collabName}/></td>
                 {/** Lundi */}
                 <td onClick={() => addMood("mondayNoonMood", row)}>{row.mondayNoonMood}</td>
                 <td onClick={() => addMood("mondayAfternoonMood", row)}>{row.mondayAfternoonMood}</td>

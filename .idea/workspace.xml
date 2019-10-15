@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,7 +131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571059701182</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Correction du bug qui empêche l'écriture du nom du collab">
+      <created>1571146140887</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571146140889</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Ajout de commentaire avant les méthodes">
+      <created>1571146324286</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571146324286</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +175,8 @@
     <MESSAGE value="Page d'acceuil fonctionnel" />
     <MESSAGE value="Ajout d'un mood sur une ligne ok" />
     <MESSAGE value="Ajout de sont mood sur plusieurs ligne Ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de sont mood sur plusieurs ligne Ok" />
+    <MESSAGE value="Correction du bug qui empêche l'écriture du nom du collab" />
+    <MESSAGE value="Ajout de commentaire avant les méthodes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de commentaire avant les méthodes" />
   </component>
 </project>

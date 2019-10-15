@@ -27,7 +27,7 @@ export default class MoodBoard extends Component {
         let month = date.getMonth()+1;
         let formattedDate = dayDate-dayNumber+"/"+month;
         return formattedDate;
-    }
+    };
 
     getEndOfWeek = () => {
         let date = new Date();
@@ -36,7 +36,7 @@ export default class MoodBoard extends Component {
         let month = date.getMonth()+1;
         let formattedDate = (5-dayNumber)+dayDate+"/"+month;
         return formattedDate;
-    }
+    };
     
     changeHide = () => {
         this.setState({isHide: !this.state.isHide});
@@ -45,7 +45,6 @@ export default class MoodBoard extends Component {
 
     handleClick = (e) => {
         const target = e.currentTarget;
-        console.log(target.id);
         this.setState({tempValue: target.id});
     };
 
