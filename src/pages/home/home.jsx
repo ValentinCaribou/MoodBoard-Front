@@ -1,6 +1,8 @@
 import React, {Component}  from 'react';
 import '../../App.scss';
+import Inscription from "../../components/inscription"
 import Soucoupe from "../../assets/app_launch_button3.png"
+import logoSII from "../../assets/logo.svg"
 import Fungenieur from "../../assets/logo_fungenieur.png"
 
 export default class Home extends Component {
@@ -30,26 +32,11 @@ export default class Home extends Component {
                     <img src={Fungenieur}/>
                     {
                         !isHide &&
-                        <div id="myModal" className="modal">
-                            <div className="modal-content">
-                                <div className="border">
-                                    <div className="div-close">
-                                        <span className="close" onClick={this.changeHide}>&times;</span>
-                                    </div>
-                                    <div>
-                                        <span>Adresse mail : </span>
-                                        <input type="text"  onChange={this.handleOnChange}></input>
-                                    </div>
-                                    <div>
-                                        <span>Adresse mail : </span>
-                                        <input type="text"  onChange={this.handleOnChange}></input>
-                                    </div>
-                                    <input type="submit" className="validate-button" value="Créer le compte" onClick={this.changeHide}/>
-                                </div>
-                            </div>
-                        </div>
+                        <Inscription
+                            changeStatus={this.changeHide}
+                        />
                     }
-                    <input className="bouton-accueil image" onClick={this.changeHide} type="image" src={Soucoupe}/>
+                    <input className="bouton-accueil image" onClick={this.changeHide} type="image" src={logoSII}/>
                 </div>
             </div>
         );
