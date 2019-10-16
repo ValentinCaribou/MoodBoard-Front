@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/logo-sii.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/inscription.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/inscription/inscription.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,6 +42,7 @@
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\pages\error" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
     </key>
   </component>
@@ -149,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571146324286</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="CHangement du logo">
+      <created>1571216606705</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1571216606705</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +187,7 @@
     <MESSAGE value="Ajout de sont mood sur plusieurs ligne Ok" />
     <MESSAGE value="Correction du bug qui empêche l'écriture du nom du collab" />
     <MESSAGE value="Ajout de commentaire avant les méthodes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de commentaire avant les méthodes" />
+    <MESSAGE value="CHangement du logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="CHangement du logo" />
   </component>
 </project>
