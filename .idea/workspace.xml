@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/login.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +14,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="US3_NoterSonMood" />
+        <entry key="$PROJECT_DIR$" value="US8_Inscription" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

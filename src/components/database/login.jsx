@@ -11,11 +11,11 @@ export default class Login extends Component{
     }
 
     saveUserToDatabase = (user) => {
-        console.log(user)
+        console.log(user);
         const res = {
             ...credentialsMock,
             login:{
-                ...login,
+                ...credentialsMock.login,
                 ArrayObject:[
                     ...credentialsMock.login.ArrayObject,
                     user
