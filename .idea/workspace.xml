@@ -4,7 +4,6 @@
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +68,7 @@
       <updated>1570113404680</updated>
       <workItem from="1570113411115" duration="24368000" />
       <workItem from="1570524985303" duration="1383000" />
-      <workItem from="1571239705405" duration="7396000" />
+      <workItem from="1571239705405" duration="10318000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1570115203556</created>
@@ -155,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571216606705</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe">
+      <created>1571306488605</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1571306488605</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +194,7 @@
     <MESSAGE value="Correction du bug qui empêche l'écriture du nom du collab" />
     <MESSAGE value="Ajout de commentaire avant les méthodes" />
     <MESSAGE value="CHangement du logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="CHangement du logo" />
+    <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
   </component>
 </project>

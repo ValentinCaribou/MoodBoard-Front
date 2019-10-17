@@ -37,16 +37,25 @@ export default class Week extends Component {
     validateInscription = () => {
         const user = this.state.user;
         let valide = this.validateEmail(user.adresseMail);
-        console.log(valide);
-        if (valide){
-            if(user.password !== user.confirmePassword){
-                this.setState({errorMessage: "Les mots de passe ne corresponde pas"});
+        if (user.adresseMail.trim() !== ""
+            && user.password.trim() !== ""
+            && user.confirmePassword.trim() !== ""
+            && user.nom.trim() !== ""
+            && user.prenom.trim() !== ""){
+            console.log(valide);
+            if (valide){
+                if(user.password !== user.confirmePassword){
+                    this.setState({errorMessage: "Les mots de passe doivent être identique"});
+                    this.setState({isError: true});
+                } else {
+                    this.setState({isError: false});
+                }
+            } else {
+                this.setState({errorMessage: "Adresse mail non valide"});
                 this.setState({isError: true});
             }
-            console.log(this.state.user);
         } else {
-            console.log("test");
-            this.setState({errorMessage: "Adresse mail non valide"});
+            this.setState({errorMessage: "Veuillez remplir tous les champs"});
             this.setState({isError: true});
         }
     };
