@@ -1,9 +1,9 @@
 import React, {Component}  from 'react';
-import Moment from 'react-moment';
 import '../../App.scss';
 import './moodboard.scss'
-import Week from "../../components/week.jsx";
-import Fungenieur from "../../assets/logo_fungenieur.png"
+import Week from '../../components/week.jsx';
+import Time from '../../librairies/time.jsx';
+import Fungenieur from '../../assets/logo_fungenieur.png';
 
 export default class MoodBoard extends Component {
 
@@ -23,9 +23,13 @@ export default class MoodBoard extends Component {
         //Les jours ouvrés sont compris entre 0 et 5 (Lundi à Vendredi) samedi et dimanche sont exclus
         let date = new Date();
         let dayNumber = date.getDay();
+        console.log(dayNumber);
         let dayDate = date.getDate();
+        console.log(dayDate)
         let month = date.getMonth()+1;
-        let formattedDate = dayDate-dayNumber+"/"+month;
+        console.log(month)
+        let formattedDate = (dayDate-dayNumber)+1+"/"+month;
+        console.log(formattedDate)
         return formattedDate;
     };
 
@@ -102,7 +106,7 @@ export default class MoodBoard extends Component {
             <div className="App">
                 <div className="App-header">
                 <img src={Fungenieur} height="280px" width="650px"/>
-                <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
+                <h1 className="moodboard-week-title">Board de la semaine du <Time getStartofWeek/> au <Time getEndOfWeek/></h1>
                   <Week
                     addMood={this.selectEmojis}
                     row={this.state.row}
