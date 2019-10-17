@@ -2,6 +2,7 @@ import React, {Component}  from 'react';
 import '../../App.scss';
 import Soucoupe from "../../assets/app_launch_button3.png"
 import Fungenieur from "../../assets/logo_fungenieur.png"
+import Login from "../../components/database/login"
 
 export default class Home extends Component {
 
@@ -33,16 +34,19 @@ export default class Home extends Component {
                         <div id="myModal" className="modal">
                             <div className="modal-content">
                                 <div className="border">
+                                    <div>
+                                        <Login checkLoginCredentials/>
+                                    </div>
                                     <div className="div-close">
                                         <span className="close" onClick={this.changeHide}>&times;</span>
                                     </div>
                                     <div>
                                         <span>Adresse mail : </span>
-                                        <input type="text"  onChange={this.handleOnChange}></input>
+                                        <input type="text" onChange={this.handleOnChange}></input>
                                     </div>
                                     <div>
                                         <span>Adresse mail : </span>
-                                        <input type="text"  onChange={this.handleOnChange}></input>
+                                        <input type="text" onChange={this.handleOnChange}></input>
                                     </div>
                                     <input type="submit" className="validate-button" value="Créer le compte" onClick={this.changeHide}/>
                                 </div>
