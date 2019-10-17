@@ -8,7 +8,7 @@ export default class Login extends Component{
         users.filter(user => {
             return user.username.includes(login) && user.password.includes(password)
         });
-    }
+    };
 
     saveUserToDatabase = (user) => {
         console.log(user);
@@ -23,5 +23,17 @@ export default class Login extends Component{
             }
         }
          console.log(res)
+    }
+
+    static saveUserToDatabase(user) {
+        console.log(user);
+        const res = {
+            ...credentialsMock,
+            login:[
+                ...credentialsMock.login,
+                user
+            ]
+        }
+        console.log(res);
     }
 }
