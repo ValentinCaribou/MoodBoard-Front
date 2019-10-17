@@ -7,11 +7,11 @@ export default class Week extends Component {
         super(props);
         this.state = {
             user : {
-                adresseMail:"",
+                email:"",
                 password:"",
                 confirmePassword:"",
-                nom:"",
-                prenom:""
+                name:"",
+                surname:""
             },
             isError: false,
             errorMessage: ""
@@ -36,12 +36,12 @@ export default class Week extends Component {
 
     validateInscription = () => {
         const user = this.state.user;
-        let valide = this.validateEmail(user.adresseMail);
-        if (user.adresseMail.trim() !== ""
+        let valide = this.validateEmail(user.email);
+        if (user.email.trim() !== ""
             && user.password.trim() !== ""
             && user.confirmePassword.trim() !== ""
-            && user.nom.trim() !== ""
-            && user.prenom.trim() !== ""){
+            && user.name.trim() !== ""
+            && user.surname.trim() !== ""){
             console.log(valide);
             if (valide){
                 if(user.password !== user.confirmePassword){
@@ -77,8 +77,8 @@ export default class Week extends Component {
                                 </div>
                             }
                             <div className="group">
-                                <input type="text" id="adresseMail" className="inputText" required="required" onChange={this.handleOnChange} value={user.adresseMail}/>
-                                <label htmlFor="adresseMail">Adresse mail</label>
+                                <input type="text" id="email" className="inputText" required="required" onChange={this.handleOnChange} value={user.email}/>
+                                <label htmlFor="email">Adresse mail</label>
                                 <div className="bar"></div>
                             </div>
                             <div className="group">
@@ -92,13 +92,13 @@ export default class Week extends Component {
                                 <div className="bar"></div>
                             </div>
                             <div className="group">
-                                <input type="text" id="nom" className="inputText" required="required" onChange={this.handleOnChange} value={user.nom}/>
-                                <label htmlFor="nom">Nom : </label>
+                                <input type="text" id="name" className="inputText" required="required" onChange={this.handleOnChange} value={user.name}/>
+                                <label htmlFor="name">Nom : </label>
                                 <div className="bar"></div>
                             </div>
                             <div className="group">
-                                <input type="text" id="prenom" className="inputText" required="required" onChange={this.handleOnChange} value={user.prenom}/>
-                                <label htmlFor="prenom">Prenom : </label>
+                                <input type="text" id="surname" className="inputText" required="required" onChange={this.handleOnChange} value={user.surname}/>
+                                <label htmlFor="surname">Prenom : </label>
                                 <div className="bar"></div>
                             </div>
                             <input type="submit" className="validate-button" value="Créer le compte" onClick={this.validateInscription}/>
