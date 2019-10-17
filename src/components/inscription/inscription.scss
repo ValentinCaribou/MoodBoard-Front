@@ -24,14 +24,14 @@ body {background: $main-color;}
 
 .group {
   width: 100%;
-  height: $width/5;
+  height: $width/7;
   overflow: hidden;
   position: relative;
 }
 
 label {
   position: absolute;
-  top: $width/15;
+  top: $width/22;
   color: rgba(#83317e, .5);
   font: 400 $width/22 Roboto;
   cursor: text;
@@ -41,20 +41,20 @@ label {
 .inputText {
   display: block;
   width: 100%;
-  padding-top: $width/30;
+  padding-top: $width/20;
   border: none;
   border-radius: 0; // For iOS
   border-bottom: solid $width/150 rgba(white, .5);
   //color: white;
   background: $main-color;
-  font-size: $width/15;
+  font: 400 $width/22 Roboto;
   transition: .3s ease;
   &:valid {
     // border-bottom-color: rgba(white, .5);
     ~label {
       top: 0;
       font: 700 $width/25 Roboto;
-      color: rgba(white, .5);
+      color: rgba($secondary-color, .3);
     }
   }
   &:focus {

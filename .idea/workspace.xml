@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/inscription/inscription.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +69,7 @@
       <updated>1570113404680</updated>
       <workItem from="1570113411115" duration="24368000" />
       <workItem from="1570524985303" duration="1383000" />
+      <workItem from="1571239705405" duration="7396000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1570115203556</created>
