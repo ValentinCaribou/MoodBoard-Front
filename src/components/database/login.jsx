@@ -9,4 +9,19 @@ export default class Login extends Component{
             return user.username.includes(login) && user.password.includes(password)
         });
     }
+
+    saveUserToDatabase = (user) => {
+        console.log(user)
+        const res = {
+            ...credentialsMock,
+            login:{
+                ...login,
+                ArrayObject:[
+                    ...credentialsMock.login.ArrayObject,
+                    user
+                ]
+            }
+        }
+         console.log(res)
+    }
 }
