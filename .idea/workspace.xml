@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/database/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/createAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/createAccount.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

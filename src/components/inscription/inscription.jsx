@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './inscription.scss'
 import Login from '../database/login'
+import {createAccount} from '../database/createAccount'
 
 export default class Week extends Component {
 
@@ -11,6 +12,12 @@ export default class Week extends Component {
                 email:"",
                 password:"",
                 confirmePassword:"",
+                name:"",
+                surname:""
+            },
+            userFinal : {
+                email:"",
+                password:"",
                 name:"",
                 surname:""
             },
@@ -49,7 +56,13 @@ export default class Week extends Component {
                     this.setState({errorMessage: "Les mots de passe doivent être identique"});
                     this.setState({isError: true});
                 } else {
-                    Login.saveUserToDatabase(user);
+                    let newUser = {
+                        email: user.email,
+                        password: user.password,
+                        name: user.name,
+                        surname: user.surname,
+                    };
+                    createAccount(newUser).then(response => console.log(response.json));
                     this.setState({isError: false});
                 }
             } else {
