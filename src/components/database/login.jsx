@@ -27,13 +27,11 @@ export default class Login extends Component{
 
     static saveUserToDatabase(user) {
         console.log(user);
-        const res = {
-            ...credentialsMock,
-            login:[
-                ...credentialsMock.login,
-                user
-            ]
-        }
+        const res = JSON.parse(credentialsMock.login);
         console.log(res);
+        res.push(user);
+        credentialsMock = res;
+        console.log(res);
+        return true;
     }
 }

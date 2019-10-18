@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/database/manageMood.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/database/createAccount.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/createAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,19 +31,20 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/error" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/database" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\pages\error" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\pages\error" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -169,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571318810084</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Inscription opérationnel">
+      <created>1571322442498</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571322442499</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +213,7 @@
     <MESSAGE value="CHangement du logo" />
     <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
     <MESSAGE value="Formulaire d'inscription valider" />
-    <option name="LAST_COMMIT_MESSAGE" value="Formulaire d'inscription valider" />
+    <MESSAGE value="Inscription opérationnel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inscription opérationnel" />
   </component>
 </project>

@@ -2,8 +2,9 @@ import React, {Component}  from 'react';
 import '../../App.scss';
 import './moodboard.scss'
 import Week from '../../components/week.jsx';
-import Time from '../../librairies/time.jsx';
+// import Time from '../../librairies/time.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
+import {sendMood} from "../../components/database/manageMood";
 
 export default class MoodBoard extends Component {
 
@@ -25,11 +26,11 @@ export default class MoodBoard extends Component {
         let dayNumber = date.getDay();
         console.log(dayNumber);
         let dayDate = date.getDate();
-        console.log(dayDate)
+        console.log(dayDate);
         let month = date.getMonth()+1;
-        console.log(month)
+        console.log(month);
         let formattedDate = (dayDate-dayNumber)+1+"/"+month;
-        console.log(formattedDate)
+        console.log(formattedDate);
         return formattedDate;
     };
 
@@ -98,6 +99,11 @@ export default class MoodBoard extends Component {
         this.setState({row});
         this.setState({idDay: id});
         this.setState({isHide: !this.state.isHide});
+        let jsonRequest = {
+            idUser: "35sgnq4dfg4s",
+            weekMood:row
+        };
+        sendMood(jsonRequest).then(response => console.log(response.json()))
     };
 
     render() {
@@ -106,7 +112,7 @@ export default class MoodBoard extends Component {
             <div className="App">
                 <div className="App-header">
                 <img src={Fungenieur} height="280px" width="650px"/>
-                <h1 className="moodboard-week-title">Board de la semaine du <Time getStartofWeek/> au <Time getEndOfWeek/></h1>
+                {/*<h1 className="moodboard-week-title">Board de la semaine du <Time getStartofWeek/> au <Time getEndOfWeek/></h1>*/}
                   <Week
                     addMood={this.selectEmojis}
                     row={this.state.row}
