@@ -5,25 +5,37 @@ export default class Week extends Component{
     constructor(props){
         super(props);
         this.state = {
-            rowList : [{
-                    collabName: "",
-                    mondayNoonMood: "",
-                    mondayAfternoonMood: "",
-                    tuesdayNoonMood: "",
-                    tuesdayAfterNoonMood: "",
-                    wednesdayNoonMood: "",
-                    wednesdayAfterNoonMood: "",
-                    thursdayNoonMood: "",
-                    thursdayAfterNoonMood: "",
-                    fridayNoonMood: "",
-                    fridayAfterNoonMood: "",
-                }],
+            rowList : this.props.row,
+            // rowList : [{
+            //         collabName: "",
+            //         mondayNoonMood: "",
+            //         mondayAfternoonMood: "",
+            //         tuesdayNoonMood: "",
+            //         tuesdayAfterNoonMood: "",
+            //         wednesdayNoonMood: "",
+            //         wednesdayAfterNoonMood: "",
+            //         thursdayNoonMood: "",
+            //         thursdayAfterNoonMood: "",
+            //         fridayNoonMood: "",
+            //         fridayAfterNoonMood: "",
+            //     }],
             currentRows : 0
         };
     }
 
-    createRow = () => {
+    componentDidMount() {
+        this.setState({rowList: this.props.row});
+    }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps !== this.props){
+            if(this.props.row.length !== undefined){
+                this.setState({rowList: this.props.row});
+            }
+        }
+    }
+
+    createRow = () => {
         let rowsCreated = this.state.currentRows;
         let newRowList =  {
             collabName: "",
@@ -131,9 +143,12 @@ export default class Week extends Component{
                             <td>Matin</td>
                             <td>Apres-midi</td>
                         </tr>
+                        {console.log("test ",this.state.rowList)}
+                        {console.log("props ",this.props.row)}
+                        {console.log("lenght ",this.state.rowList.length)}
                         {
                             //si le props est vide, alors on ne l'affiche pas (notation avec les esperluettes)
-                            this.state.rowList.length !== 0 &&
+                            this.state.rowList.length !== undefined &&
                             this.renderRows()
                         }
                     </tbody>

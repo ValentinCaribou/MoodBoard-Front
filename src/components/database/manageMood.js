@@ -9,3 +9,14 @@ export function sendMood(mood){
         }
     })
 }
+
+export function getAll(){
+    return fetch(url, {
+        method:'GET',
+        headers: {
+            'Content-Type':'application/json',
+        }
+    }).then(response =>
+        response.json()
+    )
+}

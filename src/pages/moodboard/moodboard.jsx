@@ -4,7 +4,7 @@ import './moodboard.scss'
 import Week from '../../components/week.jsx';
 // import Time from '../../librairies/time.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
-import {sendMood} from "../../components/database/manageMood";
+import {sendMood, getAll} from "../../components/database/manageMood";
 
 export default class MoodBoard extends Component {
 
@@ -33,6 +33,18 @@ export default class MoodBoard extends Component {
         console.log(formattedDate);
         return formattedDate;
     };
+
+  componentDidMount() {
+      let newListe = [];
+      let listeMood = getAll().then(json => {
+          json.map(mood => {
+              console.log(mood._id);
+              newListe.push(mood.weekMood);
+          });
+          console.log("Nouvelle liste : ", newListe);
+          this.setState({row: newListe});
+      });
+  }
 
     getEndOfWeek = () => {
         let date = new Date();
@@ -107,7 +119,8 @@ export default class MoodBoard extends Component {
     };
 
     render() {
-        let {isHide, ValueEmojis} = this.state;
+        let {isHide, ValueEmojis, row} = this.state;
+        console.log(row);
         return (
             <div className="App">
                 <div className="App-header">
