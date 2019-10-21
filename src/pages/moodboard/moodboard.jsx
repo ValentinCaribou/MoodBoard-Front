@@ -114,7 +114,6 @@ export default class MoodBoard extends Component {
         this.setState({row});
         this.setState({idDay: id});
         this.setState({isHide: !this.state.isHide});
-        console.log(keyName);
         let indexTab = keyName.split("_");
         let idMood = this.state.idListe[indexTab[1]];
         let jsonRequest = {
@@ -126,7 +125,6 @@ export default class MoodBoard extends Component {
         } else {
             updateMood(jsonRequest, idMood).then(response => console.log(response.json()))
         }
-        console.log(idMood);
     };
 
     render() {
