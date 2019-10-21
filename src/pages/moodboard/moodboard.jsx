@@ -4,7 +4,7 @@ import './moodboard.scss'
 import Week from '../../components/week.jsx';
 // import Time from '../../librairies/time.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
-import {sendMood, getAll} from "../../components/database/manageMood";
+import {sendMood, getAll, updateMood} from "../../components/database/manageMood";
 
 export default class MoodBoard extends Component {
 
@@ -15,6 +15,7 @@ export default class MoodBoard extends Component {
             tempValue: "",
             ValueEmojis: "",
             row: [],
+            idListe: [],
             keyName: "",
             cellule: "",
         }
@@ -36,13 +37,15 @@ export default class MoodBoard extends Component {
 
   componentDidMount() {
       let newListe = [];
+      let idListe = [];
       let listeMood = getAll().then(json => {
           json.map(mood => {
               console.log(mood._id);
               newListe.push(mood.weekMood);
+              idListe.push(mood._id);
           });
-          console.log("Nouvelle liste : ", newListe);
           this.setState({row: newListe});
+          this.setState({idListe});
       });
   }
 
@@ -96,31 +99,36 @@ export default class MoodBoard extends Component {
         return emojisFinal;
     };
 
-    selectEmojis = (cellule, row) => {
+    selectEmojis = (cellule, row, keyName) => {
+        console.log(keyName);
         this.setState({isHide: !this.state.isHide});
         this.setState({cellule});
         this.setState({row});
+        this.setState({keyName});
     };
 
-    validateButton = (id, keyName) => {
-        let {cellule, row} = this.state;
+    validateButton = (id) => {
+        let {cellule, row, keyName} = this.state;
         let idEmojis = this.state.tempValue;
         let emojisFinal = this.transformIdToEmojis(idEmojis);
         row[cellule] = emojisFinal;
-        this.setState({keyName});
         this.setState({row});
         this.setState({idDay: id});
         this.setState({isHide: !this.state.isHide});
+        console.log(keyName);
+        let indexTab = keyName.split("_");
+        let idMood = this.state.idListe[indexTab[1]]
         let jsonRequest = {
             idUser: "35sgnq4dfg4s",
             weekMood:row
         };
-        sendMood(jsonRequest).then(response => console.log(response.json()))
+        console.log("Liste des id : ", this.state.idListe);
+        updateMood(jsonRequest, idMood).then(response => console.log(response.json()))
+        // sendMood(jsonRequest).then(response => console.log(response.json()))
     };
 
     render() {
         let {isHide, ValueEmojis, row} = this.state;
-        console.log(row);
         return (
             <div className="App">
                 <div className="App-header">

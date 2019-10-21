@@ -10,6 +10,16 @@ export function sendMood(mood){
     })
 }
 
+export function updateMood(mood, id){
+    return fetch(url + "/" + id,  {
+        method: 'PUT',
+        body: JSON.stringify(mood),
+        headers: {
+            'Content-Type':'application/json',
+        }
+    })
+}
+
 export function getAll(){
     return fetch(url, {
         method:'GET',

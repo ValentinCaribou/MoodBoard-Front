@@ -89,20 +89,20 @@ export default class Week extends Component{
             <tr key={keyName} name={keyName}>
                 <td><input type="text" onChange={(e) => this.handleOnChange(e, row, i)} name="collabName" value={row.collabName}/></td>
                 {/** Lundi */}
-                <td onClick={() => addMood("mondayNoonMood", row)}>{row.mondayNoonMood}</td>
-                <td onClick={() => addMood("mondayAfternoonMood", row)}>{row.mondayAfternoonMood}</td>
+                <td onClick={() => addMood("mondayNoonMood", row, keyName)}>{row.mondayNoonMood}</td>
+                <td onClick={() => addMood("mondayAfternoonMood", row, keyName)}>{row.mondayAfternoonMood}</td>
                 {/** Mardi */}
-                <td onClick={() => addMood("tuesdayNoonMood", row)}>{row.tuesdayNoonMood}</td>
-                <td onClick={() => addMood("tuesdayAfterNoonMood", row)}>{row.tuesdayAfterNoonMood}</td>
+                <td onClick={() => addMood("tuesdayNoonMood", row, keyName)}>{row.tuesdayNoonMood}</td>
+                <td onClick={() => addMood("tuesdayAfterNoonMood", row, keyName)}>{row.tuesdayAfterNoonMood}</td>
                 {/** Mercredi */}
-                <td onClick={() => addMood("wednesdayNoonMood", row)}>{row.wednesdayNoonMood}</td>
-                <td onClick={() => addMood("wednesdayAfterNoonMood", row)}>{row.wednesdayAfterNoonMood}</td>
+                <td onClick={() => addMood("wednesdayNoonMood", row, keyName)}>{row.wednesdayNoonMood}</td>
+                <td onClick={() => addMood("wednesdayAfterNoonMood", row, keyName)}>{row.wednesdayAfterNoonMood}</td>
                 {/** Jeudi */}
-                <td onClick={() => addMood("thursdayNoonMood", row)}>{row.thursdayNoonMood}</td>
-                <td onClick={() => addMood("thursdayAfterNoonMood", row)}>{row.thursdayAfterNoonMood}</td>
+                <td onClick={() => addMood("thursdayNoonMood", row, keyName)}>{row.thursdayNoonMood}</td>
+                <td onClick={() => addMood("thursdayAfterNoonMood", row, keyName)}>{row.thursdayAfterNoonMood}</td>
                 {/** Vendredi */}
-                <td onClick={() => addMood("fridayNoonMood", row)}>{row.fridayNoonMood}</td>
-                <td onClick={() => addMood("fridayAfterNoonMood", row)}>{row.fridayAfterNoonMood}</td>
+                <td onClick={() => addMood("fridayNoonMood", row, keyName)}>{row.fridayNoonMood}</td>
+                <td onClick={() => addMood("fridayAfterNoonMood", row, keyName)}>{row.fridayAfterNoonMood}</td>
             </tr>
             )
         })
@@ -143,9 +143,6 @@ export default class Week extends Component{
                             <td>Matin</td>
                             <td>Apres-midi</td>
                         </tr>
-                        {console.log("test ",this.state.rowList)}
-                        {console.log("props ",this.props.row)}
-                        {console.log("lenght ",this.state.rowList.length)}
                         {
                             //si le props est vide, alors on ne l'affiche pas (notation avec les esperluettes)
                             this.state.rowList.length !== undefined &&
