@@ -1,11 +1,14 @@
 import React, {Component}  from 'react';
-import Moment from 'react-moment';
 import '../../App.scss';
 import './moodboard.scss'
-import Week from "../../components/week.jsx";
-import Fungenieur from "../../assets/logo_fungenieur.png"
+import Week from '../../components/week.jsx';
+// import Time from '../../librairies/time.jsx';
+import Fungenieur from '../../assets/logo_fungenieur.png';
+import {sendMood, getAll, updateMood} from "../../components/database/manageMood";
+import {balanceTonToast} from "../../redux/toast/dispatch";
+import {connect} from 'react-redux';
 
-export default class MoodBoard extends Component {
+class MoodBoard extends Component {
 
   constructor(props) {
         super(props);
@@ -14,6 +17,7 @@ export default class MoodBoard extends Component {
             tempValue: "",
             ValueEmojis: "",
             row: [],
+            idListe: [],
             keyName: "",
             cellule: "",
         }
@@ -23,11 +27,28 @@ export default class MoodBoard extends Component {
         //Les jours ouvrés sont compris entre 0 et 5 (Lundi à Vendredi) samedi et dimanche sont exclus
         let date = new Date();
         let dayNumber = date.getDay();
+        console.log(dayNumber);
         let dayDate = date.getDate();
+        console.log(dayDate);
         let month = date.getMonth()+1;
-        let formattedDate = dayDate-dayNumber+"/"+month;
+        console.log(month);
+        let formattedDate = (dayDate-dayNumber)+1+"/"+month;
+        console.log(formattedDate);
         return formattedDate;
     };
+
+  componentDidMount() {
+      let newListe = [];
+      let idListe = [];
+      let listeMood = getAll().then(json => {
+          json.map(mood => {
+              newListe.push(mood.weekMood);
+              idListe.push(mood._id);
+          });
+          this.setState({row: newListe});
+          this.setState({idListe});
+      });
+  }
 
     getEndOfWeek = () => {
         let date = new Date();
@@ -79,25 +100,40 @@ export default class MoodBoard extends Component {
         return emojisFinal;
     };
 
-    selectEmojis = (cellule, row) => {
+    selectEmojis = (cellule, row, keyName) => {
         this.setState({isHide: !this.state.isHide});
         this.setState({cellule});
         this.setState({row});
+        this.setState({keyName});
     };
 
-    validateButton = (id, keyName) => {
-        let {cellule, row} = this.state;
+    validateButton = (id) => {
+        let {cellule, row, keyName} = this.state;
         let idEmojis = this.state.tempValue;
         let emojisFinal = this.transformIdToEmojis(idEmojis);
         row[cellule] = emojisFinal;
-        this.setState({keyName});
         this.setState({row});
         this.setState({idDay: id});
         this.setState({isHide: !this.state.isHide});
+        let indexTab = keyName.split("_");
+        let idMood = this.state.idListe[indexTab[1]];
+        let jsonRequest = {
+            idUser: "35sgnq4dfg4s",
+            weekMood:row
+        };
+        if(idMood === undefined){
+            sendMood(jsonRequest)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+        } else {
+            updateMood(jsonRequest, idMood)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+        }
     };
 
     render() {
-        let {isHide, ValueEmojis} = this.state;
+        let {isHide, ValueEmojis, row} = this.state;
         return (
             <div className="App">
                 <div className="App-header">
@@ -156,12 +192,10 @@ export default class MoodBoard extends Component {
                           </div>
                       </div>
                   }
-                  {
-                      ValueEmojis !== "" &&
-                          <div>{ValueEmojis}</div>
-                  }
                 </div>
             </div>
         );
     }
 };
+
+export default connect()(MoodBoard);

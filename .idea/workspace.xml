@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/librairies/time.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/librairies/time.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +30,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/error" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/services" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -37,9 +38,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\pages\error" />
     </key>
   </component>
@@ -67,6 +73,7 @@
       <updated>1570113404680</updated>
       <workItem from="1570113411115" duration="24368000" />
       <workItem from="1570524985303" duration="1383000" />
+      <workItem from="1571239705405" duration="11240000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1570115203556</created>
@@ -145,7 +152,84 @@
       <option name="project" value="LOCAL" />
       <updated>1571146324286</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="CHangement du logo">
+      <created>1571216606705</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1571216606705</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe">
+      <created>1571306488605</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1571306488605</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Formulaire d'inscription valider">
+      <created>1571318810084</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1571318810084</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Inscription opérationnel">
+      <created>1571322442498</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571322442499</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Envoie du mood">
+      <created>1571388240390</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571388240390</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Envoie du mood semi-fonctionnel">
+      <created>1571405744363</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1571405744363</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update du mood">
+      <created>1571646916997</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1571646916998</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Update du mood avec ajout">
+      <created>1571647406228</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1571647406228</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Ajout de redux pour les toast">
+      <created>1571651224849</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1571651224849</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Ajout d'un fichier de gestion des retour html">
+      <created>1571666152841</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1571666152841</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Ajout du toast lors de la création du compte">
+      <created>1571666652517</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1571666652518</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +261,17 @@
     <MESSAGE value="Ajout de sont mood sur plusieurs ligne Ok" />
     <MESSAGE value="Correction du bug qui empêche l'écriture du nom du collab" />
     <MESSAGE value="Ajout de commentaire avant les méthodes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de commentaire avant les méthodes" />
+    <MESSAGE value="CHangement du logo" />
+    <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
+    <MESSAGE value="Formulaire d'inscription valider" />
+    <MESSAGE value="Inscription opérationnel" />
+    <MESSAGE value="Envoie du mood" />
+    <MESSAGE value="Envoie du mood semi-fonctionnel" />
+    <MESSAGE value="Update du mood" />
+    <MESSAGE value="Update du mood avec ajout" />
+    <MESSAGE value="Ajout de redux pour les toast" />
+    <MESSAGE value="Ajout d'un fichier de gestion des retour html" />
+    <MESSAGE value="Ajout du toast lors de la création du compte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du toast lors de la création du compte" />
   </component>
 </project>
