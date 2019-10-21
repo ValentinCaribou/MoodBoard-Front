@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/acceuilModal/inscription/inscription.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/toast/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toast/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="US8_Inscription" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -235,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571667466593</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Petite modif hauteur du toast">
+      <created>1571668014686</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1571668014686</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +290,7 @@
     <MESSAGE value="Ajout d'un fichier de gestion des retour html" />
     <MESSAGE value="Ajout du toast lors de la création du compte" />
     <MESSAGE value="Correction de l'heure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction de l'heure" />
+    <MESSAGE value="Petite modif hauteur du toast" />
+    <option name="LAST_COMMIT_MESSAGE" value="Petite modif hauteur du toast" />
   </component>
 </project>

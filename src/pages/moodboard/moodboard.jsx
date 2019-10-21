@@ -27,13 +27,9 @@ class MoodBoard extends Component {
         //Les jours ouvrés sont compris entre 0 et 5 (Lundi à Vendredi) samedi et dimanche sont exclus
         let date = new Date();
         let dayNumber = date.getDay();
-        console.log(dayNumber);
         let dayDate = date.getDate();
-        console.log(dayDate);
         let month = date.getMonth()+1;
-        console.log(month);
         let formattedDate = (dayDate-dayNumber)+1+"/"+month;
-        console.log(formattedDate);
         return formattedDate;
     };
 
