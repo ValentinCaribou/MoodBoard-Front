@@ -1,3 +1,5 @@
+import {checkStatus} from "../services/utils";
+
 const url = "http://localhost:3003/inscription";
 
 export function createAccount(user){
@@ -7,5 +9,6 @@ export function createAccount(user){
         headers: {
             'Content-Type':'application/json',
         }
-    })
+    }).then(checkStatus)
+        .then(response => response.json())
 }

@@ -198,10 +198,4 @@ class MoodBoard extends Component {
     }
 };
 
-const mapStateToProps = (state) => {
-    return {
-
-    }
-};
-
-export default connect(mapStateToProps)(MoodBoard);
+export default connect()(MoodBoard);

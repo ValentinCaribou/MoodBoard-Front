@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/services/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/database/manageMood.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/manageMood.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/toast/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toast/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/toast/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toast/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/login.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/createAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/createAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -223,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571651224849</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Ajout d'un fichier de gestion des retour html">
+      <created>1571666152841</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1571666152841</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +264,7 @@
     <MESSAGE value="Update du mood" />
     <MESSAGE value="Update du mood avec ajout" />
     <MESSAGE value="Ajout de redux pour les toast" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de redux pour les toast" />
+    <MESSAGE value="Ajout d'un fichier de gestion des retour html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'un fichier de gestion des retour html" />
   </component>
 </project>

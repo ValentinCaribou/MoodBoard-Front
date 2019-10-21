@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import './inscription.scss'
 import Login from '../database/login'
 import {createAccount} from '../database/createAccount'
+import {balanceTonToast} from "../../redux/toast/dispatch";
+import {connect} from "react-redux";
 
-export default class Week extends Component {
+class Week extends Component {
 
     constructor(props) {
         super(props);
@@ -62,8 +64,11 @@ export default class Week extends Component {
                         name: user.name,
                         surname: user.surname,
                     };
-                    createAccount(newUser).then(response => console.log(response.json));
+                    createAccount(newUser)
+                        .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                        .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
                     this.setState({isError: false});
+                    this.props.changeStatus();
                 }
             } else {
                 this.setState({errorMessage: "Adresse mail non valide"});
@@ -124,3 +129,5 @@ export default class Week extends Component {
         )
     }
 }
+
+export default connect()(Week);
