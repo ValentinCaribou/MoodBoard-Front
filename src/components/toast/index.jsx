@@ -1,4 +1,4 @@
-      import React from "react";
+import React from "react";
 import './index.css';
 import actions from '../../redux/toast/actions'
 
@@ -32,7 +32,7 @@ const Toast = ({type, message, timeout, dispatch, closeCallback}) => {
     const onClose = () => {
         closeCallback && closeCallback();
         dispatch(actions.hideToast());
-    }
+    };
 
     let animationStyle;
     if (timeout > 0) {
@@ -48,7 +48,7 @@ const Toast = ({type, message, timeout, dispatch, closeCallback}) => {
     return (
         (
             <div className={clazz} style={animationStyle}>
-                <i className={`${icon} toast-btn-close`}/>
+                <i className={`${icon} toast-btn-close test-i`}/>
                 <div className="message-toast">
                     <h4>{typeMessage}</h4>
                     <span>{message}</span>

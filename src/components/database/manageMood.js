@@ -1,3 +1,5 @@
+import {checkStatus} from "../services/utils";
+
 const url = "http://localhost:3003/mood";
 
 export function sendMood(mood){
@@ -7,7 +9,8 @@ export function sendMood(mood){
         headers: {
             'Content-Type':'application/json',
         }
-    })
+    }).then(checkStatus)
+        .then(response => response.json())
 }
 
 export function updateMood(mood, id){
@@ -17,7 +20,8 @@ export function updateMood(mood, id){
         headers: {
             'Content-Type':'application/json',
         }
-    })
+    }).then(checkStatus)
+        .then(response => response.json())
 }
 
 export function getAll(){
@@ -26,7 +30,6 @@ export function getAll(){
         headers: {
             'Content-Type':'application/json',
         }
-    }).then(response =>
-        response.json()
-    )
+    }).then(checkStatus)
+        .then(response => response.json())
 }

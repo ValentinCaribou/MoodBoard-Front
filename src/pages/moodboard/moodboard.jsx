@@ -5,8 +5,10 @@ import Week from '../../components/week.jsx';
 // import Time from '../../librairies/time.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
 import {sendMood, getAll, updateMood} from "../../components/database/manageMood";
+import {balanceTonToast} from "../../redux/toast/dispatch";
+import {connect} from 'react-redux';
 
-export default class MoodBoard extends Component {
+class MoodBoard extends Component {
 
   constructor(props) {
         super(props);
@@ -99,7 +101,6 @@ export default class MoodBoard extends Component {
     };
 
     selectEmojis = (cellule, row, keyName) => {
-        console.log(keyName);
         this.setState({isHide: !this.state.isHide});
         this.setState({cellule});
         this.setState({row});
@@ -121,9 +122,13 @@ export default class MoodBoard extends Component {
             weekMood:row
         };
         if(idMood === undefined){
-            sendMood(jsonRequest).then(response => console.log(response.json()))
+            sendMood(jsonRequest)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
         } else {
-            updateMood(jsonRequest, idMood).then(response => console.log(response.json()))
+            updateMood(jsonRequest, idMood)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
         }
     };
 
@@ -187,12 +192,16 @@ export default class MoodBoard extends Component {
                           </div>
                       </div>
                   }
-                  {
-                      ValueEmojis !== "" &&
-                          <div>{ValueEmojis}</div>
-                  }
                 </div>
             </div>
         );
     }
 };
+
+const mapStateToProps = (state) => {
+    return {
+
+    }
+};
+
+export default connect(mapStateToProps)(MoodBoard);

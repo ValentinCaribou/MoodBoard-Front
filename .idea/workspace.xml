@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/toast/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/toast/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/toast/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/toast/dispatch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/toast/reducers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/toast/types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/services/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/manageMood.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/manageMood.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/toast/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toast/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/toast/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toast/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/login.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +38,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/services" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -52,6 +50,7 @@
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571647406228</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Ajout de redux pour les toast">
+      <created>1571651224849</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1571651224849</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +263,7 @@
     <MESSAGE value="Envoie du mood semi-fonctionnel" />
     <MESSAGE value="Update du mood" />
     <MESSAGE value="Update du mood avec ajout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update du mood avec ajout" />
+    <MESSAGE value="Ajout de redux pour les toast" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de redux pour les toast" />
   </component>
 </project>
