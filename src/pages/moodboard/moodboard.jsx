@@ -40,7 +40,6 @@ export default class MoodBoard extends Component {
       let idListe = [];
       let listeMood = getAll().then(json => {
           json.map(mood => {
-              console.log(mood._id);
               newListe.push(mood.weekMood);
               idListe.push(mood._id);
           });
@@ -117,14 +116,17 @@ export default class MoodBoard extends Component {
         this.setState({isHide: !this.state.isHide});
         console.log(keyName);
         let indexTab = keyName.split("_");
-        let idMood = this.state.idListe[indexTab[1]]
+        let idMood = this.state.idListe[indexTab[1]];
         let jsonRequest = {
             idUser: "35sgnq4dfg4s",
             weekMood:row
         };
-        console.log("Liste des id : ", this.state.idListe);
-        updateMood(jsonRequest, idMood).then(response => console.log(response.json()))
-        // sendMood(jsonRequest).then(response => console.log(response.json()))
+        if(idMood === undefined){
+            sendMood(jsonRequest).then(response => console.log(response.json()))
+        } else {
+            updateMood(jsonRequest, idMood).then(response => console.log(response.json()))
+        }
+        console.log(idMood);
     };
 
     render() {
