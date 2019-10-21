@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/database/createAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/database/createAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inscription/inscription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/librairies/time.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/librairies/time.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -223,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571666152841</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Ajout du toast lors de la création du compte">
+      <created>1571666652517</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1571666652518</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +271,7 @@
     <MESSAGE value="Update du mood avec ajout" />
     <MESSAGE value="Ajout de redux pour les toast" />
     <MESSAGE value="Ajout d'un fichier de gestion des retour html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'un fichier de gestion des retour html" />
+    <MESSAGE value="Ajout du toast lors de la création du compte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du toast lors de la création du compte" />
   </component>
 </project>

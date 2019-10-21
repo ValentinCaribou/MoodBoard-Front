@@ -9,7 +9,7 @@ export default class Time extends Component{
         let dayNumber = date.getDay();
         let dayDate = date.getDate();
         let month = date.getMonth()+1;
-        let formattedDate = dayDate-dayNumber+"/"+month;
+        let formattedDate = (dayDate-dayNumber)+1+"/"+month;
         return formattedDate;
     }
 

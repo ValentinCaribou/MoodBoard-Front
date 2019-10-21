@@ -138,7 +138,7 @@ class MoodBoard extends Component {
             <div className="App">
                 <div className="App-header">
                 <img src={Fungenieur} height="280px" width="650px"/>
-                {/*<h1 className="moodboard-week-title">Board de la semaine du <Time getStartofWeek/> au <Time getEndOfWeek/></h1>*/}
+                <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
                   <Week
                     addMood={this.selectEmojis}
                     row={this.state.row}
