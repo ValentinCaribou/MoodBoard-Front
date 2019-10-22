@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import './acceuilModal.scss'
-import Login from '../database/login'
 import {createAccount} from '../database/createAccount'
+import {login} from '../database/login'
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from "react-redux";
 import Inscription from "./inscription/inscription";
+import Connexion from "./connexion/connexion";
+import {userLogin, userInscription} from "../../redux/user/dispatch";
 
 class Week extends Component {
 
@@ -23,6 +25,10 @@ class Week extends Component {
                 password:"",
                 name:"",
                 surname:""
+            },
+            userConnexion : {
+                email: "",
+                password: ""
             },
             isError: false,
             errorMessage: ""
@@ -65,9 +71,10 @@ class Week extends Component {
                         name: user.name,
                         surname: user.surname,
                     };
-                    createAccount(newUser)
-                        .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
-                        .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+                    // createAccount(newUser)
+                    //     .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                    //     .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+                    this.props.dispatch(userInscription(newUser));
                     this.setState({isError: false});
                     this.props.changeStatus();
                 }
@@ -78,6 +85,23 @@ class Week extends Component {
         } else {
             this.setState({errorMessage: "Veuillez remplir tous les champs"});
             this.setState({isError: true});
+        }
+    };
+
+    connexion = () => {
+        let userConnexion = this.state.userConnexion;
+        userConnexion.email = this.state.user.email;
+        userConnexion.password = this.state.user.confirmePassword;
+        if (userConnexion.email.trim() !== "" && userConnexion.password.trim() !== ""){
+            let valide = this.validateEmail(userConnexion.email);
+            if(valide){
+                this.setState({userConnexion});
+                // login(userConnexion).then(response => console.log(response))
+                this.props.dispatch(userLogin(userConnexion));
+            } else {
+                this.setState({errorMessage: "Adresse mail non valide"});
+                this.setState({isError: true});
+            }
         }
     };
 
@@ -102,6 +126,12 @@ class Week extends Component {
                                 handleOnChange={this.handleOnChange}
                                 validateInscription={this.validateInscription}
                                 />
+
+                            {/*<Connexion*/}
+                            {/*    user={user}*/}
+                            {/*    handleOnChange={this.handleOnChange}*/}
+                            {/*    connexion={this.connexion}*/}
+                            {/*/>*/}
                         </div>
                     </div>
                 </div>
@@ -109,5 +139,10 @@ class Week extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+    }
+};
 
-export default connect()(Week);
+export default connect(mapStateToProps)(Week);

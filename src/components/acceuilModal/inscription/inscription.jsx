@@ -13,12 +13,12 @@ class Inscription extends React.Component {
             <div>
                 <div className="group">
                     <input type="text" id="email" className="inputText" required="required" onChange={handleOnChange} value={user.email}/>
-                    <label htmlFor="email">Adresse mail</label>
+                    <label htmlFor="email">Adresse mail : </label>
                     <div className="bar"></div>
                 </div>
                 <div className="group">
                     <input type="password" id="password" className="inputText" required="required" onChange={handleOnChange} value={user.password}/>
-                    <label htmlFor="password">Mot de passe</label>
+                    <label htmlFor="password">Mot de passe : </label>
                     <div className="bar"></div>
                 </div>
                 <div className="group">
