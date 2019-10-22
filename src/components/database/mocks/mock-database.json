@@ -1,0 +1,19 @@
+{
+    "database":{
+        "id" : "week12019_cdavid",
+        "user" : "Clement",
+        "weeklyMood":{
+            "collabName":"test",
+            "mondayNoonMood": "",
+            "mondayAfternoonMood": "",
+            "tuesdayNoonMood": "",
+            "tuesdayAfterNoonMood": "",
+            "wednesdayNoonMood": "",
+            "wednesdayAfterNoonMood": "",
+            "thursdayNoonMood": "",
+            "thursdayAfterNoonMood": "",
+            "fridayNoonMood": "",
+            "fridayAfterNoonMood": ""
+        }
+    }
+}

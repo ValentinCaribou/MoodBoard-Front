@@ -82,9 +82,13 @@
       }
 
       .emojis:hover,
-      .close:focus{
+      .emojis:visited{
         background-color: #e72284;
         cursor: pointer;
+      }
+
+      .emojis-selected {
+        background-color: #e72284;
       }
 
       .validate-button {
