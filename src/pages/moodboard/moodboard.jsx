@@ -5,7 +5,7 @@ import '../../App.scss';
 import './moodboard.scss'
 
 //COMPONENTS
-import Toolbar from "../../components/toolbar.jsx"
+import Toolbar from "../../components/toolbar/toolbar.jsx";
 import Week from '../../components/week.jsx';
 // import Time from '../../librairies/time.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
@@ -44,18 +44,18 @@ class MoodBoard extends Component {
         return formattedDate;
     };
 
-  componentDidMount() {
-      let newListe = [];
-      let idListe = [];
-      let listeMood = getAll().then(json => {
-          json.map(mood => {
-              newListe.push(mood.weekMood);
-              idListe.push(mood._id);
-          });
-          this.setState({row: newListe});
-          this.setState({idListe});
-      });
-  }
+    componentDidMount() {
+        let newListe = [];
+        let idListe = [];
+        let listeMood = getAll().then(json => {
+            json.map(mood => {
+                newListe.push(mood.weekMood);
+                idListe.push(mood._id);
+            });
+            this.setState({row: newListe});
+            this.setState({idListe});
+        });
+    }
 
     getEndOfWeek = () => {
         let date = new Date();
@@ -145,7 +145,7 @@ class MoodBoard extends Component {
             <div className="App">
                 <div className="App-header">
                 <img src={Fungenieur} height="280px" width="650px"/>
-                <span><Toolbar/></span>
+                <Toolbar/>
                 <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
                   <Week
                     addMood={this.selectEmojis}

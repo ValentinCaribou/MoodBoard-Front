@@ -3,10 +3,6 @@ import './error404.css';
 
 class Error404 extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
 
