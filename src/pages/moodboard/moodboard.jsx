@@ -3,6 +3,7 @@ import Moment from 'react-moment';
 import '../../App.scss';
 import './moodboard.scss'
 import Week from "../../components/week.jsx";
+import Toolbar from "../../components/toolbar.jsx"
 import Fungenieur from "../../assets/logo_fungenieur.png"
 
 export default class MoodBoard extends Component {
@@ -20,12 +21,12 @@ export default class MoodBoard extends Component {
     }
 
     getStartofWeek = () => {
-        //Les jours ouvrés sont compris entre 0 et 5 (Lundi à Vendredi) samedi et dimanche sont exclus
+        //Les jours ouvrés sont compris entre 0 et 4 (Lundi à Vendredi) samedi et dimanche sont exclus
         let date = new Date();
         let dayNumber = date.getDay();
         let dayDate = date.getDate();
         let month = date.getMonth()+1;
-        let formattedDate = dayDate-dayNumber+"/"+month;
+        let formattedDate = (dayDate-dayNumber)+1+"/"+month;
         return formattedDate;
     };
 
@@ -34,7 +35,7 @@ export default class MoodBoard extends Component {
         let dayNumber = date.getDay();
         let dayDate = date.getDate();
         let month = date.getMonth()+1;
-        let formattedDate = (5-dayNumber)+dayDate+"/"+month;
+        let formattedDate = ((5-dayNumber))+dayDate+"/"+month;
         return formattedDate;
     };
     
@@ -102,6 +103,7 @@ export default class MoodBoard extends Component {
             <div className="App">
                 <div className="App-header">
                 <img src={Fungenieur} height="280px" width="650px"/>
+                <span><Toolbar/></span>
                 <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
                   <Week
                     addMood={this.selectEmojis}
