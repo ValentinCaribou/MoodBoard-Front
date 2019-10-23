@@ -9,7 +9,6 @@ export const userLogin = (user) => {
             .then(response => {
                     console.log(...response);
                     dispatch(action.setUser(...response));
-                    // dispatch(balanceTonToast("success", "Ajout réussi"));
                 }
             ).catch((error) => {
             console.log(error);
@@ -32,5 +31,11 @@ export const userInscription = (user) => {
             dispatch(balanceTonToast("error", "Erreur lors de l'ajout"));
             return Promise.reject(error);
         })
+    }
+};
+
+export const userConnected = (user) => {
+    return (dispatch) => {
+        dispatch(action.getUser(user));
     }
 };

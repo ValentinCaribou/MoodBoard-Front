@@ -11,13 +11,17 @@ const defaultState = {
 };
 
 const userReducer = (state = defaultState, action) => {
-    if (action.type === types.SET_USER) {
-        return {
-            ...state,
-            user: action.user,
-        };
-    } else {
-        return state;
+    switch (action.type) {
+        case types.SET_USER:
+            return {
+                ...state,
+                user: action.user,
+            };
+        case types.GET_USER:
+            return action.payload;
+
+        default :
+            return state;
     }
 };
 
