@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
 import './acceuilModal.scss'
 import {connect} from "react-redux";
-import { createStore, applyMiddleware } from 'redux'
 import  { withRouter } from 'react-router-dom'
 import Connexion from "./connexion/connexion";
-import {userLogin, userInscription, userConnected} from "../../redux/user/dispatch";
-import thunk from 'redux-thunk';
-import userReducer from "../../redux/user/reducers";
+import {userLogin, userInscription} from "../../redux/user/dispatch";
 import Inscription from "./inscription/inscription";
-
-const store = createStore(userReducer, applyMiddleware(thunk));
 
 class Week extends Component {
 
