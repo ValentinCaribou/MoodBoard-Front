@@ -6,7 +6,7 @@ import Connexion from "./connexion/connexion";
 import {userLogin, userInscription} from "../../redux/user/dispatch";
 import Inscription from "./inscription/inscription";
 
-class Week extends Component {
+class AcceuilModal extends Component {
 
     constructor(props) {
         super(props);
@@ -152,4 +152,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default withRouter(connect(mapStateToProps)(Week));
+export default withRouter(connect(mapStateToProps)(AcceuilModal));

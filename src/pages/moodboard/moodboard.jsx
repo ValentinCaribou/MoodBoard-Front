@@ -127,7 +127,7 @@ class MoodBoard extends Component {
         let indexTab = keyName.split("_");
         let idMood = idListe[indexTab[1]];
         let idUserMood = idUser[indexTab[1]];
-        if (idUserMood === user._id){
+        if (idUserMood === user._id || idUserMood === undefined){
             let idEmojis = this.state.tempValue;
             let emojisFinal = this.transformIdToEmojis(idEmojis);
             row[cellule] = emojisFinal;
@@ -140,7 +140,17 @@ class MoodBoard extends Component {
             };
             if(idMood === undefined){
                 sendMood(jsonRequest)
-                    .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                    .then(response => {
+                        this.props.dispatch(balanceTonToast("success", "Ajout réussi"))
+                        let NewMood = response.message;
+                        let idRow = response.message._id;
+                        idUser.push(user._id);
+                        idListe.push(idRow);
+                        row.push(NewMood.weekMood);
+                        this.setState({row});
+                        this.setState({idRow});
+                        this.setState({idUser});
+                    })
                     .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
             } else {
                 updateMood(jsonRequest, idMood)
