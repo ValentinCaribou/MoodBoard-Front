@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 //COMPONENTS
 import AverageMood from "../averageMood/allMoods.jsx";
+import PersonnalMood from '../averageMood/personnalMood.jsx';
 
 //IMAGES
 import options from "../../assets/options.png";
@@ -47,6 +48,9 @@ export default class Toolbar extends Component{
             {
                 displayed &&
                 <div className="toolbar-container-options">
+                    <div className="toolbar-item-card">
+                        <div>Votre moyenne : <PersonnalMood/></div>
+                    </div>
                     <div className="toolbar-item-card">
                         <div> Moyenne globale : <AverageMood/></div>
                     </div>
