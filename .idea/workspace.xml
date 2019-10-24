@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/services/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/services/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/user/dispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/dispatch.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -265,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571823276517</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Redirection after login">
+      <created>1571907017574</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1571907017574</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +291,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Modification du Readme" />
     <MESSAGE value="AJjout du dégrader de Violet" />
     <MESSAGE value="Passage au format jsx + ajout des composants et des pages" />
     <MESSAGE value="Ajout des du système de route et de la page 404" />
@@ -311,6 +315,7 @@
     <MESSAGE value="Création du composant inscription" />
     <MESSAGE value="Ajout de redux pour les utilisateurs, inscription et login" />
     <MESSAGE value="redirection vers la page moodboard après la connexion" />
-    <option name="LAST_COMMIT_MESSAGE" value="redirection vers la page moodboard après la connexion" />
+    <MESSAGE value="Redirection after login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redirection after login" />
   </component>
 </project>

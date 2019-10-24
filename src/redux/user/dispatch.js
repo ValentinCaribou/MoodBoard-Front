@@ -7,8 +7,6 @@ export const userLogin = (user, props) => {
     return (dispatch) => {
         login(user)
             .then(response => {
-                    console.log(response);
-                    console.log(...response);
                     dispatch(action.setUser(...response));
                     props.history.push("/moodboard");
                 }
@@ -24,8 +22,6 @@ export const userInscription = (user) => {
     return (dispatch) => {
         createAccount(user)
             .then(response => {
-                    console.log(response);
-                    // dispatch(action.setUser(...response));
                     dispatch(balanceTonToast("success", "Ajout réussi"));
                 }
             ).catch((error) => {
