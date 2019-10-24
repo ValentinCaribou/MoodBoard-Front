@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/toast/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toast/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +14,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="US8_Inscription" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,7 +29,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux/user" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -41,11 +41,11 @@
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux\user" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\acceuilModal\connexion" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\pages\error" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -235,7 +235,56 @@
       <option name="project" value="LOCAL" />
       <updated>1571667466593</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Petite modif hauteur du toast">
+      <created>1571668014686</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1571668014686</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Création du composant inscription">
+      <created>1571669676044</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1571669676045</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Ajout de redux pour les utilisateurs, inscription et login">
+      <created>1571755523862</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1571755523863</updated>
+    </task>
+    <task id="LOCAL-00027" summary="redirection vers la page moodboard après la connexion">
+      <created>1571823276517</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1571823276517</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Redirection after login">
+      <created>1571907017574</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1571907017574</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Suppression console.log">
+      <created>1571907894472</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1571907894472</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Connexion et inscription ok + switch entre les deux">
+      <created>1571922470463</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1571922470464</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,11 +305,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="Suppression readme.old.md" />
-    <MESSAGE value="Modification du Readme" />
-    <MESSAGE value="AJjout du dégrader de Violet" />
-    <MESSAGE value="Passage au format jsx + ajout des composants et des pages" />
     <MESSAGE value="Ajout des du système de route et de la page 404" />
     <MESSAGE value="Page d'acceuil fonctionnel" />
     <MESSAGE value="Ajout d'un mood sur une ligne ok" />
@@ -279,6 +323,13 @@
     <MESSAGE value="Ajout d'un fichier de gestion des retour html" />
     <MESSAGE value="Ajout du toast lors de la création du compte" />
     <MESSAGE value="Correction de l'heure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction de l'heure" />
+    <MESSAGE value="Petite modif hauteur du toast" />
+    <MESSAGE value="Création du composant inscription" />
+    <MESSAGE value="Ajout de redux pour les utilisateurs, inscription et login" />
+    <MESSAGE value="redirection vers la page moodboard après la connexion" />
+    <MESSAGE value="Redirection after login" />
+    <MESSAGE value="Suppression console.log" />
+    <MESSAGE value="Connexion et inscription ok + switch entre les deux" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connexion et inscription ok + switch entre les deux" />
   </component>
 </project>

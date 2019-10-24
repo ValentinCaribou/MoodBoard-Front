@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import './inscription.scss'
-import Login from '../database/login'
-import {createAccount} from '../database/createAccount'
-import {balanceTonToast} from "../../redux/toast/dispatch";
+import './acceuilModal.scss'
 import {connect} from "react-redux";
+import  { withRouter } from 'react-router-dom'
+import Connexion from "./connexion/connexion";
+import {userLogin, userInscription} from "../../redux/user/dispatch";
+import Inscription from "./inscription/inscription";
 
 class Week extends Component {
 
@@ -23,8 +24,13 @@ class Week extends Component {
                 name:"",
                 surname:""
             },
+            userConnexion : {
+                email: "",
+                password: ""
+            },
             isError: false,
-            errorMessage: ""
+            errorMessage: "",
+            connexion: true,
         }
     }
 
@@ -44,6 +50,10 @@ class Week extends Component {
         return regexMail.test(String(email).toLowerCase());
     }
 
+    changeStatusConnexion = () => {
+        this.setState({connexion: !this.state.connexion});
+    };
+
     validateInscription = () => {
         const user = this.state.user;
         let valide = this.validateEmail(user.email);
@@ -52,7 +62,6 @@ class Week extends Component {
             && user.confirmePassword.trim() !== ""
             && user.name.trim() !== ""
             && user.surname.trim() !== ""){
-            console.log(valide);
             if (valide){
                 if(user.password !== user.confirmePassword){
                     this.setState({errorMessage: "Les mots de passe doivent être identique"});
@@ -64,9 +73,7 @@ class Week extends Component {
                         name: user.name,
                         surname: user.surname,
                     };
-                    createAccount(newUser)
-                        .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
-                        .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+                    this.props.dispatch(userInscription(newUser));
                     this.setState({isError: false});
                     this.props.changeStatus();
                 }
@@ -80,8 +87,24 @@ class Week extends Component {
         }
     };
 
+    connexion = () => {
+        let userConnexion = this.state.userConnexion;
+        userConnexion.email = this.state.user.email;
+        userConnexion.password = this.state.user.confirmePassword;
+        if (userConnexion.email.trim() !== "" && userConnexion.password.trim() !== ""){
+            let valide = this.validateEmail(userConnexion.email);
+            if(valide){
+                this.setState({userConnexion});
+                this.props.dispatch(userLogin(userConnexion, this.props));
+            } else {
+                this.setState({errorMessage: "Adresse mail non valide"});
+                this.setState({isError: true});
+            }
+        }
+    };
+
     render() {
-        const {user, isError, errorMessage} = this.state;
+        const {user, isError, errorMessage, connexion} = this.state;
         return (
             <div id="myModal" className="modal">
                 <div className="modal-content">
@@ -90,38 +113,32 @@ class Week extends Component {
                             <div className="div-close">
                                 <span className="close" onClick={this.props.changeStatus}>&times;</span>
                             </div>
+                            <div>
+                                <input type="submit" className="connexion-button" value="Connexion" onClick={this.changeStatusConnexion}/>
+                                <input type="submit" className="connexion-button" value="Inscription" onClick={this.changeStatusConnexion}/>
+                            </div>
                             {
                                 isError &&
                                 <div className="group">
                                     <label>{errorMessage}</label>
                                 </div>
                             }
-                            <div className="group">
-                                <input type="text" id="email" className="inputText" required="required" onChange={this.handleOnChange} value={user.email}/>
-                                <label htmlFor="email">Adresse mail</label>
-                                <div className="bar"></div>
-                            </div>
-                            <div className="group">
-                                <input type="password" id="password" className="inputText" required="required" onChange={this.handleOnChange} value={user.password}/>
-                                <label htmlFor="password">Mot de passe</label>
-                                <div className="bar"></div>
-                            </div>
-                            <div className="group">
-                                <input type="password" id="confirmePassword" className="inputText" required="required" onChange={this.handleOnChange} value={user.confirmePassword}/>
-                                <label htmlFor="confirmePassword">Confirmer le mot de passe : </label>
-                                <div className="bar"></div>
-                            </div>
-                            <div className="group">
-                                <input type="text" id="name" className="inputText" required="required" onChange={this.handleOnChange} value={user.name}/>
-                                <label htmlFor="name">Nom : </label>
-                                <div className="bar"></div>
-                            </div>
-                            <div className="group">
-                                <input type="text" id="surname" className="inputText" required="required" onChange={this.handleOnChange} value={user.surname}/>
-                                <label htmlFor="surname">Prenom : </label>
-                                <div className="bar"></div>
-                            </div>
-                            <input type="submit" className="validate-button" value="Créer le compte" onClick={this.validateInscription}/>
+                            {
+                                !connexion &&
+                                <Inscription
+                                    user={user}
+                                    handleOnChange={this.handleOnChange}
+                                    validateInscription={this.validateInscription}
+                                />
+                            }
+                            {
+                                connexion &&
+                                <Connexion
+                                    user={user}
+                                    handleOnChange={this.handleOnChange}
+                                    connexion={this.connexion}
+                                />
+                            }
                         </div>
                     </div>
                 </div>
@@ -129,5 +146,10 @@ class Week extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+    }
+};
 
-export default connect()(Week);
+export default withRouter(connect(mapStateToProps)(Week));

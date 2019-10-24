@@ -14,6 +14,8 @@ import Fungenieur from '../../assets/logo_fungenieur.png';
 import {sendMood, getAll, updateMood} from "../../components/database/manageMood";
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
+import  { withRouter } from 'react-router-dom'
+import action from "../../redux/user/actions";
 
 class MoodBoard extends Component {
 
@@ -25,6 +27,7 @@ class MoodBoard extends Component {
             ValueEmojis: "",
             row: [],
             idListe: [],
+            idUser: [],
             keyName: "",
             cellule: "",
         }
@@ -34,28 +37,32 @@ class MoodBoard extends Component {
         //Les jours ouvrés sont compris entre 0 et 4 (Lundi à Vendredi) samedi et dimanche sont exclus
         let date = new Date();
         let dayNumber = date.getDay();
-        console.log(dayNumber);
         let dayDate = date.getDate();
-        console.log(dayDate);
         let month = date.getMonth()+1;
-        console.log(month);
         let formattedDate = (dayDate-dayNumber)+1+"/"+month;
-        console.log(formattedDate);
         return formattedDate;
     };
 
-    componentDidMount() {
-        let newListe = [];
-        let idListe = [];
-        let listeMood = getAll().then(json => {
-            json.map(mood => {
-                newListe.push(mood.weekMood);
-                idListe.push(mood._id);
-            });
-            this.setState({row: newListe});
-            this.setState({idListe});
-        });
-    }
+  componentDidMount() {
+      const {user} = this.props;
+      if(user.email === ""){
+          this.props.history.push("/");
+      } else {
+          let newListe = [];
+          let idListe = [];
+          let idUser = [];
+          let listeMood = getAll().then(json => {
+              json.map(mood => {
+                  newListe.push(mood.weekMood);
+                  idUser.push(mood.idUser);
+                  idListe.push(mood._id);
+              });
+              this.setState({row: newListe});
+              this.setState({idListe});
+              this.setState({idUser});
+          });
+      }
+  }
 
     getEndOfWeek = () => {
         let date = new Date();
@@ -115,32 +122,40 @@ class MoodBoard extends Component {
     };
 
     validateButton = (id) => {
-        let {cellule, row, keyName} = this.state;
-        let idEmojis = this.state.tempValue;
-        let emojisFinal = this.transformIdToEmojis(idEmojis);
-        row[cellule] = emojisFinal;
-        this.setState({row});
-        this.setState({idDay: id});
-        this.setState({isHide: !this.state.isHide});
+        let {cellule, row, keyName, idUser, idListe} = this.state;
+        const {user} = this.props;
         let indexTab = keyName.split("_");
-        let idMood = this.state.idListe[indexTab[1]];
-        let jsonRequest = {
-            idUser: "35sgnq4dfg4s",
-            weekMood:row
-        };
-        if(idMood === undefined){
-            sendMood(jsonRequest)
-                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
-                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+        let idMood = idListe[indexTab[1]];
+        let idUserMood = idUser[indexTab[1]];
+        if (idUserMood === user._id){
+            let idEmojis = this.state.tempValue;
+            let emojisFinal = this.transformIdToEmojis(idEmojis);
+            row[cellule] = emojisFinal;
+            this.setState({row});
+            this.setState({idDay: id});
+            this.setState({isHide: !this.state.isHide});
+            let jsonRequest = {
+                idUser: user._id,
+                weekMood:row
+            };
+            if(idMood === undefined){
+                sendMood(jsonRequest)
+                    .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                    .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+            } else {
+                updateMood(jsonRequest, idMood)
+                    .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                    .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+            }
         } else {
-            updateMood(jsonRequest, idMood)
-                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
-                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+            this.props.dispatch(balanceTonToast("error", "Vous ne pouvez pas modifier le mood des autres utilisateurs"));
         }
+
     };
 
     render() {
         let {isHide, ValueEmojis, row} = this.state;
+        const {user} = this.props;
         return (
             <div className="App">
                 <div className="App-header">
@@ -206,4 +221,10 @@ class MoodBoard extends Component {
     }
 };
 
-export default connect()(MoodBoard);
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+    }
+};
+
+export default withRouter(connect(mapStateToProps)(MoodBoard));
