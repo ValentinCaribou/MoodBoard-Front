@@ -23,9 +23,6 @@ export default class AverageMood extends Component{
     }
 
     async componentDidMount(){
-        console.log("-------------------");
-        console.log("component did mount");
-        console.log("-------------------");
         let listeMoods = [];
         await getAll()
             .then(json => {
@@ -34,7 +31,6 @@ export default class AverageMood extends Component{
             });
         });
         let mood = this.calculateScore(listeMoods);
-        console.log("mood : "+mood);
         this.setState({listMoods: listeMoods});
         if(mood != undefined){
             this.setState({averageMood: mood});
@@ -42,7 +38,6 @@ export default class AverageMood extends Component{
     }
 
     calculateScore = (listMoods) => {
-        console.log("calculateScore start function");
         var score = 0;
         listMoods.map(mood =>{
             Object.entries(mood).forEach(fragment => {
@@ -53,8 +48,6 @@ export default class AverageMood extends Component{
     }
     
     calculateAverageMood = (score) => {
-        console.log("calculateAverageMood start function");
-        console.log(score)
         let generalMood = "";
         if(score < 0){
             generalMood = "😠";
@@ -67,15 +60,11 @@ export default class AverageMood extends Component{
     }
 
     render(){
-        console.log("Render start function");
-        console.log("render state var averageMood :"+this.state.averageMood);
-        console.log("render state var listMood : "+this.state.listMoods.length);
         return this.state.averageMood;
     }
 }
 
 function compareMoods(valueToCompare){
-    console.log("compareMoods start function");
     let score = 0;
     listEmojis.map(entry =>{
         let emojiUnicode = "0x"+entry['value'].codePointAt(0).toString(16);
