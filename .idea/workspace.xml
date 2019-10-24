@@ -4,10 +4,8 @@
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/services/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/services/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/user/dispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/dispatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571755523863</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="redirection vers la page moodboard après la connexion">
+      <created>1571823276517</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1571823276517</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +286,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Suppression readme.old.md" />
     <MESSAGE value="Modification du Readme" />
     <MESSAGE value="AJjout du dégrader de Violet" />
     <MESSAGE value="Passage au format jsx + ajout des composants et des pages" />
@@ -306,6 +310,7 @@
     <MESSAGE value="Petite modif hauteur du toast" />
     <MESSAGE value="Création du composant inscription" />
     <MESSAGE value="Ajout de redux pour les utilisateurs, inscription et login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de redux pour les utilisateurs, inscription et login" />
+    <MESSAGE value="redirection vers la page moodboard après la connexion" />
+    <option name="LAST_COMMIT_MESSAGE" value="redirection vers la page moodboard après la connexion" />
   </component>
 </project>

@@ -94,8 +94,8 @@ class Week extends Component {
             let valide = this.validateEmail(userConnexion.email);
             if(valide){
                 this.setState({userConnexion});
-                this.props.dispatch(userLogin(userConnexion));
-                this.props.history.push("/moodboard");
+                this.props.dispatch(userLogin(userConnexion, this.props));
+                // this.props.history.push("/moodboard");
             } else {
                 this.setState({errorMessage: "Adresse mail non valide"});
                 this.setState({isError: true});

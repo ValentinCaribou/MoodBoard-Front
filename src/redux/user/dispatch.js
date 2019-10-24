@@ -3,17 +3,19 @@ import {login} from "../../components/database/login";
 import {createAccount} from '../../components/database/createAccount';
 import {balanceTonToast} from "../toast/dispatch";
 
-export const userLogin = (user) => {
+export const userLogin = (user, props) => {
     return (dispatch) => {
         login(user)
             .then(response => {
+                    console.log(response);
                     console.log(...response);
                     dispatch(action.setUser(...response));
+                    props.history.push("/moodboard");
                 }
             ).catch((error) => {
-            console.log(error);
-            dispatch(balanceTonToast("error", "Erreur lors de l'ajout"));
-            return Promise.reject(error);
+                console.log(error);
+                dispatch(balanceTonToast("error", "Erreur de login"));
+                return Promise.reject(error);
         })
     }
 };
