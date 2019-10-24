@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+//CSS
+import "./week.scss";
+
 export default class Week extends Component{
 
     constructor(props){
@@ -113,9 +116,9 @@ export default class Week extends Component{
             <div name="moodboard_root" className="Moodboard">
                 <div name="addRow">
                     <input type="submit" 
-                            name="add" 
+                            className="addRow" 
                             onClick={this.createRow} 
-                            value="Ajouter une ligne"
+                            value="Ajouter"
                             className="AddRowButton"/>
                 </div>
                 <table className="Moodboard-table">

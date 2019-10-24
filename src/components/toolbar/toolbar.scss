@@ -1,0 +1,34 @@
+@font-face{
+    font-family: "bebas_neue";
+  src: url("../../font/bebas_neue/BebasNeue-Regular.ttf") format("truetype"),
+  url("../../font/bebas_neue/BebasNeue-Regular.ttf") format("truetype");
+}
+
+.toolbar-container{
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 41%;
+    color : whitesmoke
+}
+
+.toolbar-container-options{
+    .toolbar-container-dropdown{
+        padding:10px;
+        margin-top:10%;
+    }
+    .toolbar-item-card{
+        background-color: whitesmoke;
+        text-align: start;
+        display: grid;
+        img{
+            padding:10px;
+            padding-top:10%
+        }
+        div{
+            color: #e72284;
+            font-size: 0.5em;
+            display: inline;
+            padding:10px;
+        }
+    }
+}

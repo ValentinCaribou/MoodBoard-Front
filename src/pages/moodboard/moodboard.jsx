@@ -1,9 +1,16 @@
 import React, {Component}  from 'react';
+
+//CSS
 import '../../App.scss';
 import './moodboard.scss'
+
+//COMPONENTS
+import Toolbar from "../../components/toolbar/toolbar.jsx";
 import Week from '../../components/week.jsx';
 // import Time from '../../librairies/time.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
+
+//REDUX
 import {sendMood, getAll, updateMood} from "../../components/database/manageMood";
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
@@ -27,7 +34,7 @@ class MoodBoard extends Component {
     }
 
     getStartofWeek = () => {
-        //Les jours ouvrés sont compris entre 0 et 5 (Lundi à Vendredi) samedi et dimanche sont exclus
+        //Les jours ouvrés sont compris entre 0 et 4 (Lundi à Vendredi) samedi et dimanche sont exclus
         let date = new Date();
         let dayNumber = date.getDay();
         let dayDate = date.getDate();
@@ -62,7 +69,7 @@ class MoodBoard extends Component {
         let dayNumber = date.getDay();
         let dayDate = date.getDate();
         let month = date.getMonth()+1;
-        let formattedDate = (5-dayNumber)+dayDate+"/"+month;
+        let formattedDate = ((5-dayNumber))+dayDate+"/"+month;
         return formattedDate;
     };
     
@@ -98,7 +105,7 @@ class MoodBoard extends Component {
                 emojisFinal = "😭";
                 break;
             case "normal":
-                emojisFinal = "🙂";
+                emojisFinal = "😐";
                 break;
             case "upside-down":
                 emojisFinal = "🙃";
@@ -153,6 +160,7 @@ class MoodBoard extends Component {
             <div className="App">
                 <div className="App-header">
                 <img src={Fungenieur} height="280px" width="650px"/>
+                <Toolbar/>
                 <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
                   <Week
                     addMood={this.selectEmojis}
@@ -194,7 +202,7 @@ class MoodBoard extends Component {
                                           <span className="tooltiptext">Triste</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="normal" onClick={this.handleClick}>🙂</div>
+                                          <div className="emojis" id="normal" onClick={this.handleClick}>😐</div>
                                           <span className="tooltiptext">Normal</span>
                                       </div>
                                       <div className="tooltip">
