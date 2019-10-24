@@ -98,7 +98,7 @@ class MoodBoard extends Component {
                 emojisFinal = "😭";
                 break;
             case "normal":
-                emojisFinal = "🙂";
+                emojisFinal = "😐";
                 break;
             case "upside-down":
                 emojisFinal = "🙃";
@@ -187,7 +187,7 @@ class MoodBoard extends Component {
                                           <span className="tooltiptext">Triste</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="normal" onClick={this.handleClick}>🙂</div>
+                                          <div className="emojis" id="normal" onClick={this.handleClick}>😐</div>
                                           <span className="tooltiptext">Normal</span>
                                       </div>
                                       <div className="tooltip">

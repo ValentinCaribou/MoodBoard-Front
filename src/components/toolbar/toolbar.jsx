@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 //COMPONENTS
-import AllMoods from "../averageMood/allMoods.jsx";
+import AverageMood from "../averageMood/allMoods.jsx";
 
 //IMAGES
 import options from "../../assets/options.png";
@@ -38,7 +38,6 @@ export default class Toolbar extends Component{
         return (
             <div className="toolbar-container">
                 <div className="toolbar-container-dropdown">
-                    
                     {
                         displayed
                         ? <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions}/>
@@ -49,7 +48,7 @@ export default class Toolbar extends Component{
                 displayed &&
                 <div className="toolbar-container-options">
                     <div className="toolbar-item-card">
-                        <div> Moyenne globale : <AllMoods/></div>
+                        <div> Moyenne globale : <AverageMood/></div>
                     </div>
                     <div className="toolbar-item-card">
                         <div>Paramètres</div>
