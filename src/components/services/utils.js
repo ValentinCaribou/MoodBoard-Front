@@ -1,5 +1,4 @@
 export const checkStatus = (response) => {
-    console.log(response.status);
     return Promise.resolve(response);
     // if (response.status >= 200 && response.status < 300) {
     //     return Promise.resolve(response);

@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import './acceuilModal.scss'
-import {createAccount} from '../database/createAccount'
-import {login} from '../database/login'
-import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from "react-redux";
-import Inscription from "./inscription/inscription";
+import { createStore, applyMiddleware } from 'redux'
 import  { withRouter } from 'react-router-dom'
 import Connexion from "./connexion/connexion";
 import {userLogin, userInscription, userConnected} from "../../redux/user/dispatch";
+import thunk from 'redux-thunk';
+import userReducer from "../../redux/user/reducers";
+import Inscription from "./inscription/inscription";
+
+const store = createStore(userReducer, applyMiddleware(thunk));
 
 class Week extends Component {
 
@@ -32,7 +34,8 @@ class Week extends Component {
                 password: ""
             },
             isError: false,
-            errorMessage: ""
+            errorMessage: "",
+            connexion: true,
         }
     }
 
@@ -52,6 +55,10 @@ class Week extends Component {
         return regexMail.test(String(email).toLowerCase());
     }
 
+    changeStatusConnexion = () => {
+        this.setState({connexion: !this.state.connexion});
+    };
+
     validateInscription = () => {
         const user = this.state.user;
         let valide = this.validateEmail(user.email);
@@ -60,7 +67,6 @@ class Week extends Component {
             && user.confirmePassword.trim() !== ""
             && user.name.trim() !== ""
             && user.surname.trim() !== ""){
-            console.log(valide);
             if (valide){
                 if(user.password !== user.confirmePassword){
                     this.setState({errorMessage: "Les mots de passe doivent être identique"});
@@ -95,7 +101,6 @@ class Week extends Component {
             if(valide){
                 this.setState({userConnexion});
                 this.props.dispatch(userLogin(userConnexion, this.props));
-                // this.props.history.push("/moodboard");
             } else {
                 this.setState({errorMessage: "Adresse mail non valide"});
                 this.setState({isError: true});
@@ -104,7 +109,7 @@ class Week extends Component {
     };
 
     render() {
-        const {user, isError, errorMessage} = this.state;
+        const {user, isError, errorMessage, connexion} = this.state;
         return (
             <div id="myModal" className="modal">
                 <div className="modal-content">
@@ -113,23 +118,32 @@ class Week extends Component {
                             <div className="div-close">
                                 <span className="close" onClick={this.props.changeStatus}>&times;</span>
                             </div>
+                            <div>
+                                <input type="submit" className="connexion-button" value="Connexion" onClick={this.changeStatusConnexion}/>
+                                <input type="submit" className="connexion-button" value="Inscription" onClick={this.changeStatusConnexion}/>
+                            </div>
                             {
                                 isError &&
                                 <div className="group">
                                     <label>{errorMessage}</label>
                                 </div>
                             }
-                            {/*<Inscription*/}
-                            {/*    user={user}*/}
-                            {/*    handleOnChange={this.handleOnChange}*/}
-                            {/*    validateInscription={this.validateInscription}*/}
-                            {/*    />*/}
-
-                            <Connexion
-                                user={user}
-                                handleOnChange={this.handleOnChange}
-                                connexion={this.connexion}
-                            />
+                            {
+                                !connexion &&
+                                <Inscription
+                                    user={user}
+                                    handleOnChange={this.handleOnChange}
+                                    validateInscription={this.validateInscription}
+                                />
+                            }
+                            {
+                                connexion &&
+                                <Connexion
+                                    user={user}
+                                    handleOnChange={this.handleOnChange}
+                                    connexion={this.connexion}
+                                />
+                            }
                         </div>
                     </div>
                 </div>
