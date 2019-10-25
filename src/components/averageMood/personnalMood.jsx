@@ -46,7 +46,9 @@ class PersonnalMood extends Component{
         var score = 0;
         listMoods.map(mood =>{
             Object.entries(mood).forEach(fragment => {
-                score += compareMoods(fragment[1]);
+                if(fragment[1] !== undefined && fragment[1] !== ""){
+                    score += compareMoods(fragment[1]);
+                }
             })
         })
         this.calculateAverageMood(score);
