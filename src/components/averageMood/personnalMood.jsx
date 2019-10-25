@@ -35,7 +35,6 @@ class PersonnalMood extends Component{
                 }
             });
         });
-        console.log(listeMoods);
         let myMood = this.calculateScore(listeMoods);
         this.setState({listMoods: listeMoods});
         if(myMood != undefined){
