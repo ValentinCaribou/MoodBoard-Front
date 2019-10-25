@@ -55,13 +55,13 @@ class AcceuilModal extends Component {
     changeStatusConnexion = () => {
         this.setState({connexion: true});
         this.setState({inscription: false});
-        this.setState({isActive: !this.state.isActive});
+        this.setState({isActive: true});
     };
 
     changeStatusInscription = () => {
         this.setState({connexion: false});
         this.setState({inscription: true});
-        this.setState({isActive: !this.state.isActive});
+        this.setState({isActive: false});
     };
 
     validateInscription = () => {
