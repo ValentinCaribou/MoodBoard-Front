@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import { getAll } from '../database/manageMood';
-//import userReducer from "../redux/user/reducers";
+import userReducer from "../../redux/user/reducers";
 
 const listEmojis = [
     {name: "smile", value:"😄", score: 1},
@@ -25,17 +25,20 @@ class PersonnalMood extends Component{
     }
 
     async componentDidMount(){
+        const {user}=this.props;
         let listeMoods = [];
         await getAll()
             .then(json => {
             json.map(mood => {
-                listeMoods.push(mood.weekMood);
+                if(user._id.includes(mood.idUser)){
+                    listeMoods.push(mood.weekMood);
+                }
             });
         });
-        let mood = this.calculateScore(listeMoods);
+        let myMood = this.calculateScore(listeMoods);
         this.setState({listMoods: listeMoods});
-        if(mood != undefined){
-            this.setState({averageMood: mood});
+        if(myMood != undefined){
+            this.setState({averageMood: myMood});
         }
     }
 
@@ -69,10 +72,14 @@ class PersonnalMood extends Component{
 function compareMoods(valueToCompare){
     let score = 0;
     listEmojis.map(entry =>{
-        let emojiUnicode = "0x"+entry['value'].codePointAt(0).toString(16);
-        let valueUnicode = "0x"+valueToCompare.codePointAt(0).toString(16);
+        let unicodeIdentifier = "0x";
+        let emojiUnicode = unicodeIdentifier+entry.value.codePointAt(0).toString(16);
+        let valueUnicode = "";
+        if(valueToCompare !== undefined){
+            valueUnicode = unicodeIdentifier+valueToCompare.codePointAt(0).toString(16);
+        }
         if(emojiUnicode.includes(valueUnicode)){
-            score = entry['score'];
+            score = entry.score;
         }
     })
     return score;
