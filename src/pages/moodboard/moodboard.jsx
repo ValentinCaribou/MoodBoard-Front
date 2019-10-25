@@ -146,12 +146,13 @@ class MoodBoard extends Component {
                         let idRow = response.message._id;
                         idUser.push(user._id);
                         idListe.push(idRow);
-                        row.push(NewMood.weekMood);
-                        this.setState({row});
                         this.setState({idRow});
                         this.setState({idUser});
                     })
-                    .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+                    .catch(error => {
+                        console.log("error : ", error);
+                        this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie"))
+                    });
             } else {
                 updateMood(jsonRequest, idMood)
                     .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
