@@ -68,7 +68,10 @@ function compareMoods(valueToCompare){
     let score = 0;
     listEmojis.map(entry =>{
         let emojiUnicode = "0x"+entry['value'].codePointAt(0).toString(16);
-        let valueUnicode = "0x"+valueToCompare.codePointAt(0).toString(16);
+        let valueUnicode = "0x";
+        if(valueToCompare == undefined){
+            valueUnicode+=valueToCompare.codePointAt(0).toString(16);
+        }
         if(emojiUnicode.includes(valueUnicode)){
             score = entry['score'];
         }
