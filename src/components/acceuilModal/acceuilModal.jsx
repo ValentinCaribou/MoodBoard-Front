@@ -31,6 +31,7 @@ class AcceuilModal extends Component {
             isError: false,
             errorMessage: "",
             connexion: true,
+            inscription: false,
         }
     }
 
@@ -51,7 +52,13 @@ class AcceuilModal extends Component {
     }
 
     changeStatusConnexion = () => {
-        this.setState({connexion: !this.state.connexion});
+        this.setState({connexion: true});
+        this.setState({inscription: false});
+    };
+
+    changeStatusInscription = () => {
+        this.setState({connexion: false});
+        this.setState({inscription: true});
     };
 
     validateInscription = () => {
@@ -104,7 +111,7 @@ class AcceuilModal extends Component {
     };
 
     render() {
-        const {user, isError, errorMessage, connexion} = this.state;
+        const {user, isError, errorMessage, connexion, inscription} = this.state;
         return (
             <div id="myModal" className="modal">
                 <div className="modal-content">
@@ -115,7 +122,7 @@ class AcceuilModal extends Component {
                             </div>
                             <div>
                                 <input type="submit" className="connexion-button" value="Connexion" onClick={this.changeStatusConnexion}/>
-                                <input type="submit" className="connexion-button" value="Inscription" onClick={this.changeStatusConnexion}/>
+                                <input type="submit" className="connexion-button" value="Inscription" onClick={this.changeStatusInscription}/>
                             </div>
                             {
                                 isError &&
@@ -124,7 +131,7 @@ class AcceuilModal extends Component {
                                 </div>
                             }
                             {
-                                !connexion &&
+                                inscription &&
                                 <Inscription
                                     user={user}
                                     handleOnChange={this.handleOnChange}
