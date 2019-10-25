@@ -119,6 +119,17 @@
         margin-right: 10px;
       }
 
+      .connexion-button-active{
+        background-color: #e72284;
+        color: white;
+        font-size: 0.7em;
+        position: relative;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #e72284;
+        margin-right: 10px;
+      }
+
       .connexion-button:hover{
         background-color: #e72284;
         transition-duration: 0.5s;

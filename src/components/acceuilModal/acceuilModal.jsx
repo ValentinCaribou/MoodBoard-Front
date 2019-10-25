@@ -32,6 +32,7 @@ class AcceuilModal extends Component {
             errorMessage: "",
             connexion: true,
             inscription: false,
+            isActive: true
         }
     }
 
@@ -54,11 +55,13 @@ class AcceuilModal extends Component {
     changeStatusConnexion = () => {
         this.setState({connexion: true});
         this.setState({inscription: false});
+        this.setState({isActive: !this.state.isActive});
     };
 
     changeStatusInscription = () => {
         this.setState({connexion: false});
         this.setState({inscription: true});
+        this.setState({isActive: !this.state.isActive});
     };
 
     validateInscription = () => {
@@ -111,7 +114,7 @@ class AcceuilModal extends Component {
     };
 
     render() {
-        const {user, isError, errorMessage, connexion, inscription} = this.state;
+        const {user, isError, errorMessage, connexion, inscription, isActive} = this.state;
         return (
             <div id="myModal" className="modal">
                 <div className="modal-content">
@@ -121,8 +124,8 @@ class AcceuilModal extends Component {
                                 <span className="close" onClick={this.props.changeStatus}>&times;</span>
                             </div>
                             <div>
-                                <input type="submit" className="connexion-button" value="Connexion" onClick={this.changeStatusConnexion}/>
-                                <input type="submit" className="connexion-button" value="Inscription" onClick={this.changeStatusInscription}/>
+                                <input type="submit" className={isActive ? "connexion-button-active" : "connexion-button"} value="Connexion" onClick={this.changeStatusConnexion}/>
+                                <input type="submit" className={isActive ? "connexion-button" : "connexion-button-active"} value="Inscription" onClick={this.changeStatusInscription}/>
                             </div>
                             {
                                 isError &&

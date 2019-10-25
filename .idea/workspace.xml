@@ -4,6 +4,7 @@
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -249,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571995861668</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Correction bug changement connexion, inscription">
+      <created>1572005443042</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1572005443042</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +278,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initial commit" />
     <MESSAGE value="Suppression readme.old.md" />
     <MESSAGE value="Modification du Readme" />
     <MESSAGE value="AJjout du dégrader de Violet" />
@@ -295,6 +302,7 @@
     <MESSAGE value="Correction de l'heure" />
     <MESSAGE value="Correction bug lors de la création d'une nouvelle ligne" />
     <MESSAGE value="Correction bug lors de l'enregistrement d'un nouveaux mood" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction bug lors de l'enregistrement d'un nouveaux mood" />
+    <MESSAGE value="Correction bug changement connexion, inscription" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction bug changement connexion, inscription" />
   </component>
 </project>
