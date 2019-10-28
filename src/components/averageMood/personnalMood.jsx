@@ -77,7 +77,7 @@ function compareMoods(valueToCompare){
         let unicodeIdentifier = "0x";
         let emojiUnicode = unicodeIdentifier+entry.value.codePointAt(0).toString(16);
         let valueUnicode = "";
-        if(valueToCompare !== undefined){
+        if(valueToCompare !== undefined && valueToCompare !== ""){
             valueUnicode = unicodeIdentifier+valueToCompare.codePointAt(0).toString(16);
         }
         if(emojiUnicode.includes(valueUnicode)){
