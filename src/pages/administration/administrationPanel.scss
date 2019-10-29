@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "bebas_neue";
+    src: url("../../font/bebas_neue/BebasNeue-Regular.ttf") format("truetype"),
+    url("../../font/bebas_neue/BebasNeue-Regular.ttf") format("truetype");
+}
+
+.admin{
+    background: linear-gradient(#83317e, #e72284);
+}
+
+.parameter-item{
+    background-color: whitesmoke;
+    color : #83317e;
+    padding-top: 0.7%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 25px;
+}

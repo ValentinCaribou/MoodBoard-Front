@@ -3,10 +3,6 @@ import '../acceuilModal.scss';
 
 class Connexion extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {user, handleOnChange, connexion} = this.props;
         return (

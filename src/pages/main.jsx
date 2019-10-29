@@ -1,12 +1,13 @@
 import React, {Component}  from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {connect} from 'react-redux';
-import logo from '../logo.svg';
+//import logo from '../logo.svg';
 import '../App.scss';
 import Toast from "../components/toast/index";
 import Error404 from "../pages/error/error404"
 import Home from "../pages/home/home"
 import MoodBoard from "../pages/moodboard/moodboard";
+import administrationPanel from '../pages/administration/administrationPanel';
 
 class Main extends Component {
     render() {
@@ -24,6 +25,7 @@ class Main extends Component {
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/moodboard" component={MoodBoard}/>
+                            <Route exact path="/administrate" component={administrationPanel}/>
                             <Route component={Error404}/>
                         </Switch>
                     </Router>

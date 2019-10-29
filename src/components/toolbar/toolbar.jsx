@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import  { Redirect } from 'react-router-dom'
 
 //COMPONENTS
 import AverageMood from "../averageMood/allMoods.jsx";
 import PersonnalMood from '../averageMood/personnalMood.jsx';
 import {connect} from "react-redux";
-import userReducer from "../../redux/user/reducers";
 
 //IMAGES
 import options from "../../assets/options.png";
@@ -37,14 +35,14 @@ class Toolbar extends Component{
     }
 
     render(){
-        const {displayed, user} = this.state;
+        const {displayed} = this.state;
         return (
             <div className="toolbar-container">
                 <div className="toolbar-container-dropdown">
                     {
                         displayed
-                        ? <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions}/>
-                        : <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions}/>
+                        ? <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions} alt=""/>
+                        : <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions} alt=""/>
                     }
                 </div>
             {
@@ -61,11 +59,11 @@ class Toolbar extends Component{
                     SI ADMIN ALORS VISIBLE, 
                     SINON PAS VISIBLE 
                     */}
-                    <div className="toolbar-item-card">
+                    <div className="toolbar-item-card-interactive">
                         <div>Paramètres</div>
                     </div>
-                    <div className="toolbar-item-card">
-                        <div><input type="submit" label="Déconnexion"/></div>
+                    <div className="toolbar-item-card-interactive">
+                        <div>Déconnexion</div>
                         {/**onClick={this.deconnexion()*/}
                     </div>
                 </div>
