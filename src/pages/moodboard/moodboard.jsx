@@ -1,4 +1,5 @@
 import React, {Component}  from 'react';
+import {format, startOfWeek, endOfWeek} from 'date-fns';
 
 //CSS
 import '../../App.scss';
@@ -7,7 +8,6 @@ import './moodboard.scss'
 //COMPONENTS
 import Toolbar from "../../components/toolbar/toolbar.jsx";
 import Week from '../../components/week.jsx';
-// import Time from '../../librairies/time.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
 
 //REDUX
@@ -36,11 +36,8 @@ class MoodBoard extends Component {
     getStartofWeek = () => {
         //Les jours ouvrés sont compris entre 0 et 4 (Lundi à Vendredi) samedi et dimanche sont exclus
         let date = new Date();
-        let dayNumber = date.getDay();
-        let dayDate = date.getDate();
-        let month = date.getMonth()+1;
-        let formattedDate = (dayDate-dayNumber)+1+"/"+month;
-        return formattedDate;
+        let start = startOfWeek(date, { weekStartsOn: 1 });
+        return format(start, "dd/MM");
     };
 
   componentDidMount() {
@@ -66,11 +63,8 @@ class MoodBoard extends Component {
 
     getEndOfWeek = () => {
         let date = new Date();
-        let dayNumber = date.getDay();
-        let dayDate = date.getDate();
-        let month = date.getMonth()+1;
-        let formattedDate = ((5-dayNumber))+dayDate+"/"+month;
-        return formattedDate;
+        let end = endOfWeek(date, { weekStartsOn: 6 });
+        return format(end, "dd/MM");
     };
     
     changeHide = () => {
