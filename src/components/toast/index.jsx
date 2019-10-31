@@ -26,6 +26,7 @@ const Toast = ({type, message, timeout, dispatch, closeCallback}) => {
             typeMessage = "Erreur !";
             clazz += " toast-error";
             icon += " fa-times-circle";
+            break;
         default :
             break;
     }

@@ -9,19 +9,6 @@ export default class Week extends Component{
         super(props);
         this.state = {
             rowList : this.props.row,
-            // rowList : [{
-            //         collabName: "",
-            //         mondayNoonMood: "",
-            //         mondayAfternoonMood: "",
-            //         tuesdayNoonMood: "",
-            //         tuesdayAfterNoonMood: "",
-            //         wednesdayNoonMood: "",
-            //         wednesdayAfterNoonMood: "",
-            //         thursdayNoonMood: "",
-            //         thursdayAfterNoonMood: "",
-            //         fridayNoonMood: "",
-            //         fridayAfterNoonMood: "",
-            //     }],
             currentRows : 0
         };
     }
@@ -53,7 +40,6 @@ export default class Week extends Component{
             fridayNoonMood: "",
             fridayAfterNoonMood: "",
         };
-        let keyName = 'row_'+rowsCreated;
         let stateRowList = this.state.rowList;
 
         stateRowList.push(newRowList);
@@ -68,17 +54,18 @@ export default class Week extends Component{
     handleOnChange = (e, row, i) => {
         const target = e.currentTarget;
         row[target.name] = target.value;
-        this.persistName(target.name, target.value, i);
+        this.persistName(i);
     };
 
     // Méthode persiste name qui va permettre de faire persister la valeur contenue dans le champ avec un setState
-    persistName = (name, value, indexRow) => {
+    persistName = (indexRow) => {
         const rowList = this.state.rowList;
         let currentRow = rowList[indexRow];
         rowList.map((row, index) => {
             if(index === indexRow){
                 row = currentRow;
             }
+            return row;
         });
         this.setState({rowList});
     };
@@ -87,7 +74,7 @@ export default class Week extends Component{
         let {addMood} = this.props;
         return this.state.rowList.map((row, i) => {
             let keyName = "row_"+i;
-            let rowList = this.state.rowList;
+            //let rowList = this.state.rowList;
             return (
             <tr key={keyName} name={keyName}>
                 <td><input type="text" onChange={(e) => this.handleOnChange(e, row, i)} name="collabName" value={row.collabName}/></td>
@@ -116,7 +103,6 @@ export default class Week extends Component{
             <div name="moodboard_root" className="Moodboard">
                 <div name="addRow">
                     <input type="submit" 
-                            className="addRow" 
                             onClick={this.createRow} 
                             value="Ajouter"
                             className="AddRowButton"/>

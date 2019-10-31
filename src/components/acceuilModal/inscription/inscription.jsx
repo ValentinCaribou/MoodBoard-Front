@@ -3,10 +3,6 @@ import '../acceuilModal.scss';
 
 class Inscription extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {user, handleOnChange, validateInscription} = this.props;
         return (

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import {Component} from 'react';
 import {connect} from "react-redux";
 import { getAll } from '../../services/manageMood';
 import userReducer from "../../redux/user/reducers";
@@ -33,11 +33,12 @@ class PersonnalMood extends Component{
                 if(user._id.includes(mood.idUser)){
                     listeMoods.push(mood.weekMood);
                 }
+                return null;
             });
         });
         let myMood = this.calculateScore(listeMoods);
         this.setState({listMoods: listeMoods});
-        if(myMood != undefined){
+        if(myMood !== undefined){
             this.setState({averageMood: myMood});
         }
     }
@@ -50,6 +51,7 @@ class PersonnalMood extends Component{
                     score += compareMoods(fragment[1]);
                 }
             })
+            return null;
         })
         this.calculateAverageMood(score);
     }
@@ -58,7 +60,7 @@ class PersonnalMood extends Component{
         let generalMood = "";
         if(score < 0){
             generalMood = "😠";
-        }else if(score == 0){
+        }else if(score === 0){
             generalMood = "😐"
         }else{
             generalMood = "😄";
@@ -83,6 +85,7 @@ function compareMoods(valueToCompare){
                 score = entry.score;
             }
         }
+        return null;
     })
     return score;
 }

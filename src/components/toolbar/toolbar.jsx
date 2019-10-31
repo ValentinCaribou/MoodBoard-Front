@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
-import  { Redirect } from 'react-router-dom'
 
 //COMPONENTS
 import AverageMood from "../averageMood/allMoods.jsx";
 import PersonnalMood from '../averageMood/personnalMood.jsx';
 import {connect} from "react-redux";
-import userReducer from "../../redux/user/reducers";
+import  { withRouter } from 'react-router-dom'
 
 //IMAGES
 import options from "../../assets/options.png";
-//import arrow_down from "../../assets/arrow_down.png";
-//import arrow_up from "../../assets/arrow_up.png";
-//import params from "../../assets/parameters.png";
-//import logout from "../../assets/logout.png";
 
 //CSS
 import "./toolbar.scss";
@@ -32,9 +27,19 @@ class Toolbar extends Component{
         })
       }
 
-    displayOptions = () =>{
+    displayOptions = () => {
         this.setState({displayed : !this.state.displayed})
     };
+
+    goToAdminPanel = () => {
+        console.log("passe ici gotoAdminPanel");
+        this.props.history.push('/administrate');
+    }
+
+    deconnexion = () => {
+        console.log("passe ici deconnexion");
+        this.props.history.push('/');
+    }
 
     render(){
         const {displayed} = this.state;
@@ -44,8 +49,8 @@ class Toolbar extends Component{
                 <div className="toolbar-container-dropdown">
                     {
                         displayed
-                        ? <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions}/>
-                        : <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions}/>
+                        ? <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions} alt=""/>
+                        : <img className="dropdownArrow" src={options} height="25" width="25" onClick={this.displayOptions} alt=""/>
                     }
                 </div>
             {
@@ -60,17 +65,11 @@ class Toolbar extends Component{
                     <div className="toolbar-item-card">
                         <div> Moyenne globale : <AverageMood/></div>
                     </div>
-                    {/** 
-                    RAJOUTER UNE CONDITIONNELLE SUR LE ROLE DE L'UTILISATEUR CONECTE : 
-                    SI ADMIN ALORS VISIBLE, 
-                    SINON PAS VISIBLE 
-                    */}
-                    <div className="toolbar-item-card">
-                        <div>Paramètres</div>
+                    <div className="toolbar-item-card-interactive">
+                        <button className="toolbar-buttons" onClick={this.goToAdminPanel}>Paramètres</button>
                     </div>
-                    <div className="toolbar-item-card">
-                        <div><input type="submit" label="Déconnexion"/></div>
-                        {/**onClick={this.deconnexion()*/}
+                    <div className="toolbar-item-card-interactive">
+                        <button className="toolbar-buttons" onClick={this.deconnexion}>Déconnexion</button>
                     </div>
                 </div>
             }
@@ -85,4 +84,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(Toolbar);
+export default withRouter(connect(mapStateToProps)(Toolbar));
