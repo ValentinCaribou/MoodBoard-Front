@@ -1,13 +1,24 @@
 import React, {Component} from 'react';
 
 //COMPONENTS
-import Admin from '../../components/administration/adminPanel';
+import Admin from '../../components/administration/manageEmails';
 
 //CSS
 import '../../App.scss';
 import './administrationPanel.scss';
 
-export default class AdminPanel extends Component{
+//COMPONENTS REDUX
+import {connect} from 'react-redux';
+import  { withRouter } from 'react-router-dom'
+
+class AdminPanel extends Component{
+
+    componentDidMount(){
+        /**const {user} = this.props;
+        if(user.email === ""){
+            this.props.history.push("/");
+        }*/
+    }
 
     render(){
         return (
@@ -21,3 +32,11 @@ export default class AdminPanel extends Component{
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+    }
+};
+
+export default withRouter(connect(mapStateToProps)(AdminPanel));

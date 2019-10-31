@@ -181,19 +181,19 @@ class MoodBoard extends Component {
                                   </div>
                                   <div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="smile" onClick={this.handleClick}><span role="img" aria-label="content">😄</span></div>
+                                          <div className="emojis" id="smile" onClick={this.handleClick}><span role="img" aria-label="content / heureux">😄</span></div>
                                           <span className="tooltiptext">Content / Heureux</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="unamused" onClick={this.handleClick}><span role="img" aria-label="blasé">😒</span></div>
+                                          <div className="emojis" id="unamused" onClick={this.handleClick}><span role="img" aria-label="pas content">😒</span></div>
                                           <span className="tooltiptext">Pas Content</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="dizzy_face" onClick={this.handleClick}><span role="img" aria-label="confus">😵</span></div>
+                                          <div className="emojis" id="dizzy_face" onClick={this.handleClick}><span role="img" aria-label="sous l'eau">😵</span></div>
                                           <span className="tooltiptext">Sous l'eau</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="cold_sweat" onClick={this.handleClick}><span role="img" aria-label="sous_leau">😰</span></div>
+                                          <div className="emojis" id="cold_sweat" onClick={this.handleClick}><span role="img" aria-label="stressé">😰</span></div>
                                           <span className="tooltiptext">Stresser</span>
                                       </div>
                                   </div>
@@ -211,7 +211,7 @@ class MoodBoard extends Component {
                                           <span className="tooltiptext">Normal</span>
                                       </div>
                                       <div className="tooltip">
-                                          <div className="emojis" id="upside-down" onClick={this.handleClick}><span role="img" aria-label="remué">🙃</span></div>
+                                          <div className="emojis" id="upside-down" onClick={this.handleClick}><span role="img" aria-label="blasé sarcastique">🙃</span></div>
                                           <span className="tooltiptext">Blasé sarcastique</span>
                                       </div>
                                   </div>

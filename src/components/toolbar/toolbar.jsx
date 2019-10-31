@@ -4,13 +4,10 @@ import React, {Component} from 'react';
 import AverageMood from "../averageMood/allMoods.jsx";
 import PersonnalMood from '../averageMood/personnalMood.jsx';
 import {connect} from "react-redux";
+import  { withRouter } from 'react-router-dom'
 
 //IMAGES
 import options from "../../assets/options.png";
-//import arrow_down from "../../assets/arrow_down.png";
-//import arrow_up from "../../assets/arrow_up.png";
-//import params from "../../assets/parameters.png";
-//import logout from "../../assets/logout.png";
 
 //CSS
 import "./toolbar.scss";
@@ -30,8 +27,18 @@ class Toolbar extends Component{
         })
       }
 
-    displayOptions = () =>{
+    displayOptions = () => {
         this.setState({displayed : !this.state.displayed})
+    }
+
+    goToAdminPanel = () => {
+        console.log("passe ici gotoAdminPanel");
+        this.props.history.push('/administrate');
+    }
+
+    deconnexion = () => {
+        console.log("passe ici deconnexion");
+        this.props.history.push('/');
     }
 
     render(){
@@ -54,17 +61,11 @@ class Toolbar extends Component{
                     <div className="toolbar-item-card">
                         <div> Moyenne globale : <AverageMood/></div>
                     </div>
-                    {/** 
-                    RAJOUTER UNE CONDITIONNELLE SUR LE ROLE DE L'UTILISATEUR CONECTE : 
-                    SI ADMIN ALORS VISIBLE, 
-                    SINON PAS VISIBLE 
-                    */}
                     <div className="toolbar-item-card-interactive">
-                        <div>Paramètres</div>
+                        <button className="toolbar-buttons" onClick={this.goToAdminPanel}>Paramètres</button>
                     </div>
                     <div className="toolbar-item-card-interactive">
-                        <div>Déconnexion</div>
-                        {/**onClick={this.deconnexion()*/}
+                        <button className="toolbar-buttons" onClick={this.deconnexion}>Déconnexion</button>
                     </div>
                 </div>
             }
@@ -79,4 +80,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(Toolbar);
+export default withRouter(connect(mapStateToProps)(Toolbar));

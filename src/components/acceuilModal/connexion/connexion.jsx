@@ -19,7 +19,7 @@ class Connexion extends React.Component {
                 </div>
                 <input type="submit" className="validate-button" value="Connexion" onClick={connexion}/>
             </div>
-        )
+        );
     }
 }
 

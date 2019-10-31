@@ -31,11 +31,16 @@
             padding:10px;
         }
     }
+}
 
-    .toolbar-item-card-interactive:hover{
-        background-color: #e72284;
-        div{
-            color: whitesmoke;
-        }
-    }
+.toolbar-buttons{
+    background-color: whitesmoke;
+    color: #e72284;
+    border: none;
+    padding: 2%;
+}
+
+.toolbar-buttons:hover{
+    background-color: #e72284;
+    color: whitesmoke;
 }
