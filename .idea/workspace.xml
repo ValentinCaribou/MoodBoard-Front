@@ -3,9 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/averageMood/allMoods.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/averageMood/allMoods.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/averageMood/personnalMood.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/averageMood/personnalMood.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/createAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/createAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/manageMood.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/manageMood.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/mocks/mock-credentials.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/mocks/mock-database.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/database/moodboard_crud.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/services/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/dispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/dispatch.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +41,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -39,13 +49,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\pages\error" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
     </key>
@@ -279,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572340018929</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Ajout d'un role par défaut lors de la création d'un utilisateur">
+      <created>1572345383121</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1572345383121</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +319,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Passage au format jsx + ajout des composants et des pages" />
     <MESSAGE value="Ajout des du système de route et de la page 404" />
     <MESSAGE value="Page d'acceuil fonctionnel" />
     <MESSAGE value="Ajout d'un mood sur une ligne ok" />
@@ -325,6 +343,7 @@
     <MESSAGE value="Modif style button courant" />
     <MESSAGE value="Modif style button courant 2" />
     <MESSAGE value="Ajout du nom / prénom dans le composant toolbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du nom / prénom dans le composant toolbar" />
+    <MESSAGE value="Ajout d'un role par défaut lors de la création d'un utilisateur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'un role par défaut lors de la création d'un utilisateur" />
   </component>
 </project>

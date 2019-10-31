@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { getAll } from '../database/manageMood';
+import { getAll } from '../../services/manageMood';
 import userReducer from "../../redux/user/reducers";
 
 const listEmojis = [

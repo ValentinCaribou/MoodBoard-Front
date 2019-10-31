@@ -1,6 +1,6 @@
 import action from "./actions"
-import {login} from "../../components/database/login";
-import {createAccount} from '../../components/database/createAccount';
+import {login} from "../../services/login";
+import {createAccount} from '../../services/createAccount';
 import {balanceTonToast} from "../toast/dispatch";
 
 export const userLogin = (user, props) => {

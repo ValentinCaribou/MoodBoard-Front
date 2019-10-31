@@ -1,6 +1,6 @@
-import {checkStatus} from "../services/utils";
+import {checkStatus} from "./utils";
 
-const url = "http://localhost:3003/inscription";
+const url = "http://localhost:4000/inscription";
 
 export function createAccount(user){
     return fetch(url, {

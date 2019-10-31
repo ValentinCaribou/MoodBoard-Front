@@ -1,6 +1,6 @@
-import {checkStatus} from "../services/utils";
+import {checkStatus} from "./utils";
 
-const url = "http://localhost:3003/mood";
+const url = "http://localhost:4000/mood";
 
 export function sendMood(mood){
     return fetch(url, {

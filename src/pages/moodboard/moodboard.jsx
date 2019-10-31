@@ -11,7 +11,7 @@ import Week from '../../components/week.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
 
 //REDUX
-import {sendMood, getAll, updateMood} from "../../components/database/manageMood";
+import {sendMood, getAll, updateMood} from "../../services/manageMood";
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
 import  { withRouter } from 'react-router-dom'

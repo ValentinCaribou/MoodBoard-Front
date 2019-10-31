@@ -1,6 +1,6 @@
-import {checkStatus} from "../services/utils";
+import {checkStatus} from "./utils";
 
-const url = "http://localhost:3003/login";
+const url = "http://localhost:4000/login";
 
 export function login(user){
     return fetch(url, {
