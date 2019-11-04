@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 //COMPONENTS
 import Admin from '../../components/administration/manageEmails';
+import AdminUser from '../../components/administration/manageUsers';
 
 //CSS
 import '../../App.scss';
@@ -26,7 +27,8 @@ class AdminPanel extends Component{
                 <div className="App-header">
                     <h1>Administration des paramètres</h1>
                     <a href="./moodboard">Return</a>
-                    <Admin/>
+                    {/*<Admin/>*/}
+                    <AdminUser/>
                 </div>
             </div>
         );

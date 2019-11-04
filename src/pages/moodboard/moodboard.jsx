@@ -162,6 +162,7 @@ class MoodBoard extends Component {
 
     render() {
         let {isHide} = this.state;
+        const {user} = this.props;
         return (
             <div className="App">
                 <div className="App-header">

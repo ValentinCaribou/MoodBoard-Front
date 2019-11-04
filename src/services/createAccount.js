@@ -12,3 +12,13 @@ export function createAccount(user){
     }).then(checkStatus)
         .then(response => response.json())
 }
+
+export function getAllUser(){
+    return fetch(url, {
+        method:'GET',
+        headers: {
+            'Content-Type':'application/json',
+        }
+    }).then(checkStatus)
+        .then(response => response.json())
+}

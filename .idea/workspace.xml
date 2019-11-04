@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/administration/manageUsers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageUsers.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/toolbar/toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toolbar/toolbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/administration/administrationPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/administration/administrationPanel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/dispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/dispatch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/createAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/createAccount.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,18 +46,18 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\valen\WebstormProjects\moodboard" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
     </key>
   </component>
   <component name="RunDashboard">

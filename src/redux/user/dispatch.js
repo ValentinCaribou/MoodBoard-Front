@@ -1,6 +1,6 @@
 import action from "./actions"
 import {login} from "../../services/login";
-import {createAccount} from '../../services/createAccount';
+import {createAccount, getAllUser} from '../../services/createAccount';
 import {balanceTonToast} from "../toast/dispatch";
 
 export const userLogin = (user, props) => {
@@ -14,6 +14,20 @@ export const userLogin = (user, props) => {
                 console.log(error);
                 dispatch(balanceTonToast("error", "Erreur de login"));
                 return Promise.reject(error);
+        })
+    }
+};
+
+export const getListUser = () => {
+    return (dispatch) => {
+        getAllUser()
+            .then(response => {
+                    dispatch(action.setUsers(response));
+            }
+            ).catch((error) => {
+            console.log(error);
+            dispatch(balanceTonToast("error", "Erreur lors de l'ajout"));
+            return Promise.reject(error);
         })
     }
 };
