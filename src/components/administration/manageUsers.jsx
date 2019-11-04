@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 
 import '../../App.scss'
+import './manage.scss'
 import { getParameters} from '../../services/manageParameters';
-import {getAllUser} from "../../services/createAccount";
+import {getAllUser, updateAccount} from "../../services/createAccount";
 
 import {connect} from 'react-redux';
-import  { withRouter } from 'react-router-dom'
+import { Switch } from '@material-ui/core';
+import { withRouter } from 'react-router-dom'
 
 class AdminUser extends Component{
 
@@ -18,18 +20,45 @@ class AdminUser extends Component{
                 formatPreference : "",
                 listEmojis : ""
             },
-            isEdit : false
+            isEdit : false,
+            users: [],
+            checked: true,
         };
     }
 
     componentDidMount(){
-        getAllUser().then(r => console.log(r));
+        getAllUser().then(r => {
+            this.setState({users: r})
+        });
     }
 
+    toggleChecked = (e) => {
+        const {users} = this.state;
+        const target = e.currentTarget;
+        let user = users.find(user => user._id === target.id);
+        if(user.role === "USER"){
+            user.role = "ADMIN"
+        } else {
+            user.role = "USER"
+        }
+        updateAccount(user, target.id).then(r => console.log(r));
+        this.setState({checked: !this.state.checked})
+    };
+
+
     render(){
+        const {users, checked} = this.state;
         return(
             <div className="parameter-item">
                 <p>Liste des utilisateurs</p>
+                {
+                    users.map((user) => {
+                        return <div key={user._id} className="email-item-card">
+                            <span className={"label-affichage-mail"}>{user.email}</span>
+                            <Switch id={user._id} checked={(user.role === "USER") ? false : true} onChange={this.toggleChecked} />
+                        </div>
+                    })
+                }
             </div>
         );
     }

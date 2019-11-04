@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/administration/manage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/administration/manageUsers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageUsers.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/toolbar/toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toolbar/toolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/administration/administrationPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/administration/administrationPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/user/dispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/dispatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/createAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/createAccount.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,6 +37,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -303,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572532766310</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Modifiation de Redux pour récupérer la liste des utilisateurs + création du composant permettant l'affichage">
+      <created>1572862910593</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1572862910594</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +325,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Page d'acceuil fonctionnel" />
     <MESSAGE value="Ajout d'un mood sur une ligne ok" />
     <MESSAGE value="Ajout de sont mood sur plusieurs ligne Ok" />
     <MESSAGE value="Correction du bug qui empêche l'écriture du nom du collab" />
@@ -349,6 +349,7 @@
     <MESSAGE value="Ajout du nom / prénom dans le composant toolbar" />
     <MESSAGE value="Ajout d'un role par défaut lors de la création d'un utilisateur" />
     <MESSAGE value="refacto fichier + extention + changement adresse API" />
-    <option name="LAST_COMMIT_MESSAGE" value="refacto fichier + extention + changement adresse API" />
+    <MESSAGE value="Modifiation de Redux pour récupérer la liste des utilisateurs + création du composant permettant l'affichage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifiation de Redux pour récupérer la liste des utilisateurs + création du composant permettant l'affichage" />
   </component>
 </project>

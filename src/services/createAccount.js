@@ -13,6 +13,17 @@ export function createAccount(user){
         .then(response => response.json())
 }
 
+export function updateAccount(user, id){
+    return fetch(url + "/" + id,  {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        headers: {
+            'Content-Type':'application/json',
+        }
+    }).then(checkStatus)
+        .then(response => response.json())
+}
+
 export function getAllUser(){
     return fetch(url, {
         method:'GET',
