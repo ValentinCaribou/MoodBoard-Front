@@ -16,7 +16,11 @@ class AdminEmail extends Component{
                 diffusionList : "",
                 theme : "",
                 formatPreference : "",
-                listEmojis : ""
+                listEmojis : [{
+                    code : "",
+                    label : "",
+                    score : 0
+                }]
             },
             isEdit : false
         };
@@ -32,16 +36,13 @@ class AdminEmail extends Component{
     }
 
     handleChange(event) {
-        console.log(event.target.value);
         let param = this.state.param;
         param.diffusionList = event.target.value;
-        console.log(param);
         this.setState({param});
       }
     
       handleSubmit(event) {
         event.preventDefault();
-        console.log(event.target.value);
         this.saveToDatabase();
       }
 
@@ -74,6 +75,10 @@ class AdminEmail extends Component{
                         <br/><br/>
                         <textarea cols="50" rows="10" value={this.state.param.diffusionList} onChange={this.handleChange}/>
                     </form>
+                    <p className="infos">
+                    Vous pouvez ajouter une ou plusieurs adresses, toutes séparées par un ";". 
+                    Le dernier email entré ne doit pas contenir de ";" à la fin.
+                </p>
                 );
             }
         }
@@ -82,7 +87,6 @@ class AdminEmail extends Component{
     saveToDatabase = () => {
         this.allowEdit();
         let parameters = this.state.param;
-        console.log(JSON.stringify(parameters));
         updateParameters(parameters, this.state.param._id)
             .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
             .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
