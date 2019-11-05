@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import '../../App.scss'
-import { getParameters, updateParameters } from '../database/manageParameters';
+import { getParameters, updateParameters} from "../../services/manageParameters";
 
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
@@ -32,14 +32,16 @@ class AdminEmojis extends Component{
 
     componentDidMount(){
         getParameters().then( json => {
-            this.setState({param : json[0]});
-            let emojis = "";
+            if(json.length !== 0){
+                this.setState({param : json[0]});
+                let emojis = "";
                 json[0].listEmojis.map(item => {
                     emojis += "{"+item.code+","+item.label+","+item.score+"}";
                     this.setState({emojisToAdd : emojis});
                     return null;
-                })
+                });
                 return null;
+            }
         });
     }
 
@@ -58,7 +60,7 @@ class AdminEmojis extends Component{
             let itemSplit = item.replace("{","").replace("}","").split(",");
             param.listEmojis.push({code : itemSplit[0], label : itemSplit[1], score : itemSplit[2]});
             return null;
-        })
+        });
 
         this.setState({param});
         this.saveToDatabase();
@@ -66,11 +68,11 @@ class AdminEmojis extends Component{
 
     cancelChanges = () => {
         this.allowEdit();
-    }
+    };
 
     allowEdit = () => {
         this.setState({isEdit : !this.state.isEdit});
-    }
+    };
 
     emojisDisplay = () => {
         if(this.state.isEdit === false){
@@ -84,7 +86,7 @@ class AdminEmojis extends Component{
                         ? this.state.param.listEmojis.map(item => {
                             let code = item.code;
                             return(
-                                <span className="item-pill">
+                                <span key={item.code} className="item-pill">
                                     <span aria-label={item.label.toString}>{code}</span>
                                 </span>
                             );
@@ -112,7 +114,7 @@ class AdminEmojis extends Component{
             </form>
             );
         }
-    }
+    };
 
     saveToDatabase = () => {
         this.allowEdit();
@@ -120,7 +122,7 @@ class AdminEmojis extends Component{
         updateParameters(parameters, this.state.param._id)
             .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
             .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
-    }
+    };
 
     render(){
         return(

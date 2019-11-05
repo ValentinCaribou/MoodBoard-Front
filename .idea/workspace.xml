@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/administration/manage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/administration/manageEmojis.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageEmojis.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/administration/manageFormat.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageFormat.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/administration/manageUsers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageUsers.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/administration/administrationPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/administration/administrationPanel.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

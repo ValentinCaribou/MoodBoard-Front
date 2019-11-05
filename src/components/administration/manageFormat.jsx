@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import '../../App.scss'
-import { getParameters, updateParameters } from '../database/manageParameters';
+import { getParameters, updateParameters} from "../../services/manageParameters";
 
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
@@ -25,7 +25,7 @@ class AdminFormat extends Component{
                 }]
             },
             isEdit : false
-        }
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,7 +33,10 @@ class AdminFormat extends Component{
 
     componentDidMount(){
         getParameters().then( json => {
-            this.setState({param : json[0]});
+            console.log(json[0]);
+            if (json[0] !== undefined){
+                this.setState({param : json[0]});
+            }
         });
     }
 
@@ -52,7 +55,7 @@ class AdminFormat extends Component{
 
     allowEdit = () => {
         this.setState({isEdit : !this.state.isEdit});
-    }
+    };
 
     formatDisplay = () => {
         let formats = formatAvailable;
@@ -62,7 +65,10 @@ class AdminFormat extends Component{
                     <button name="editer" onClick={this.allowEdit} className="button">Editer</button>
                     <br/>
                     <div>
-                        <span className="item-pill">{this.state.param.formatPreference}</span>
+                        {
+                            this.state.param !== undefined &&
+                            <span className="item-pill">{this.state.param.formatPreference}</span>
+                        }
                     </div>
                 </div>
             );

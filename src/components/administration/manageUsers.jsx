@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import '../../App.scss'
 import './manage.scss'
-import { getParameters} from '../../services/manageParameters';
 import {getAllUser, updateAccount} from "../../services/createAccount";
 
 import {connect} from 'react-redux';

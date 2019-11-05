@@ -67,18 +67,18 @@ class AdminEmail extends Component{
                             }
                         </div>
                     </div>);
-            }else{
+            } else {
                 return(
                     <form onSubmit={this.handleSubmit}>
                         <input type="submit" value="Sauvegarder" className="button"/>
                         <input type="button" value="Annuler" onClick={this.allowEdit} className="button"/>
                         <br/><br/>
                         <textarea cols="50" rows="10" value={this.state.param.diffusionList} onChange={this.handleChange}/>
+                        <p className="infos">
+                            Vous pouvez ajouter une ou plusieurs adresses, toutes séparées par un ";".
+                            Le dernier email entré ne doit pas contenir de ";" à la fin.
+                        </p>
                     </form>
-                    <p className="infos">
-                    Vous pouvez ajouter une ou plusieurs adresses, toutes séparées par un ";". 
-                    Le dernier email entré ne doit pas contenir de ";" à la fin.
-                </p>
                 );
             }
         }
