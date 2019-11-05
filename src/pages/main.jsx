@@ -8,6 +8,7 @@ import Error404 from "../pages/error/error404"
 import Home from "../pages/home/home"
 import MoodBoard from "../pages/moodboard/moodboard";
 import administrationPanel from '../pages/administration/administrationPanel';
+import adminUser from '../pages/administration/administrationPanel';
 
 class Main extends Component {
     render() {
@@ -26,6 +27,7 @@ class Main extends Component {
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/moodboard" component={MoodBoard}/>
                             <Route exact path="/administrate" component={administrationPanel}/>
+                            <Route exact path="/adminUser" component={adminUser}/>
                             <Route component={Error404}/>
                         </Switch>
                     </Router>

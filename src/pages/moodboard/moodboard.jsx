@@ -11,10 +11,11 @@ import Week from '../../components/week.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
 
 //REDUX
-import {sendMood, getAll, updateMood} from "../../components/database/manageMood";
+import {sendMood, getAll, updateMood} from "../../services/manageMood";
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
 import  { withRouter } from 'react-router-dom'
+import action from "../../redux/user/actions";
 
 class MoodBoard extends Component {
 
@@ -161,11 +162,14 @@ class MoodBoard extends Component {
 
     render() {
         let {isHide} = this.state;
+        const {user} = this.props;
         return (
             <div className="App">
                 <div className="App-header">
-                <img src={Fungenieur} height="280px" width="650px" alt=""/>
-                <Toolbar/>
+                <img src={Fungenieur} height="280px" width="650px"/>
+                <Toolbar
+                    user={user}
+                />
                 <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
                   <Week
                     addMood={this.selectEmojis}

@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 
 //COMPONENTS
+<<<<<<< src/pages/administration/administrationPanel.jsx
 import ManageEmailComponent from '../../components/administration/manageEmails';
 import ManageFormatComponent from '../../components/administration/manageFormat';
 import ManageEmojisComponent from '../../components/administration/manageEmojis';
+import ManageUsersComponent from '../../components/administration/manageUsers';
+>>>>>>> src/pages/administration/administrationPanel.jsx
 
 //CSS
 import '../../App.scss';
@@ -47,6 +50,7 @@ class AdminPanel extends Component{
 
                     </div>*/}
                     <div className="parameter-container">
+                        <ManageUsersComponent/>
                         <ManageFormatComponent/>
                         <ManageEmailComponent/>
                         <ManageEmojisComponent/>

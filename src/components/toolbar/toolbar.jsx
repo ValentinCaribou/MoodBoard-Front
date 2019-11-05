@@ -29,7 +29,7 @@ class Toolbar extends Component{
 
     displayOptions = () => {
         this.setState({displayed : !this.state.displayed})
-    }
+    };
 
     goToAdminPanel = () => {
         this.props.history.push('/administrate');
@@ -37,10 +37,11 @@ class Toolbar extends Component{
 
     deconnexion = () => {
         this.props.history.push('/');
-    }
+    };
 
     render(){
         const {displayed} = this.state;
+        const {user} = this.props;
         return (
             <div className="toolbar-container">
                 <div className="toolbar-container-dropdown">
@@ -53,6 +54,9 @@ class Toolbar extends Component{
             {
                 displayed &&
                 <div className="toolbar-container-options">
+                    <div className="toolbar-item-card">
+                        <div className="toolbar-item-card-user">Bonjour {user.surname + " " + user.name}</div>
+                    </div>
                     <div className="toolbar-item-card">
                         <div>Votre moyenne : <PersonnalMood/></div>
                     </div>

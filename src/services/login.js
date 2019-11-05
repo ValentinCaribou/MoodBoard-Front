@@ -1,4 +1,4 @@
-import {checkStatus} from "../services/utils";
+import {checkStatus} from "./utils";
 
 const url = "http://localhost:4000/login";
 

@@ -20,6 +20,10 @@
         background-color: whitesmoke;
         text-align: start;
         display: grid;
+
+        .toolbar-item-card-user {
+            font-weight:bold;
+        }
         img{
             padding:10px;
             padding-top:10%

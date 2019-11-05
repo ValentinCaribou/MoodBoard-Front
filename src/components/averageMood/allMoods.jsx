@@ -1,5 +1,5 @@
-import {Component} from 'react';
-import { getAll } from '../database/manageMood';
+import React, {Component} from 'react';
+import { getAll } from '../../services/manageMood';
 
 const listEmojis = [
     {name: "smile", value:"😄", score: 1},

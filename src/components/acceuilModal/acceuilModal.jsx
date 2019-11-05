@@ -80,6 +80,7 @@ class AcceuilModal extends Component {
                     let newUser = {
                         email: user.email,
                         password: user.password,
+                        role: "USER",
                         name: user.name,
                         surname: user.surname,
                     };

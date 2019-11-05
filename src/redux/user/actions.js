@@ -6,6 +6,12 @@ const setUser = (user) =>
         user
     });
 
+const setUsers = (users) =>
+    ({
+        type: types.SET_USERS,
+        users
+    });
+
 const getUser = (user) => ({
     type: types.GET_USER,
     payload: user,
@@ -13,5 +19,6 @@ const getUser = (user) => ({
 
 export default {
     setUser,
+    setUsers,
     getUser
 }
