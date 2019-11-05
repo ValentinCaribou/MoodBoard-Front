@@ -7,7 +7,9 @@ import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
 import  { withRouter } from 'react-router-dom'
 
-class AdminEmail extends Component{
+const formatAvailable = ["pdf","csv"];
+
+class AdminFormat extends Component{
 
     constructor(props){
         super(props);
@@ -37,7 +39,9 @@ class AdminEmail extends Component{
 
     handleChange(event) {
         let param = this.state.param;
-        param.diffusionList = event.target.value;
+        console.log(event.target.value);
+        param.formatPreference = event.target.value;
+        console.log(param.formatPreference);
         this.setState({param});
       }
     
@@ -50,33 +54,32 @@ class AdminEmail extends Component{
         this.setState({isEdit : !this.state.isEdit});
     }
 
-    emailDisplay = () => {
-        let emails = [];
-        emails = this.state.param.diffusionList.split(";");
+    formatDisplay = () => {
+        let formats = formatAvailable;
         if(this.state.isEdit === false){
             return(
-            <div>
-                <button name="editer" onClick={this.allowEdit} className="button">Editer</button>
-                <br/>
                 <div>
-                {
-                    emails.map(item => {
-                        return <span className="item-pill">{item}</span>;
-                    })
-                }
+                    <button name="editer" onClick={this.allowEdit} className="button">Editer</button>
+                    <br/>
+                    <div>
+                        <span className="item-pill">{this.state.param.formatPreference}</span>
+                    </div>
                 </div>
-            </div>);
+            );
         }else{
             return(
             <form onSubmit={this.handleSubmit}>
                 <input type="submit" value="Sauvegarder" className="button"/>
                 <input type="button" value="Annuler" onClick={this.allowEdit} className="button"/>
                 <br/><br/>
-                <textarea cols="50" rows="10" value={this.state.param.diffusionList} onChange={this.handleChange}/>
-                <p className="infos">
-                    Vous pouvez ajouter une ou plusieurs adresses, toutes séparées par un ";". 
-                    Le dernier email entré ne doit pas contenir de ";" à la fin.
-                </p>
+                <select value={this.state.param.formatPreference} onChange={this.handleChange}>
+                {
+                    formats.map(item => {
+                        console.log(item);
+                        return <option value={item} label={item}/>;
+                    })
+                }
+                </select>
             </form>
             );
         }
@@ -85,6 +88,7 @@ class AdminEmail extends Component{
     saveToDatabase = () => {
         this.allowEdit();
         let parameters = this.state.param;
+        console.log(JSON.stringify(parameters));
         updateParameters(parameters, this.state.param._id)
             .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
             .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
@@ -93,9 +97,9 @@ class AdminEmail extends Component{
     render(){
         return(
             <div className="parameter-item">
-                <p>Liste de diffusion des emails</p>
+                <p>Choix du format d'exportation du fichier</p>
                 <div>
-                    {this.emailDisplay()}
+                    {this.formatDisplay()}
                 </div>
             </div>
         );
@@ -108,4 +112,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default withRouter(connect(mapStateToProps)(AdminEmail));
+export default withRouter(connect(mapStateToProps)(AdminFormat));

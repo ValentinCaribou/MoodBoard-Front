@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
 //COMPONENTS
-import Admin from '../../components/administration/manageEmails';
+import ManageEmailComponent from '../../components/administration/manageEmails';
+import ManageFormatComponent from '../../components/administration/manageFormat';
+import ManageEmojisComponent from '../../components/administration/manageEmojis';
 
 //CSS
 import '../../App.scss';
@@ -13,21 +15,44 @@ import  { withRouter } from 'react-router-dom'
 
 class AdminPanel extends Component{
 
+    constructor(props){
+        super(props);
+        this.state = {
+            manageEmail : false,
+            manageUsers : false,
+            manageThemes : false,
+            manageEmojis : false,
+            isActive : true
+        }
+    }
+
     componentDidMount(){
-        /**const {user} = this.props;
+        const {user} = this.props;
         if(user.email === ""){
             this.props.history.push("/");
-        }*/
+        }
     }
 
     render(){
         return (
             <div className="App">
                 <div className="App-header">
-                    <h1>Administration des paramètres</h1>
-                    <a href="./moodboard">Return</a>
-                    <Admin/>
+                <span><a href="./moodboard">Retour</a></span>
+                    <span>Administration des paramètres</span>
+                    <div className="grid-container">
+                    {/**<div className="menu-bar">
+
+                        </div>
+                        <div className="fragment-display">
+
+                    </div>*/}
+                    <div className="parameter-container">
+                        <ManageFormatComponent/>
+                        <ManageEmailComponent/>
+                        <ManageEmojisComponent/>
+                    </div>
                 </div>
+            </div>
             </div>
         );
     }

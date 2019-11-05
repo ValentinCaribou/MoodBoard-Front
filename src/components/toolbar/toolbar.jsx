@@ -32,12 +32,10 @@ class Toolbar extends Component{
     }
 
     goToAdminPanel = () => {
-        console.log("passe ici gotoAdminPanel");
         this.props.history.push('/administrate');
     }
 
     deconnexion = () => {
-        console.log("passe ici deconnexion");
         this.props.history.push('/');
     }
 
