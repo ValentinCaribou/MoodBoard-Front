@@ -4,10 +4,12 @@ const defaultState = {
     user: {
         id: '',
         email: '',
+        role: '',
         password: '',
         name: '',
         surname: ''
-    }
+    },
+    users: [],
 };
 
 const userReducer = (state = defaultState, action) => {
@@ -16,6 +18,11 @@ const userReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 user: action.user,
+            };
+        case types.SET_USERS:
+            return {
+                ...state,
+                users: action.users,
             };
         case types.GET_USER:
             return action.payload;

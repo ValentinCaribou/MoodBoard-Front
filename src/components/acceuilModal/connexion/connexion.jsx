@@ -3,10 +3,6 @@ import '../acceuilModal.scss';
 
 class Connexion extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {user, handleOnChange, connexion} = this.props;
         return (
@@ -23,7 +19,7 @@ class Connexion extends React.Component {
                 </div>
                 <input type="submit" className="validate-button" value="Connexion" onClick={connexion}/>
             </div>
-        )
+        );
     }
 }
 

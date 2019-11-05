@@ -1,11 +1,11 @@
-import {checkStatus} from "../services/utils";
+import {checkStatus} from "./utils";
 
-const url = "http://localhost:3003/mood";
+const url = "http://localhost:4000/inscription";
 
-export function sendMood(mood){
+export function createAccount(user){
     return fetch(url, {
         method: 'POST',
-        body: JSON.stringify(mood),
+        body: JSON.stringify(user),
         headers: {
             'Content-Type':'application/json',
         }
@@ -13,10 +13,10 @@ export function sendMood(mood){
         .then(response => response.json())
 }
 
-export function updateMood(mood, id){
+export function updateAccount(user, id){
     return fetch(url + "/" + id,  {
         method: 'PUT',
-        body: JSON.stringify(mood),
+        body: JSON.stringify(user),
         headers: {
             'Content-Type':'application/json',
         }
@@ -24,7 +24,7 @@ export function updateMood(mood, id){
         .then(response => response.json())
 }
 
-export function getAll(){
+export function getAllUser(){
     return fetch(url, {
         method:'GET',
         headers: {

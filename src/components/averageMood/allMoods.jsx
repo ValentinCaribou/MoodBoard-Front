@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { getAll } from '../database/manageMood';
+import { getAll } from '../../services/manageMood';
 
 const listEmojis = [
     {name: "smile", value:"😄", score: 1},
@@ -28,11 +28,13 @@ export default class AverageMood extends Component{
             .then(json => {
             json.map(mood => {  
                 listeMoods.push(mood.weekMood);
+                return null;
             });
+            return null;
         });
         let mood = this.calculateScore(listeMoods);
         this.setState({listMoods: listeMoods});
-        if(mood != undefined){
+        if(mood !== undefined){
             this.setState({averageMood: mood});
         }
     }
@@ -43,6 +45,7 @@ export default class AverageMood extends Component{
             Object.entries(mood).forEach(fragment => {
                 score += compareMoods(fragment[1]);
             })
+            return null;
         })
         this.calculateAverageMood(score);
     }
@@ -51,7 +54,7 @@ export default class AverageMood extends Component{
         let generalMood = "";
         if(score < 0){
             generalMood = "😠";
-        }else if(score == 0){
+        }else if(score === 0){
             generalMood = "😐"
         }else{
             generalMood = "😄";
@@ -69,12 +72,13 @@ function compareMoods(valueToCompare){
     listEmojis.map(entry =>{
         let emojiUnicode = "0x"+entry['value'].codePointAt(0).toString(16);
         let valueUnicode = "0x";
-        if(valueToCompare == undefined){
+        if(valueToCompare === undefined){
             valueUnicode+=valueToCompare.codePointAt(0).toString(16);
         }
         if(emojiUnicode.includes(valueUnicode)){
             score = entry['score'];
         }
+        return score;
     })
     return score;
 }
