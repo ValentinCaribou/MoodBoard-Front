@@ -8,7 +8,12 @@
   border-radius: 25px;
   text-align: left;
 
-  .email-item-card{
+  .email-item{
+    border-bottom: 1px solid gray;
+    padding: 1%;
+    margin: 0.2%;
+    font-size: 0.5em;
+    width: 30em;
 
     .label-affichage-mail{
       font-size: 1.2em;

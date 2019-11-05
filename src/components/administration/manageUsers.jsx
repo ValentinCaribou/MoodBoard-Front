@@ -53,7 +53,7 @@ class AdminUser extends Component{
                 <p>Liste des utilisateurs</p>
                 {
                     users.map((user) => {
-                        return <div key={user._id} className="email-item-card">
+                        return <div key={user._id} className="email-item">
                             <span className={"label-affichage-mail"}>{user.email}</span>
                             <Switch id={user._id} checked={(user.role === "USER") ? false : true} onChange={this.toggleChecked} />
                         </div>
