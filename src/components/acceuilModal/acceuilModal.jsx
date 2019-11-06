@@ -83,6 +83,7 @@ class AcceuilModal extends Component {
                         role: "USER",
                         name: user.name,
                         surname: user.surname,
+                        theme:"default",
                     };
                     this.props.dispatch(userInscription(newUser));
                     this.setState({isError: false});

@@ -67,6 +67,9 @@ class Toolbar extends Component{
                         <button className="toolbar-buttons" onClick={this.goToAdminPanel}>Paramètres</button>
                     </div>
                     <div className="toolbar-item-card-interactive">
+                        <button className="toolbar-buttons" onClick="">Modifier le thème</button>
+                    </div>
+                    <div className="toolbar-item-card-interactive">
                         <button className="toolbar-buttons" onClick={this.deconnexion}>Déconnexion</button>
                     </div>
                 </div>
