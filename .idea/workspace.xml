@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="Correction Merge branch">
+    <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="Correction format d'export">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/administration/manageEmojis.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageEmojis.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/administration/manageFormat.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageFormat.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/manageParameters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/manageParameters.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -334,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572969240017</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Correction format d'export">
+      <created>1573036030631</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1573036030631</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +363,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correction du bug qui empêche l'écriture du nom du collab" />
     <MESSAGE value="Ajout de commentaire avant les méthodes" />
     <MESSAGE value="CHangement du logo" />
     <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
@@ -380,6 +387,7 @@
     <MESSAGE value="Modifiation de Redux pour récupérer la liste des utilisateurs + création du composant permettant l'affichage" />
     <MESSAGE value="Ajout de la méthode de modification des utilisateurs + page d'administration des utilisateurs" />
     <MESSAGE value="Correction Merge branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction Merge branch" />
+    <MESSAGE value="Correction format d'export" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction format d'export" />
   </component>
 </project>

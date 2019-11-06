@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import '../../App.scss'
-import { getParameters, updateParameters} from "../../services/manageParameters";
+import {getParameters, sendParameters, updateParameters} from "../../services/manageParameters";
 
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
@@ -23,8 +23,9 @@ class AdminEmojis extends Component{
                 }]
             },
             isEdit : false,
+            isEmpty : false,
             emojisToAdd : ""
-        }
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -117,11 +118,18 @@ class AdminEmojis extends Component{
     };
 
     saveToDatabase = () => {
+        const {isEmpty} = this.state;
         this.allowEdit();
         let parameters = this.state.param;
-        updateParameters(parameters, this.state.param._id)
-            .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
-            .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
+        if (isEmpty){
+            sendParameters(parameters)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
+        } else {
+            updateParameters(parameters, this.state.param._id)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
+        }
     };
 
     render(){

@@ -34,7 +34,6 @@ class AdminFormat extends Component{
 
     componentDidMount(){
         getParameters().then( json => {
-            console.log(json[0]);
             if (json[0] !== undefined){
                 this.setState({param : json[0]});
                 this.setState({isEmpty : false});
@@ -97,8 +96,6 @@ class AdminFormat extends Component{
         const {isEmpty} = this.state;
         this.allowEdit();
         let parameters = this.state.param;
-        console.log(JSON.stringify(parameters));
-        console.log(isEmpty);
         if (isEmpty){
             sendParameters(parameters)
                 .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import '../../App.scss'
-import { getParameters, updateParameters } from "../../services/manageParameters"
+import {getParameters, sendParameters, updateParameters} from "../../services/manageParameters"
 
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
@@ -22,7 +22,8 @@ class AdminEmail extends Component{
                     score : 0
                 }]
             },
-            isEdit : false
+            isEdit : false,
+            isEmpty : false,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -31,7 +32,12 @@ class AdminEmail extends Component{
 
     componentDidMount(){
         getParameters().then( json => {
-            this.setState({param : json[0]});
+            if (json[0] !== undefined){
+                this.setState({param : json[0]});
+                this.setState({isEmpty : false});
+            } else {
+                this.setState({isEmpty : true});
+            }
         });
     }
 
@@ -51,9 +57,21 @@ class AdminEmail extends Component{
     };
 
     emailDisplay = () => {
-        let emails = [];
+        if (this.state.param === undefined){
+            let param = {
+                    diffusionList : "",
+                    theme : "",
+                    formatPreference : "",
+                    listEmojis : [{
+                        code : "",
+                        label : "",
+                        score : 0
+                    }]
+                };
+                this.setState({param});
+        }
+        let emails = this.state.param.diffusionList.split(";");
         if(emails.length !== 0){
-            emails = this.state.param.diffusionList.split(";");
             if(this.state.isEdit === false){
                 return(
                     <div>
@@ -85,11 +103,18 @@ class AdminEmail extends Component{
     };
 
     saveToDatabase = () => {
+        const {isEmpty} = this.state;
         this.allowEdit();
         let parameters = this.state.param;
-        updateParameters(parameters, this.state.param._id)
-            .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
-            .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
+        if (isEmpty){
+            sendParameters(parameters)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
+        } else {
+            updateParameters(parameters, this.state.param._id)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
+        }
     };
 
     render(){
