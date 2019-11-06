@@ -27,3 +27,17 @@ export function updateParameters(params, id){
             console.log(response);
         })
 }
+
+export function sendParameters(params){
+    return fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(params),
+        headers: {
+            'Content-Type':'application/json',
+        }
+    }).then(checkStatus)
+        .then(response => {
+            response.json();
+            console.log(response);
+        })
+}

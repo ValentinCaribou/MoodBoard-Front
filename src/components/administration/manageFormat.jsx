@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import '../../App.scss'
-import { getParameters, updateParameters} from "../../services/manageParameters";
+import { getParameters, updateParameters, sendParameters} from "../../services/manageParameters";
 
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
@@ -24,7 +24,8 @@ class AdminFormat extends Component{
                     score : 0
                 }]
             },
-            isEdit : false
+            isEdit : false,
+            isEmpty : false,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -36,15 +37,16 @@ class AdminFormat extends Component{
             console.log(json[0]);
             if (json[0] !== undefined){
                 this.setState({param : json[0]});
+                this.setState({isEmpty : false});
+            } else {
+                this.setState({isEmpty : true});
             }
         });
     }
 
     handleChange(event) {
         let param = this.state.param;
-        console.log(event.target.value);
         param.formatPreference = event.target.value;
-        console.log(param.formatPreference);
         this.setState({param});
       }
     
@@ -79,26 +81,34 @@ class AdminFormat extends Component{
                 <input type="button" value="Annuler" onClick={this.allowEdit} className="button"/>
                 <br/><br/>
                 <select value={this.state.param.formatPreference} onChange={this.handleChange}>
+                    <option key={12} value="default" label="Sélectionner un format"/>
                 {
-                    formats.map(item => {
-                        console.log(item);
-                        return <option value={item} label={item}/>;
+                    formats.map((item,index) => {
+                        return <option key={index} value={item} label={item}/>;
                     })
                 }
                 </select>
             </form>
             );
         }
-    }
+    };
 
     saveToDatabase = () => {
+        const {isEmpty} = this.state;
         this.allowEdit();
         let parameters = this.state.param;
         console.log(JSON.stringify(parameters));
-        updateParameters(parameters, this.state.param._id)
-            .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
-            .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
-    }
+        console.log(isEmpty);
+        if (isEmpty){
+            sendParameters(parameters)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
+        } else {
+            updateParameters(parameters, this.state.param._id)
+                .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoi")));
+        }
+    };
 
     render(){
         return(
