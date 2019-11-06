@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="Correction format d'export">
+    <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/App-bleu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard-bleu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageEmails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/administration/manageEmojis.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageEmojis.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/administration/manageFormat.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/administration/manageFormat.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/reducers.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +34,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/moodboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -39,18 +42,18 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\pages\moodboard" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\valen\WebstormProjects\moodboard" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -342,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573036030631</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Correction bug managers">
+      <created>1573045600886</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1573045600886</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +373,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Ajout de commentaire avant les méthodes" />
     <MESSAGE value="CHangement du logo" />
     <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
     <MESSAGE value="Formulaire d'inscription valider" />
@@ -388,6 +397,7 @@
     <MESSAGE value="Ajout de la méthode de modification des utilisateurs + page d'administration des utilisateurs" />
     <MESSAGE value="Correction Merge branch" />
     <MESSAGE value="Correction format d'export" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction format d'export" />
+    <MESSAGE value="Correction bug managers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction bug managers" />
   </component>
 </project>

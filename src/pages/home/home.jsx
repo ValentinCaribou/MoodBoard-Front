@@ -1,25 +1,32 @@
 import React, {Component}  from 'react';
 import '../../App.scss';
+import '../../App-bleu.scss';
 import Inscription from "../../components/acceuilModal/acceuilModal"
 //import Soucoupe from "../../assets/app_launch_button3.png"
 import logoSII from "../../assets/logo.svg"
 import Fungenieur from "../../assets/logo_fungenieur.png"
+import {connect} from "react-redux";
 
-export default class Home extends Component {
+class Home extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             isHide : true,
+            AppHeader: 'App-header'
+        }
+    }
+
+    componentDidMount() {
+        const {user} = this.props;
+        console.log(user.theme);
+        if(user.theme !== "" && user.theme !== "default"){
+            this.setState({AppHeader: 'App-header-bleu'})
         }
     }
 
     changeHide = () => {
         this.setState({isHide: !this.state.isHide});
-    };
-
-    handleOnChange = () => {
-
     };
 
     render() {
@@ -42,3 +49,11 @@ export default class Home extends Component {
         );
     }
 };
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+    }
+};
+
+export default connect(mapStateToProps)(Home);

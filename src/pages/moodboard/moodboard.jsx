@@ -3,7 +3,9 @@ import {format, startOfWeek, endOfWeek} from 'date-fns';
 
 //CSS
 import '../../App.scss';
+import '../../App-bleu.scss';
 import './moodboard.scss'
+import './moodboard-bleu.scss'
 
 //COMPONENTS
 import Toolbar from "../../components/toolbar/toolbar.jsx";
@@ -30,6 +32,12 @@ class MoodBoard extends Component {
             idUser: [],
             keyName: "",
             cellule: "",
+            AppHeader: 'App-header',
+            border: 'border',
+            tooltiptext: 'tooltiptext',
+            tooltip: 'tooltip',
+            button: 'validate-button',
+            div: 'div-close',
         }
     }
 
@@ -45,6 +53,14 @@ class MoodBoard extends Component {
       if(user.email === ""){
           this.props.history.push("/");
       } else {
+          if(user.theme !== "" && user.theme !== "default"){
+              this.setState({AppHeader: 'App-header-bleu'});
+              this.setState({border: 'border-bleu'});
+              this.setState({tooltip: 'tooltip-bleu'});
+              this.setState({tooltiptext: 'tooltiptext-bleu'});
+              this.setState({button: 'validate-button-bleu'});
+              this.setState({div: 'div-close-bleu'});
+          }
           let newListe = [];
           let idListe = [];
           let idUser = [];
@@ -161,11 +177,11 @@ class MoodBoard extends Component {
     };
 
     render() {
-        let {isHide} = this.state;
+        let {isHide, AppHeader} = this.state;
         const {user} = this.props;
         return (
             <div className="App">
-                <div className="App-header">
+                <div className={AppHeader}>
                 <img src={Fungenieur} height="280px" width="650px"/>
                 <Toolbar
                     user={user}
@@ -179,47 +195,47 @@ class MoodBoard extends Component {
                       !isHide &&
                       <div id="myModal" className="modal">
                           <div className="modal-content">
-                              <div className="border">
-                                  <div className="div-close">
+                              <div className={this.state.border}>
+                                  <div className={this.state.div}>
                                       <span className="close" onClick={this.changeHide}>&times;</span>
                                   </div>
                                   <div>
-                                      <div className="tooltip">
+                                      <div className={this.state.tooltip}>
                                           <div className="emojis" id="smile" onClick={this.handleClick}><span role="img" aria-label="content / heureux">😄</span></div>
-                                          <span className="tooltiptext">Content / Heureux</span>
+                                          <span className={this.state.tooltiptext}>Content / Heureux</span>
                                       </div>
-                                      <div className="tooltip">
+                                      <div className={this.state.tooltip}>
                                           <div className="emojis" id="unamused" onClick={this.handleClick}><span role="img" aria-label="pas content">😒</span></div>
-                                          <span className="tooltiptext">Pas Content</span>
+                                          <span className={this.state.tooltiptext}>Pas Content</span>
                                       </div>
-                                      <div className="tooltip">
+                                      <div className={this.state.tooltip}>
                                           <div className="emojis" id="dizzy_face" onClick={this.handleClick}><span role="img" aria-label="sous l'eau">😵</span></div>
-                                          <span className="tooltiptext">Sous l'eau</span>
+                                          <span className={this.state.tooltiptext}>Sous l'eau</span>
                                       </div>
-                                      <div className="tooltip">
+                                      <div className={this.state.tooltip}>
                                           <div className="emojis" id="cold_sweat" onClick={this.handleClick}><span role="img" aria-label="stressé">😰</span></div>
-                                          <span className="tooltiptext">Stresser</span>
+                                          <span className={this.state.tooltiptext}>Stresser</span>
                                       </div>
                                   </div>
                                   <div>
-                                      <div className="tooltip">
+                                      <div className={this.state.tooltip}>
                                           <div className="emojis" id="angry" onClick={this.handleClick}><span role="img" aria-label="en_colere">😠</span></div>
-                                          <span className="tooltiptext">En colère</span>
+                                          <span className={this.state.tooltiptext}>En colère</span>
                                       </div>
-                                      <div className="tooltip">
+                                      <div className={this.state.tooltip}>
                                           <div className="emojis" id="sob" onClick={this.handleClick}><span role="img" aria-label="triste">😭</span></div>
-                                          <span className="tooltiptext">Triste</span>
+                                          <span className={this.state.tooltiptext}>Triste</span>
                                       </div>
-                                      <div className="tooltip">
+                                      <div className={this.state.tooltip}>
                                           <div className="emojis" id="normal" onClick={this.handleClick}><span role="img" aria-label="normal">😐</span></div>
-                                          <span className="tooltiptext">Normal</span>
+                                          <span className={this.state.tooltiptext}>Normal</span>
                                       </div>
-                                      <div className="tooltip">
+                                      <div className={this.state.tooltip}>
                                           <div className="emojis" id="upside-down" onClick={this.handleClick}><span role="img" aria-label="blasé sarcastique">🙃</span></div>
-                                          <span className="tooltiptext">Blasé sarcastique</span>
+                                          <span className={this.state.tooltiptext}>Blasé sarcastique</span>
                                       </div>
                                   </div>
-                                  <input type="submit" className="validate-button" value="Valider" onClick={this.validateButton}/>
+                                  <input type="submit" className={this.state.button} value="Valider" onClick={this.validateButton}/>
                               </div>
                           </div>
                       </div>
