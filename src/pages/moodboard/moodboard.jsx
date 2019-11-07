@@ -53,9 +53,7 @@ class MoodBoard extends Component {
       if(user.email === ""){
           this.props.history.push("/");
       } else {
-          if(user.theme !== "" && user.theme !== "default"){
-              this.changeStyle();
-          }
+          this.changeStyle(user);
           this.getMood();
       }
   }
@@ -77,13 +75,22 @@ class MoodBoard extends Component {
       });
   };
 
-  changeStyle = () => {
-      this.setState({AppHeader: 'App-header-bleu'});
-      this.setState({border: 'border-bleu'});
-      this.setState({tooltip: 'tooltip-bleu'});
-      this.setState({tooltiptext: 'tooltiptext-bleu'});
-      this.setState({button: 'validate-button-bleu'});
-      this.setState({div: 'div-close-bleu'});
+  changeStyle = (user) => {
+      if(user.theme !== "" && user.theme !== "default"){
+          this.setState({AppHeader: 'App-header-bleu'});
+          this.setState({border: 'border-bleu'});
+          this.setState({tooltip: 'tooltip-bleu'});
+          this.setState({tooltiptext: 'tooltiptext-bleu'});
+          this.setState({button: 'validate-button-bleu'});
+          this.setState({div: 'div-close-bleu'});
+      } else {
+          this.setState({AppHeader: 'App-header'});
+          this.setState({border: 'border'});
+          this.setState({tooltip: 'tooltip'});
+          this.setState({tooltiptext: 'tooltiptext'});
+          this.setState({button: 'validate-button'});
+          this.setState({div: 'div-close'});
+      }
   };
 
 
@@ -190,6 +197,7 @@ class MoodBoard extends Component {
                 <img src={Fungenieur} height="280px" width="650px"/>
                 <Toolbar
                     user={user}
+                    changeStyleParent={this.changeStyle}
                 />
                 <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
                   <Week

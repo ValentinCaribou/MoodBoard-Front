@@ -54,14 +54,26 @@ class Toolbar extends Component{
         }
     }
 
+    changeStyle = () => {
+        const {user} = this.props;
+        if(user.theme !== "" && user.theme !== "default"){
+            this.setState({toolbarButton: 'toolbar-buttons-bleu'});
+            this.setState({toolbarItemCard: 'toolbar-item-card-bleu'});
+            this.setState({toolbarItemCardInteractive: 'toolbar-item-card-interactive-bleu'});
+        } else {
+            this.setState({toolbarButton: 'toolbar-buttons'});
+            this.setState({toolbarItemCard: 'toolbar-item-card'});
+            this.setState({toolbarItemCardInteractive: 'toolbar-item-card-interactive'});
+        }
+    };
+
     handleOnChange = (e) => {
         const target = e.currentTarget;
-        console.log(target.id, target.value);
         let newUser = this.props.user;
         newUser.theme = target.value;
-        console.log(newUser);
-        console.log(newUser._id);
         this.props.dispatch(userUpdate(newUser, newUser._id));
+        this.changeStyle();
+        this.props.changeStyleParent(newUser);
     };
 
     displayOptions = () => {
