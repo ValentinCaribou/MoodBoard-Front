@@ -14,7 +14,7 @@ class Main extends Component {
     render() {
         const {dispatch, toast} = this.props;
         return (
-            <div className="App">
+            <div className='App'>
                 {
                     toast &&
                     <Toast type={toast.type} message={toast.message} timeout={toast.timeout}
@@ -40,6 +40,7 @@ class Main extends Component {
 const mapStateToProps = (state) => {
     return {
         toast: state.toastReducer.toast,
+        user: state.userReducer.user,
     }
 };
 

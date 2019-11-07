@@ -1,4 +1,4 @@
-.parameter-item{
+.parameter-item {
   background-color: whitesmoke;
   color : #83317e;
   padding-top: 0.7%;
@@ -8,14 +8,34 @@
   border-radius: 25px;
   text-align: left;
 
-  .email-item{
+  .email-item {
     border-bottom: 1px solid gray;
     padding: 1%;
     margin: 0.2%;
     font-size: 0.5em;
-    width: 30em;
+    width: 35em;
+    display: flex;
 
-    .label-affichage-mail{
+    .switch-title {
+      flex: auto;
+      position: relative;
+      text-align: right;
+    }
+
+    .email-title {
+      padding-bottom: 1em;
+      flex: auto;
+      position: relative;
+    }
+
+    .switch-item {
+      flex: auto;
+      position: relative;
+      margin-right: 5em;
+      text-align: right;
+    }
+
+    .label-affichage-mail {
       font-size: 1.2em;
     }
   }

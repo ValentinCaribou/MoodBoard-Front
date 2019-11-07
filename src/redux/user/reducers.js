@@ -7,7 +7,8 @@ const defaultState = {
         role: '',
         password: '',
         name: '',
-        surname: ''
+        surname: '',
+        theme: ''
     },
     users: [],
 };
