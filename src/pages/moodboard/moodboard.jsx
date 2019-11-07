@@ -56,22 +56,26 @@ class MoodBoard extends Component {
           if(user.theme !== "" && user.theme !== "default"){
               this.changeStyle();
           }
-          let newListe = [];
-          let idListe = [];
-          let idUser = [];
-          getAll().then(json => {
-              json.map(mood => {
-                  newListe.push(mood.weekMood);
-                  idUser.push(mood.idUser);
-                  idListe.push(mood._id);
-                  return null;
-              });
-              this.setState({row: newListe});
-              this.setState({idListe});
-              this.setState({idUser});
-          });
+          this.getMood();
       }
   }
+
+  getMood = () => {
+      let newListe = [];
+      let idListe = [];
+      let idUser = [];
+      getAll().then(json => {
+          json.map(mood => {
+              newListe.push(mood.weekMood);
+              idUser.push(mood.idUser);
+              idListe.push(mood._id);
+              return null;
+          });
+          this.setState({row: newListe});
+          this.setState({idListe});
+          this.setState({idUser});
+      });
+  };
 
   changeStyle = () => {
       this.setState({AppHeader: 'App-header-bleu'});
@@ -160,11 +164,7 @@ class MoodBoard extends Component {
                 sendMood(jsonRequest)
                     .then(response => {
                         this.props.dispatch(balanceTonToast("success", "Ajout réussi"))
-                        let idRow = response.message._id;
-                        idUser.push(user._id);
-                        idListe.push(idRow);
-                        this.setState({idRow});
-                        this.setState({idUser});
+                        this.getMood();
                     })
                     .catch(error => {
                         console.log("error : ", error);
