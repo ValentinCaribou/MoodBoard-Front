@@ -16,13 +16,13 @@ class AdminFormat extends Component{
         this.state = {
             param : {
                 diffusionList : "",
-                theme : "",
                 formatPreference : "",
                 listEmojis : [{
                     code : "",
                     label : "",
                     score : 0
-                }]
+                }],
+                listThemes : [],
             },
             isEdit : false,
             isEmpty : false,

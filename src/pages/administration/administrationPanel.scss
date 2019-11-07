@@ -11,6 +11,7 @@
 .parameter-container{
     background-color: whitesmoke;
     color : #83317e;
+    width: 22em;
     padding-top: 0.7%;
     padding-bottom: 5%;
     padding-left: 5%;
@@ -38,6 +39,14 @@
     border-radius: 5px;
     border: 1px solid #e72284;
     margin-right: 10px;
+}
+
+.button-retour {
+    color: #232883;
+}
+
+.button-retour:hover {
+    cursor: pointer;
 }
 
 .infos{

@@ -14,13 +14,13 @@ class AdminEmojis extends Component{
         this.state = {
             param : {
                 diffusionList : "",
-                theme : "",
                 formatPreference : "",
                 listEmojis : [{
                     code : "",
                     label : "",
                     score : ""
-                }]
+                }],
+                listThemes : [],
             },
             isEdit : false,
             isEmpty : false,
