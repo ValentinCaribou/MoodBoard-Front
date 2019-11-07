@@ -4,7 +4,6 @@
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/toolbar/toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toolbar/toolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -383,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573135342213</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="COrrection bug lors de l'ajout d'une nouvelle ligne">
+      <created>1573141321733</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1573141321733</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +410,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Envoie du mood semi-fonctionnel" />
     <MESSAGE value="Update du mood" />
     <MESSAGE value="Update du mood avec ajout" />
     <MESSAGE value="Ajout de redux pour les toast" />
@@ -429,6 +434,7 @@
     <MESSAGE value="Changement du thème depuis les paramètres ok" />
     <MESSAGE value="Petite modif bouton retour" />
     <MESSAGE value="COrrection bug lors de l'ajout d'une nouvelle ligne" />
-    <option name="LAST_COMMIT_MESSAGE" value="COrrection bug lors de l'ajout d'une nouvelle ligne" />
+    <MESSAGE value="Modif css en direct live" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modif css en direct live" />
   </component>
 </project>

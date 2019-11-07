@@ -46,12 +46,7 @@ class Toolbar extends Component{
                 this.setState({isEmpty : true});
             }
         });
-        const {user} = this.props;
-        if(user.theme !== "" && user.theme !== "default"){
-            this.setState({toolbarButton: 'toolbar-buttons-bleu'});
-            this.setState({toolbarItemCard: 'toolbar-item-card-bleu'});
-            this.setState({toolbarItemCardInteractive: 'toolbar-item-card-interactive-bleu'});
-        }
+        this.changeStyle();
     }
 
     changeStyle = () => {
@@ -126,11 +121,8 @@ class Toolbar extends Component{
                     <div className={this.state.toolbarItemCardInteractive}>
                         <button className={this.state.toolbarButton} onClick={this.goToAdminPanel}>Paramètres</button>
                     </div>
-                    <div className="toolbar-item-card-interactive">
-                        <button className="toolbar-buttons" onClick="">Modifier le thème</button>
-                    </div>
-                    <div className="toolbar-item-card-interactive">
-                        <button className="toolbar-buttons" onClick={this.deconnexion}>Déconnexion</button>
+                    <div className={this.state.toolbarItemCardInteractive}>
+                        <button className={this.state.toolbarButton} onClick={this.deconnexion}>Déconnexion</button>
                     </div>
                 </div>
             }
