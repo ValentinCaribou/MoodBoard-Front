@@ -99,28 +99,6 @@ class MoodBoard extends Component {
         let end = endOfWeek(date, { weekStartsOn: 6 });
         return format(end, "dd/MM");
     };
-
-    componentDidMount() {
-        const {user} = this.props;
-        if(user.email === ""){
-            this.props.history.push("/");
-        } else {
-            let newListe = [];
-            let idListe = [];
-            let idUser = [];
-            getAll().then(json => {
-                json.map(mood => {
-                    newListe.push(mood.weekMood);
-                    idUser.push(mood.idUser);
-                    idListe.push(mood._id);
-                    return null;
-                });
-                this.setState({row: newListe});
-                this.setState({idListe});
-                this.setState({idUser});
-            });
-        }
-    }
     
     changeHide = () => {
         this.setState({isHide: !this.state.isHide});
