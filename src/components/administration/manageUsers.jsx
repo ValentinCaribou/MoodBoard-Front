@@ -49,12 +49,24 @@ class AdminUser extends Component{
         const {users, checked} = this.state;
         return(
             <div className="parameter-item">
-                <p>Liste des utilisateurs</p>
+                <p>Liste des utilisateurs : </p>
+                <div className="email-item">
+                    <div className={"email-title"}>
+                        <span className={"label-affichage-mail"}>Adresse mail : </span>
+                    </div>
+                    <div className={"switch-title"}>
+                        <span className={"label-affichage-mail"}>Utilisateur / Administrateur </span>
+                    </div>
+                </div>
                 {
                     users.map((user) => {
                         return <div key={user._id} className="email-item">
-                            <span className={"label-affichage-mail"}>{user.email}</span>
-                            <Switch id={user._id} checked={(user.role === "USER") ? false : true} onChange={this.toggleChecked} />
+                            <div>
+                                <span className={"label-affichage-mail"}>{user.email}</span>
+                            </div>
+                            <div className={"switch-item"}>
+                                <Switch id={user._id} checked={(user.role === "USER") ? false : true} onChange={this.toggleChecked} />
+                            </div>
                         </div>
                     })
                 }

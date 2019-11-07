@@ -5,6 +5,7 @@ import AverageMood from "../averageMood/allMoods.jsx";
 import PersonnalMood from '../averageMood/personnalMood.jsx';
 import {connect} from "react-redux";
 import  { withRouter } from 'react-router-dom'
+import {userInscription, userUpdate} from "../../redux/user/dispatch";
 
 //IMAGES
 import options from "../../assets/options.png";
@@ -12,12 +13,23 @@ import options from "../../assets/options.png";
 //CSS
 import "./toolbar.scss";
 import "./toolbar-bleu.scss";
+import {getParameters} from "../../services/manageParameters";
 
 class Toolbar extends Component{
 
     constructor(props){
         super(props);
         this.state = {
+            param : {
+                diffusionList : "",
+                formatPreference : "",
+                listEmojis : [{
+                    code : "",
+                    label : "",
+                    score : 0
+                }],
+                listThemes : [],
+            },
             displayed:false,
             toolbarButton: 'toolbar-buttons',
             toolbarItemCard: 'toolbar-item-card',
@@ -26,6 +38,14 @@ class Toolbar extends Component{
     }
 
     componentDidMount() {
+        getParameters().then( json => {
+            if (json[0] !== undefined){
+                this.setState({param : json[0]});
+                this.setState({isEmpty : false});
+            } else {
+                this.setState({isEmpty : true});
+            }
+        });
         const {user} = this.props;
         if(user.theme !== "" && user.theme !== "default"){
             this.setState({toolbarButton: 'toolbar-buttons-bleu'});
@@ -34,11 +54,15 @@ class Toolbar extends Component{
         }
     }
 
-    handleClickOutside(){
-        this.setState({
-          displayed: false
-        })
-    }
+    handleOnChange = (e) => {
+        const target = e.currentTarget;
+        console.log(target.id, target.value);
+        let newUser = this.props.user;
+        newUser.theme = target.value;
+        console.log(newUser);
+        console.log(newUser._id);
+        this.props.dispatch(userUpdate(newUser, newUser._id));
+    };
 
     displayOptions = () => {
         this.setState({displayed : !this.state.displayed})
@@ -53,7 +77,7 @@ class Toolbar extends Component{
     };
 
     render(){
-        const {displayed} = this.state;
+        const {displayed, param} = this.state;
         const {user} = this.props;
         return (
             <div className="toolbar-container">
@@ -75,6 +99,17 @@ class Toolbar extends Component{
                     </div>
                     <div className={this.state.toolbarItemCard}>
                         <div> Moyenne globale : <AverageMood/></div>
+                    </div>
+                    <div className={this.state.toolbarItemCardInteractive}>
+                        <div>Modifier le thème : </div>
+                        <select name="theme" id="theme-select" onChange={this.handleOnChange}>
+                            <option value="">--Sélectionner un thème--</option>
+                            {
+                                param.listThemes.map((theme, index) => {
+                                    return <option key={index} value={theme}>{theme}</option>
+                                })
+                            }
+                        </select>
                     </div>
                     <div className={this.state.toolbarItemCardInteractive}>
                         <button className={this.state.toolbarButton} onClick={this.goToAdminPanel}>Paramètres</button>

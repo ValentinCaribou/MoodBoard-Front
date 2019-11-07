@@ -32,7 +32,7 @@ export const getListUser = () => {
     }
 };
 
-export const userInscription = (user, id) => {
+export const userUpdate = (user, id) => {
     return (dispatch) => {
         updateAccount(user, id)
             .then(response => {
@@ -46,7 +46,7 @@ export const userInscription = (user, id) => {
     }
 };
 
-export const userUpdate = (user) => {
+export const userInscription = (user) => {
     return (dispatch) => {
         createAccount(user)
             .then(response => {

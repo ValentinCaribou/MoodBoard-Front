@@ -8,6 +8,7 @@ import ManageUsersComponent from '../../components/administration/manageUsers';
 
 //CSS
 import '../../App.scss';
+import '../../App-bleu.scss';
 import './administrationPanel.scss';
 
 //COMPONENTS REDUX
@@ -23,7 +24,8 @@ class AdminPanel extends Component{
             manageUsers : false,
             manageThemes : false,
             manageEmojis : false,
-            isActive : true
+            isActive : true,
+            AppHeader: 'App-header'
         }
     }
 
@@ -32,12 +34,15 @@ class AdminPanel extends Component{
         if(user.email === ""){
             this.props.history.push("/");
         }
+        if(user.theme !== "" && user.theme !== "default"){
+            this.setState({AppHeader: 'App-header-bleu'})
+        }
     }
 
     render(){
         return (
             <div className="App">
-                <div className="App-header">
+                <div className={this.state.AppHeader}>
                 <span><a href="./moodboard">Retour</a></span>
                     <span>Administration des paramètres</span>
                     <div className="grid-container">
