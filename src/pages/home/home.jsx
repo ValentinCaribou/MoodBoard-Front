@@ -19,7 +19,6 @@ class Home extends Component {
 
     componentDidMount() {
         const {user} = this.props;
-        console.log(user.theme);
         if(user.theme !== "" && user.theme !== "default"){
             this.setState({AppHeader: 'App-header-bleu'})
         }

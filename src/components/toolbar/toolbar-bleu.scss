@@ -1,0 +1,50 @@
+@font-face{
+    font-family: "bebas_neue";
+  src: url("../../font/bebas_neue/BebasNeue-Regular.ttf") format("truetype"),
+  url("../../font/bebas_neue/BebasNeue-Regular.ttf") format("truetype");
+}
+
+.toolbar-container{
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 41%;
+    color : whitesmoke
+}
+
+.toolbar-container-options{
+    .toolbar-container-dropdown{
+        padding:10px;
+        margin-top:10%;
+    }
+    .toolbar-item-card-bleu, .toolbar-item-card-interactive-bleu{
+        background-color: whitesmoke;
+        text-align: start;
+        display: grid;
+
+        .toolbar-item-card-user {
+            font-weight:bold;
+        }
+        img{
+            padding:10px;
+            padding-top:10%
+        }
+        div{
+            color: #177ce7;
+            font-size: 0.5em;
+            display: inline;
+            padding:10px;
+        }
+    }
+}
+
+.toolbar-buttons-bleu{
+    background-color: whitesmoke;
+    color: #177ce7;
+    border: none;
+    padding: 2%;
+}
+
+.toolbar-buttons-bleu:hover{
+    background-color: #177ce7;
+    color: whitesmoke;
+}

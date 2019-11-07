@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App-bleu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard-bleu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/toolbar/toolbar-bleu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/toolbar/toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toolbar/toolbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/reducers.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +32,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/moodboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/toolbar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -43,11 +41,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\toolbar" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\pages\moodboard" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
@@ -352,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573045600886</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Création du theme bleu">
+      <created>1573055168653</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1573055168653</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +378,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CHangement du logo" />
     <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
     <MESSAGE value="Formulaire d'inscription valider" />
     <MESSAGE value="Inscription opérationnel" />
@@ -398,6 +402,7 @@
     <MESSAGE value="Correction Merge branch" />
     <MESSAGE value="Correction format d'export" />
     <MESSAGE value="Correction bug managers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction bug managers" />
+    <MESSAGE value="Création du theme bleu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Création du theme bleu" />
   </component>
 </project>

@@ -54,12 +54,7 @@ class MoodBoard extends Component {
           this.props.history.push("/");
       } else {
           if(user.theme !== "" && user.theme !== "default"){
-              this.setState({AppHeader: 'App-header-bleu'});
-              this.setState({border: 'border-bleu'});
-              this.setState({tooltip: 'tooltip-bleu'});
-              this.setState({tooltiptext: 'tooltiptext-bleu'});
-              this.setState({button: 'validate-button-bleu'});
-              this.setState({div: 'div-close-bleu'});
+              this.changeStyle();
           }
           let newListe = [];
           let idListe = [];
@@ -77,6 +72,16 @@ class MoodBoard extends Component {
           });
       }
   }
+
+  changeStyle = () => {
+      this.setState({AppHeader: 'App-header-bleu'});
+      this.setState({border: 'border-bleu'});
+      this.setState({tooltip: 'tooltip-bleu'});
+      this.setState({tooltiptext: 'tooltiptext-bleu'});
+      this.setState({button: 'validate-button-bleu'});
+      this.setState({div: 'div-close-bleu'});
+  };
+
 
     getEndOfWeek = () => {
         let date = new Date();

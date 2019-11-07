@@ -11,13 +11,26 @@ import options from "../../assets/options.png";
 
 //CSS
 import "./toolbar.scss";
+import "./toolbar-bleu.scss";
 
 class Toolbar extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-            displayed:false
+            displayed:false,
+            toolbarButton: 'toolbar-buttons',
+            toolbarItemCard: 'toolbar-item-card',
+            toolbarItemCardInteractive: 'toolbar-item-card-interactive',
+        }
+    }
+
+    componentDidMount() {
+        const {user} = this.props;
+        if(user.theme !== "" && user.theme !== "default"){
+            this.setState({toolbarButton: 'toolbar-buttons-bleu'});
+            this.setState({toolbarItemCard: 'toolbar-item-card-bleu'});
+            this.setState({toolbarItemCardInteractive: 'toolbar-item-card-interactive-bleu'});
         }
     }
 
@@ -25,7 +38,7 @@ class Toolbar extends Component{
         this.setState({
           displayed: false
         })
-      }
+    }
 
     displayOptions = () => {
         this.setState({displayed : !this.state.displayed})
@@ -33,7 +46,7 @@ class Toolbar extends Component{
 
     goToAdminPanel = () => {
         this.props.history.push('/administrate');
-    }
+    };
 
     deconnexion = () => {
         this.props.history.push('/');
@@ -54,20 +67,20 @@ class Toolbar extends Component{
             {
                 displayed &&
                 <div className="toolbar-container-options">
-                    <div className="toolbar-item-card">
+                    <div className={this.state.toolbarItemCard}>
                         <div className="toolbar-item-card-user">Bonjour {user.surname + " " + user.name}</div>
                     </div>
-                    <div className="toolbar-item-card">
+                    <div className={this.state.toolbarItemCard}>
                         <div>Votre moyenne : <PersonnalMood/></div>
                     </div>
-                    <div className="toolbar-item-card">
+                    <div className={this.state.toolbarItemCard}>
                         <div> Moyenne globale : <AverageMood/></div>
                     </div>
-                    <div className="toolbar-item-card-interactive">
-                        <button className="toolbar-buttons" onClick={this.goToAdminPanel}>Paramètres</button>
+                    <div className={this.state.toolbarItemCardInteractive}>
+                        <button className={this.state.toolbarButton} onClick={this.goToAdminPanel}>Paramètres</button>
                     </div>
-                    <div className="toolbar-item-card-interactive">
-                        <button className="toolbar-buttons" onClick={this.deconnexion}>Déconnexion</button>
+                    <div className={this.state.toolbarItemCardInteractive}>
+                        <button className={this.state.toolbarButton} onClick={this.deconnexion}>Déconnexion</button>
                     </div>
                 </div>
             }
