@@ -40,33 +40,33 @@ class MoodBoard extends Component {
         return format(start, "dd/MM");
     };
 
-  componentDidMount() {
-      const {user} = this.props;
-      if(user.email === ""){
-          this.props.history.push("/");
-      } else {
-          let newListe = [];
-          let idListe = [];
-          let idUser = [];
-          getAll().then(json => {
-              json.map(mood => {
-                  newListe.push(mood.weekMood);
-                  idUser.push(mood.idUser);
-                  idListe.push(mood._id);
-                  return null;
-              });
-              this.setState({row: newListe});
-              this.setState({idListe});
-              this.setState({idUser});
-          });
-      }
-  }
-
     getEndOfWeek = () => {
         let date = new Date();
         let end = endOfWeek(date, { weekStartsOn: 6 });
         return format(end, "dd/MM");
     };
+
+    componentDidMount() {
+        const {user} = this.props;
+        if(user.email === ""){
+            this.props.history.push("/");
+        } else {
+            let newListe = [];
+            let idListe = [];
+            let idUser = [];
+            getAll().then(json => {
+                json.map(mood => {
+                    newListe.push(mood.weekMood);
+                    idUser.push(mood.idUser);
+                    idListe.push(mood._id);
+                    return null;
+                });
+                this.setState({row: newListe});
+                this.setState({idListe});
+                this.setState({idUser});
+            });
+        }
+    }
     
     changeHide = () => {
         this.setState({isHide: !this.state.isHide});
@@ -146,7 +146,6 @@ class MoodBoard extends Component {
                         this.setState({idUser});
                     })
                     .catch(error => {
-                        console.log("error : ", error);
                         this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie"))
                     });
             } else {
@@ -174,6 +173,7 @@ class MoodBoard extends Component {
                   <Week
                     addMood={this.selectEmojis}
                     row={this.state.row}
+                    idRows={this.state.idListe}
                   />
                   {
                       !isHide &&
