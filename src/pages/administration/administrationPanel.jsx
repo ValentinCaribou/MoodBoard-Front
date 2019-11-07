@@ -39,11 +39,15 @@ class AdminPanel extends Component{
         }
     }
 
+    redirect = () => {
+        this.props.history.push("/moodboard");
+    };
+
     render(){
         return (
             <div className="App">
                 <div className={this.state.AppHeader}>
-                <span><a href="./moodboard">Retour</a></span>
+                <span onClick={this.redirect} className="button-retour">Retour</span>
                     <span>Administration des paramètres</span>
                     <div className="grid-container">
                     {/**<div className="menu-bar">
