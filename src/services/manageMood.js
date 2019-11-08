@@ -34,10 +34,10 @@ export function updateMood(mood, id){
         .then(response => response.json())
 }
 
-export function deleteMood(mood, id){
+export function deleteMood(id){
     return fetch(url + "/" + id,  {
         method: 'DELETE',
-        body: JSON.stringify(mood),
+        body : '',
         headers: {
             'Content-Type':'application/json',
         }

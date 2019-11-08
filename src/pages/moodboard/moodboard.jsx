@@ -174,7 +174,6 @@ class MoodBoard extends Component {
                         this.getMood();
                     })
                     .catch(error => {
-                        console.log("error : ", error);
                         this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie"))
                     });
             } else {
@@ -203,6 +202,7 @@ class MoodBoard extends Component {
                   <Week
                     addMood={this.selectEmojis}
                     row={this.state.row}
+                    idRows={this.state.idListe}
                   />
                   {
                       !isHide &&

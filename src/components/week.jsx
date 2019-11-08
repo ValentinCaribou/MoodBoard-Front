@@ -3,12 +3,17 @@ import React, {Component} from 'react';
 //CSS
 import "./week.scss";
 
-export default class Week extends Component{
+import {connect} from 'react-redux';
+import {deleteMood} from '../services/manageMood';
+import {balanceTonToast} from "../redux/toast/dispatch";
+
+class Week extends Component{
 
     constructor(props){
         super(props);
         this.state = {
             rowList : this.props.row,
+            idRows : this.props.idListe,
             currentRows : 0
         };
     }
@@ -57,6 +62,25 @@ export default class Week extends Component{
         this.persistName(i);
     };
 
+    deleteRow = (row, i) => {
+        let rowList = this.state.rowList;
+        let {idRows} = this.props;
+        let rowId = idRows[i];
+
+        if(rowId !== undefined){
+            deleteMood(rowId)
+            .then(response => this.props.dispatch(balanceTonToast("success", "Suppression effectuée")))
+            .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de la suppression")));
+
+            {/** a supprimer */}
+            rowList.splice(i,1);
+            idRows.splice(i,1);
+
+            this.setState({rowList});
+            this.setState({idRows});
+        }
+    }
+
     // Méthode persiste name qui va permettre de faire persister la valeur contenue dans le champ avec un setState
     persistName = (indexRow) => {
         const rowList = this.state.rowList;
@@ -67,11 +91,13 @@ export default class Week extends Component{
             }
             return row;
         });
+
         this.setState({rowList});
     };
 
     renderRows = () => {
         let {addMood} = this.props;
+
         return this.state.rowList.map((row, i) => {
             let keyName = "row_"+i;
             //let rowList = this.state.rowList;
@@ -93,6 +119,8 @@ export default class Week extends Component{
                 {/** Vendredi */}
                 <td onClick={() => addMood("fridayNoonMood", row, keyName)}>{row.fridayNoonMood}</td>
                 <td onClick={() => addMood("fridayAfterNoonMood", row, keyName)}>{row.fridayAfterNoonMood}</td>
+                {/** Bouton de suppression de la ligne courante */}
+                <td><i className="fas fa-times-circle" onClick={() => this.deleteRow(row,i)}></i></td>
             </tr>
             )
         })
@@ -143,3 +171,5 @@ export default class Week extends Component{
         );
     }
 }
+
+export default connect()(Week);
