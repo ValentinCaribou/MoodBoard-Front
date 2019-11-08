@@ -82,7 +82,7 @@ class Week extends Component{
     }
 
     // Méthode persiste name qui va permettre de faire persister la valeur contenue dans le champ avec un setState
-    persistName = (indexRow) => {
+    persistName = (name, value, indexRow) => {
         const rowList = this.state.rowList;
         let currentRow = rowList[indexRow];
         rowList.map((row, index) => {
@@ -100,7 +100,7 @@ class Week extends Component{
 
         return this.state.rowList.map((row, i) => {
             let keyName = "row_"+i;
-            //let rowList = this.state.rowList;
+            let rowList = this.state.rowList;
             return (
             <tr key={keyName} name={keyName}>
                 <td><input type="text" onChange={(e) => this.handleOnChange(e, row, i)} name="collabName" value={row.collabName}/></td>

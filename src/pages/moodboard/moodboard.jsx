@@ -178,7 +178,10 @@ class MoodBoard extends Component {
                     });
             } else {
                 updateMood(jsonRequest, idMood)
-                    .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
+                    .then(response => {
+                        this.props.dispatch(balanceTonToast("success", "Ajout réussi"))
+                        this.getMood();
+                    })
                     .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
             }
         } else {
