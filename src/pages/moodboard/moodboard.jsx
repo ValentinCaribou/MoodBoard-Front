@@ -38,6 +38,7 @@ class MoodBoard extends Component {
             tooltip: 'tooltip',
             button: 'validate-button',
             div: 'div-close',
+            addButton: 'AddRowButton',
         }
     }
 
@@ -83,6 +84,7 @@ class MoodBoard extends Component {
           this.setState({tooltiptext: 'tooltiptext-bleu'});
           this.setState({button: 'validate-button-bleu'});
           this.setState({div: 'div-close-bleu'});
+          this.setState({addButton: 'AddRowButton-bleu'});
       } else {
           this.setState({AppHeader: 'App-header'});
           this.setState({border: 'border'});
@@ -90,6 +92,7 @@ class MoodBoard extends Component {
           this.setState({tooltiptext: 'tooltiptext'});
           this.setState({button: 'validate-button'});
           this.setState({div: 'div-close'});
+          this.setState({addButton: 'AddRowButton'});
       }
   };
 
@@ -206,6 +209,7 @@ class MoodBoard extends Component {
                     addMood={this.selectEmojis}
                     row={this.state.row}
                     idRows={this.state.idListe}
+                    themeBouton={this.state.addButton}
                   />
                   {
                       !isHide &&

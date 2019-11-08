@@ -133,7 +133,7 @@ class Week extends Component{
                     <input type="submit" 
                             onClick={this.createRow} 
                             value="Ajouter"
-                            className="AddRowButton"/>
+                            className={this.props.themeBouton}/>
                 </div>
                 <table className="Moodboard-table">
                     <tbody>
