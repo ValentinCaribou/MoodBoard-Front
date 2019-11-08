@@ -69,9 +69,10 @@ class Week extends Component{
 
         if(rowId !== undefined){
             deleteMood(rowId)
-            .then(response => this.props.dispatch(balanceTonToast("success", "Ajout réussi")))
-            .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+            .then(response => this.props.dispatch(balanceTonToast("success", "Suppression effectuée")))
+            .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de la suppression")));
 
+            {/** a supprimer */}
             rowList.splice(i,1);
             idRows.splice(i,1);
 

@@ -37,6 +37,7 @@ export function updateMood(mood, id){
 export function deleteMood(id){
     return fetch(url + "/" + id,  {
         method: 'DELETE',
+        body : '',
         headers: {
             'Content-Type':'application/json',
         }
