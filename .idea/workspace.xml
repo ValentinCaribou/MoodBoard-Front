@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/week.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/week.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/week.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/week.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/connexion/connexion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/connexion/connexion.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user/dispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/dispatch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="US10_ChangerLeCSS" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -349,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573206609410</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Correction bug dernière minute">
+      <created>1573220567333</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1573220567334</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +380,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CHangement du logo" />
     <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
     <MESSAGE value="Formulaire d'inscription valider" />
     <MESSAGE value="Inscription opérationnel" />
@@ -395,6 +404,7 @@
     <MESSAGE value="Correction Merge branch" />
     <MESSAGE value="Correction format d'export" />
     <MESSAGE value="Correction bug mineur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction bug mineur" />
+    <MESSAGE value="Correction bug dernière minute" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction bug dernière minute" />
   </component>
 </project>

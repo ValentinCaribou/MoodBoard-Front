@@ -13,7 +13,7 @@ class Connexion extends React.Component {
                     <div className="bar"></div>
                 </div>
                 <div className="group">
-                    <input type="password" id="confirmePassword" className="inputText" required="required" onChange={handleOnChange} value={user.confirmePassword}/>
+                    <input type="password" id="password" className="inputText" required="required" onChange={handleOnChange} value={user.password}/>
                     <label htmlFor="confirmePassword">Mot de passe : </label>
                     <div className="bar"></div>
                 </div>

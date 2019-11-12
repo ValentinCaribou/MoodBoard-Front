@@ -40,6 +40,7 @@ class Home extends Component {
                         !isHide &&
                         <Inscription
                             changeStatus={this.changeHide}
+                            user={this.props.user}
                         />
                     }
                     <input className="bouton-accueil image" onClick={this.changeHide} type="image" src={logoSII} aria-label=""/>

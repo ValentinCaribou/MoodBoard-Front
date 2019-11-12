@@ -3,12 +3,12 @@ import {login} from "../../services/login";
 import {createAccount, getAllUser, updateAccount} from '../../services/createAccount';
 import {balanceTonToast} from "../toast/dispatch";
 
-export const userLogin = (user, props) => {
+export const userLogin = (user, history) => {
     return (dispatch) => {
         login(user)
             .then(response => {
                     dispatch(action.setUser(...response));
-                    props.history.push("/moodboard");
+                    history.push("/moodboard");
                 }
             ).catch((error) => {
                 console.log(error);
