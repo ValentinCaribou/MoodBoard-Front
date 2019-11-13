@@ -4,6 +4,8 @@
   url("font/bebas_neue/BebasNeue-Regular.ttf") format("truetype");
 }
 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .App {
   text-align: center;
 }
@@ -19,6 +21,7 @@
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
+  overflow: hidden;
 
   .title {
     color: white;
@@ -39,14 +42,66 @@
     }
   }
 
+  .texte-acceuil {
+    color: white;
+    font: 1.5em bebas_neue;
+  }
+
+  figure img{
+    display:block;
+  }
+
+  .change-ratio img{
+    //margin:0 0 -50% 0;
+    position: absolute;
+    right: 6em;
+    bottom: 0;
+    width: 500px;
+    overflow: hidden;
+  }
+
   .bouton-accueil {
-    position: relative;
-    margin-top: 13em;
-    margin-left: 40em;
+    position: absolute;
+    z-index: 10;
+    bottom: 12em;
+    right: 25.5em;
     height: 120px;
 
     .image {
        height: 200px;
+    }
+  }
+
+  .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -200%, 0);
+      transform: translate3d(0, -200%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -200%, 0);
+      transform: translate3d(0, -200%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
     }
   }
 
