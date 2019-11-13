@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/kisspng-earth-drawing-clip-art-5afd1470e9b7f4.9047296215265352809573.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/connexion/connexion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/connexion/connexion.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/user/dispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user/dispatch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +33,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -43,11 +42,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
@@ -359,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573220567334</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Refonte de la connexion opérationnel">
+      <created>1573554511938</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1573554511938</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +386,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
     <MESSAGE value="Formulaire d'inscription valider" />
     <MESSAGE value="Inscription opérationnel" />
     <MESSAGE value="Envoie du mood" />
@@ -405,6 +410,7 @@
     <MESSAGE value="Correction format d'export" />
     <MESSAGE value="Correction bug mineur" />
     <MESSAGE value="Correction bug dernière minute" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction bug dernière minute" />
+    <MESSAGE value="Refonte de la connexion opérationnel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refonte de la connexion opérationnel" />
   </component>
 </project>

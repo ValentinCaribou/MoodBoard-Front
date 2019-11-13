@@ -36,8 +36,8 @@ import Inscription from "./inscription/inscription";
 //                 email: "",
 //                 password: ""
 //             },
-//             isError: false,
-//             errorMessage: "",
+//             setIsisError: false,
+//             isErrorMessage: "",
 //             connexion: true,
 //             inscription: false,
 //             isActive: true
@@ -82,8 +82,8 @@ import Inscription from "./inscription/inscription";
 //             && user.surname.trim() !== ""){
 //             if (valide){
 //                 if(user.password !== user.confirmePassword){
-//                     this.setState({errorMessage: "Les mots de passe doivent être identique"});
-//                     this.setState({isError: true});
+//                     this.setState({isErrorMessage: "Les mots de passe doivent être identique"});
+//                     this.setState({setIsisError: true});
 //                 } else {
 //                     let newUser = {
 //                         email: user.email,
@@ -94,16 +94,16 @@ import Inscription from "./inscription/inscription";
 //                         theme:"default",
 //                     };
 //                     this.props.dispatch(userInscription(newUser));
-//                     this.setState({isError: false});
+//                     this.setState({setIsisError: false});
 //                     this.props.changeStatus();
 //                 }
 //             } else {
-//                 this.setState({errorMessage: "Adresse mail non valide"});
-//                 this.setState({isError: true});
+//                 this.setState({isErrorMessage: "Adresse mail non valide"});
+//                 this.setState({setIsisError: true});
 //             }
 //         } else {
-//             this.setState({errorMessage: "Veuillez remplir tous les champs"});
-//             this.setState({isError: true});
+//             this.setState({isErrorMessage: "Veuillez remplir tous les champs"});
+//             this.setState({setIsisError: true});
 //         }
 //     };
 //
@@ -117,14 +117,14 @@ import Inscription from "./inscription/inscription";
 //                 this.setState({userConnexion});
 //                 this.props.dispatch(userLogin(userConnexion, this.props));
 //             } else {
-//                 this.setState({errorMessage: "Adresse mail non valide"});
-//                 this.setState({isError: true});
+//                 this.setState({isErrorMessage: "Adresse mail non valide"});
+//                 this.setState({setIsisError: true});
 //             }
 //         }
 //     };
 //
 //     render() {
-//         const {user, isError, errorMessage, connexion, inscription, isActive} = this.state;
+//         const {user, setIsisError, isErrorMessage, connexion, inscription, isActive} = this.state;
 //         return (
 //             <div id="myModal" className="modal">
 //                 <div className="modal-content">
@@ -138,9 +138,9 @@ import Inscription from "./inscription/inscription";
 //                                 <input type="submit" className={isActive ? "connexion-button" : "connexion-button-active"} value="Inscription" onClick={this.changeStatusInscription}/>
 //                             </div>
 //                             {
-//                                 isError &&
+//                                 setIsisError &&
 //                                 <div className="group">
-//                                     <label>{errorMessage}</label>
+//                                     <label>{isErrorMessage}</label>
 //                                 </div>
 //                             }
 //                             {
@@ -228,8 +228,9 @@ export default function FullWidthTabs(props) {
     const dispatch = useDispatch();
     const history = useHistory();
     const [value, setValue] = useState(0);
+    const [isError, setIsError] = useState(false);
+    const [ErrorMessage, setErrorMessage] = useState("");
     const [user, setUser] = useState({email:'', password:"", confirmePassword:"", name:"", surname:""});
-    // const [userConnexion, setUserConnexion] = {email: "", password: ""};
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -265,9 +266,44 @@ export default function FullWidthTabs(props) {
                 console.log(newUserConnexion);
                 dispatch(userLogin(newUserConnexion, history));
             } else {
-                this.setState({errorMessage: "Adresse mail non valide"});
-                this.setState({isError: true});
+                setErrorMessage( "Adresse mail non valide");
+                setIsError( true);
             }
+        }
+    };
+
+    const validateInscription = () => {
+        const currentUser = user;
+        let valide = validateEmail(currentUser.email);
+        if (currentUser.email.trim() !== ""
+            && currentUser.password.trim() !== ""
+            && currentUser.confirmePassword.trim() !== ""
+            && currentUser.name.trim() !== ""
+            && currentUser.surname.trim() !== ""){
+            if (valide){
+                if(currentUser.password !== currentUser.confirmePassword){
+                    setErrorMessage( "Les mots de passe doivent être identique");
+                    setIsError( true);
+                } else {
+                    let newUser = {
+                        email: currentUser.email,
+                        password: currentUser.password,
+                        role: "USER",
+                        name: currentUser.name,
+                        surname: currentUser.surname,
+                        theme:"default",
+                    };
+                    dispatch(userInscription(newUser));
+                    setIsError(false);
+                    props.changeStatus();
+                }
+            } else {
+                setErrorMessage( "Adresse mail non valide");
+                setIsError(true);
+            }
+        } else {
+            setErrorMessage( "Veuillez remplir tous les champs");
+            setIsError(true);
         }
     };
 
@@ -279,13 +315,19 @@ export default function FullWidthTabs(props) {
                         <div className="div-close">
                             <span className="close" onClick={props.changeStatus}>&times;</span>
                         </div>
+                        {
+                                isError &&
+                                <div className="group">
+                                    <label>{ErrorMessage}</label>
+                                </div>
+                            }
                             <div className={classes.root}>
                                 <AppBar position="static" color="default">
                                     <Tabs
                                         value={value}
                                         onChange={handleChange}
-                                        indicatorColor="primary"
-                                        textColor="primary"
+                                        indicatorColor="secondary"
+                                        textColor="secondary"
                                         variant="fullWidth"
                                         aria-label="full width tabs example"
                                     >
@@ -308,8 +350,8 @@ export default function FullWidthTabs(props) {
                                     <TabPanel value={value} index={1} dir={theme.direction}>
                                         <Inscription
                                              user={user}
-                                             // handleOnChange={this.handleOnChange}
-                                             // validateInscription={this.validateInscription}
+                                             handleOnChange={handleOnChange}
+                                             validateInscription={validateInscription}
                                          />
                                     </TabPanel>
                                 </SwipeableViews>
