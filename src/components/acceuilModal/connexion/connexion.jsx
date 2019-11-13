@@ -70,28 +70,6 @@ const CssTextField = withStyles({
     },
 })(TextField);
 
-const CssInputField = withStyles({
-    root: {
-        '& label.Mui-focused': {
-            color: '#E91E63',
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: '#E91E63',
-        },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: 'red',
-            },
-            '&:hover fieldset': {
-                borderColor: 'yellow',
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: '#E91E63',
-            },
-        },
-    },
-})(Input);
-
 const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
@@ -99,6 +77,9 @@ const useStyles = makeStyles(theme => ({
     },
     margin: {
         margin: theme.spacing(1),
+    },
+    padding: {
+        padding: 0,
     },
     button: {
         margin: theme.spacing(1),
@@ -116,6 +97,9 @@ const ColorButton = withStyles(theme => ({
             backgroundColor: pink[700],
         },
     },
+    margin: {
+        margin: theme.spacing(1),
+    },
 }))(Button);
 
 export default function CustomizedInputs(props) {
@@ -132,14 +116,15 @@ export default function CustomizedInputs(props) {
 
     return (
         <div>
-            <CssTextField className={classes.margin} id="email" onChange={props.handleOnChange} label="Adresse mail" />
-            <FormControl className={clsx(classes.margin, classes.textField)}>
-                <InputLabel htmlFor="standard-adornment-password">Mot de passe</InputLabel>
-                <CssInputField
+            <CssTextField className={classes.margin} style ={{width: '100%'}} id="email" onChange={props.handleOnChange} label="Adresse mail" />
+            <FormControl className={clsx(classes.margin, classes.textField)} style ={{width: '100%'}}>
+                <InputLabel htmlFor="standard-adornment-password" color="secondary">Mot de passe</InputLabel>
+                <Input
                     id="password"
                     type={showPassword ? 'text' : 'password'}
                     value={props.user.password}
                     onChange={props.handleOnChange}
+                    color="secondary"
                     endAdornment={
                         <InputAdornment position="end">
                             <IconButton
@@ -153,7 +138,7 @@ export default function CustomizedInputs(props) {
                     }
                 />
             </FormControl>
-            <ColorButton  variant="contained" color="primary" className={classes.button} onClick={props.connexion}>
+            <ColorButton style ={{marginTop: '20px'}} variant="contained" color="primary" className={classes.button} onClick={props.connexion}>
                 Connexion
             </ColorButton>
         </div>
