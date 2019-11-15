@@ -264,7 +264,6 @@ export default function FullWidthTabs(props) {
         if (newUserConnexion.email.trim() !== "" && newUserConnexion.password.trim() !== ""){
             let valide = validateEmail(newUserConnexion.email);
             if(valide){
-                console.log(newUserConnexion);
                 dispatch(userLogin(newUserConnexion, history));
             } else {
                 setErrorMessage( "Adresse mail non valide");

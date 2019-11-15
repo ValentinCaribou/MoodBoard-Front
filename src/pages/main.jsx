@@ -38,6 +38,7 @@ class Main extends Component {
                 listThemes : [],
             },
             isEmpty:false,
+            theme: "my-menu"
         }
     }
 
@@ -49,22 +50,37 @@ class Main extends Component {
             } else {
                 this.setState({isEmpty : true});
             }
+            this.changeStyle();
         });
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps !== this.props){
+            this.changeStyle();
+        }
+    }
+
+    changeStyle = () => {
+        const {user} = this.props;
+        console.log(user);
+        if(user.theme !== "" && user.theme !== "default"){
+            this.setState({theme: 'my-menu-bleu'});
+        } else {
+            this.setState({theme: 'my-menu'});
+        }
+    };
+
     handleOnChange = (e) => {
-        const target = e.currentTarget;
         let newUser = this.props.user;
-        newUser.theme = target.value;
+        newUser.theme = e.target.value;
         this.props.dispatch(userUpdate(newUser, newUser._id));
         this.changeStyle();
-        this.props.changeStyleParent(newUser);
+        // this.props.changeStyleParent(newUser);
     };
 
     render() {
         const {dispatch, toast, user} = this.props;
         const {param} = this.state;
-        console.log(user);
         return (
             <div className='App'>
                 {
@@ -76,7 +92,7 @@ class Main extends Component {
                 {
                     user.email !== "" &&
                     <Menu pageWrapId="page-wrap" width="auto"
-                          menuClassName="my-menu"
+                          menuClassName={this.state.theme}
                           outerContainerId="body" customBurgerIcon={<BurgerButton/>}
                           burgerButtonClassName="burger-button"
                           customCrossIcon={<i className="fas fa-times fa-times-cross"></i>} disableAutoFocus right>
@@ -101,14 +117,16 @@ class Main extends Component {
                                     id="demo-controlled-open-select"
                                     // value={age}
                                     style ={{width: '100%'}}
-                                    // onChange={handleChange}
+                                    onChange={this.handleOnChange}
                                 >
                                     <MenuItem value="">
                                         <em>Sélectionner un thème</em>
                                     </MenuItem>
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
+                                    {
+                                        param.listThemes.map((theme, index) => {
+                                            return <MenuItem value={theme}>{theme}</MenuItem>
+                                        })
+                                    }
                                 </Select>
                             </FormControl>
                         </a>
@@ -120,12 +138,6 @@ class Main extends Component {
                         {/*        })*/}
                         {/*    }*/}
                         {/*</select>*/}
-
-                        <a id="ajoutArme" className="bm-item menu-item" href="/armes/add"><img className="imageEpee" /> Ajouter une arme</a>
-
-                        <a id="ajoutArmure" className="bm-item menu-item" href="/armures/add"><img className="imageEpee" /> Ajouter une Armure</a>
-
-                        <a id="ajoutEnchantement" className="bm-item menu-item" href="/enchantements/add"><img className="imageEpee" /> Ajouter un Enchantement</a>
                     </Menu>
                 }
                 <main>

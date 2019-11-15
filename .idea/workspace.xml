@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/burger-menu/burger-button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/burger-menu/burger-button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/select/selectInput.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/burger.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/acceuilModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/acceuilModal/inscription/inscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/acceuilModal/inscription/inscription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/burger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/burger.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -393,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573660686589</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Ajout du burger menu">
+      <created>1573816528719</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1573816528719</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +412,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Envoie du mood semi-fonctionnel" />
     <MESSAGE value="Update du mood" />
     <MESSAGE value="Update du mood avec ajout" />
     <MESSAGE value="Ajout de redux pour les toast" />
@@ -439,6 +436,7 @@
     <MESSAGE value="COnnexion avec style Google opérationnel" />
     <MESSAGE value="Ajout d'une petite phrase sur la page de connexion + planete + annimation soucoupe" />
     <MESSAGE value="Style login fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="Style login fini" />
+    <MESSAGE value="Ajout du burger menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du burger menu" />
   </component>
 </project>

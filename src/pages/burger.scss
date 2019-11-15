@@ -66,6 +66,20 @@
   font-size: 1.15em;
 }
 
+.my-menu {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  background: #e72284;
+}
+
+.my-menu-bleu {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  background: #177ce7;
+}
+
 .bm-item-list > label.bm-item.label {
   font-size: 1em;
 }
