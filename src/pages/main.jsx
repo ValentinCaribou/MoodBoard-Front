@@ -62,7 +62,6 @@ class Main extends Component {
 
     changeStyle = () => {
         const {user} = this.props;
-        console.log(user);
         if(user.theme !== "" && user.theme !== "default"){
             this.setState({theme: 'my-menu-bleu'});
         } else {

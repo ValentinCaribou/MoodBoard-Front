@@ -77,7 +77,13 @@ class MoodBoard extends Component {
       });
   };
 
-  changeStyle = (user) => {
+  componentDidUpdate(prevProps, prevState, snapshot) {
+      if(prevProps !== this.props){
+          this.changeStyle(this.props.user);
+      }
+  }
+
+    changeStyle = (user) => {
       if(user.theme !== "" && user.theme !== "default"){
           this.setState({AppHeader: 'App-header-bleu'});
           this.setState({border: 'border-bleu'});
