@@ -174,7 +174,7 @@ import Inscription from "./inscription/inscription";
 //
 // export default withRouter(connect(mapStateToProps)(AcceuilModal));
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
@@ -218,7 +218,6 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor: theme.palette.background.paper,
-        width: 500,
     },
 }));
 
@@ -227,6 +226,8 @@ export default function FullWidthTabs(props) {
     const theme = useTheme();
     const dispatch = useDispatch();
     const history = useHistory();
+    const wrapperRef = useRef(null);
+    useOutsideAlerter(wrapperRef, props);
     const [value, setValue] = useState(0);
     const [isError, setIsError] = useState(false);
     const [ErrorMessage, setErrorMessage] = useState("");
@@ -272,6 +273,26 @@ export default function FullWidthTabs(props) {
         }
     };
 
+    function useOutsideAlerter(ref, props) {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                props.changeStatus();
+            }
+        }
+
+        useEffect(() => {
+            // Bind the event listener
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                // Unbind the event listener on clean up
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+        });
+    }
+
     const validateInscription = () => {
         const currentUser = user;
         let valide = validateEmail(currentUser.email);
@@ -309,12 +330,12 @@ export default function FullWidthTabs(props) {
 
     return (
         <div id="myModal" className="modal">
-            <div className="modal-content">
+            <div className="modal-content" ref={wrapperRef}>
                 <div className="border">
                     <div className="centered">
-                        <div className="div-close">
-                            <span className="close" onClick={props.changeStatus}>&times;</span>
-                        </div>
+                        {/*<div className="div-close">*/}
+                        {/*    <span className="close" onClick={props.changeStatus}>&times;</span>*/}
+                        {/*</div>*/}
                         {
                                 isError &&
                                 <div className="group">

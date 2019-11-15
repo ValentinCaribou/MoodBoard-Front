@@ -1,5 +1,6 @@
 import React, {Component}  from 'react';
 import {format, startOfWeek, endOfWeek} from 'date-fns';
+import { slide as Menu } from 'react-burger-menu'
 
 //CSS
 import '../../App.scss';
