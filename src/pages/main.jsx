@@ -1,7 +1,6 @@
 import React, {Component}  from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {connect} from 'react-redux';
-//import logo from '../logo.svg';
 import '../App.scss';
 import './burger.scss';
 import Toast from "../components/toast/index";
@@ -16,11 +15,21 @@ import PersonnalMood from "../components/averageMood/personnalMood";
 import AverageMood from "../components/averageMood/allMoods";
 import {getParameters} from "../services/manageParameters";
 import {userUpdate} from "../redux/user/dispatch";
-import selectInput from "../components/select/selectInput"
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+import SettingsIcon from '@material-ui/icons/Settings';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
+import {withStyles} from "@material-ui/core";
+import EndMenu from "../components/itemMenu/listeItemEnd";
+import StartMenu from "../components/itemMenu/listeItemStart";
 
 class Main extends Component {
 
@@ -80,6 +89,8 @@ class Main extends Component {
     render() {
         const {dispatch, toast, user} = this.props;
         const {param} = this.state;
+
+
         return (
             <div className='App'>
                 {
@@ -88,59 +99,25 @@ class Main extends Component {
                            closeCallback={toast.closeCallback}
                            dispatch={dispatch}/>
                 }
-                {
-                    user.email !== "" &&
-                    <Menu pageWrapId="page-wrap" width="auto"
-                          menuClassName={this.state.theme}
-                          outerContainerId="body" customBurgerIcon={<BurgerButton/>}
-                          burgerButtonClassName="burger-button"
-                          customCrossIcon={<i className="fas fa-times fa-times-cross"></i>} disableAutoFocus right>
 
-
-                        <div className="h1">Menu</div>
-                        <label className="label">Projet Moodboard</label>
-
-                        <a id="userName" className="bm-item menu-item"><i className="fas fa-user"/>{user.surname + " " + user.name}</a>
-
-                        <a id="userAverage" className="bm-item menu-item"><i className="fas fa-chart-line"></i>Votre Moyenne : <PersonnalMood/></a>
-
-                        <a id="globalAverage" className="bm-item menu-item"><i className="fas fa-chart-pie"></i>Moyenne général : <AverageMood/></a>
-
-                        <a id="changeStyle" className="bm-item menu-item"><i className="fas fa-paint-roller"></i>Changer le thèmes : </a>
-
-                        <a id="changeStyleSelect" className="bm-item menu-item">
-                            <FormControl style ={{width: '100%'}}>
-                                <InputLabel id="demo-controlled-open-select-label">Thème</InputLabel>
-                                <Select
-                                    labelId="demo-controlled-open-select-label"
-                                    id="demo-controlled-open-select"
-                                    // value={age}
-                                    style ={{width: '100%'}}
-                                    onChange={this.handleOnChange}
-                                >
-                                    <MenuItem value="">
-                                        <em>Sélectionner un thème</em>
-                                    </MenuItem>
-                                    {
-                                        param.listThemes.map((theme, index) => {
-                                            return <MenuItem value={theme}>{theme}</MenuItem>
-                                        })
-                                    }
-                                </Select>
-                            </FormControl>
-                        </a>
-                        {/*<select name="theme" id="theme-select" onChange={this.handleOnChange}>*/}
-                        {/*    <option value="">--Sélectionner un thème--</option>*/}
-                        {/*    {*/}
-                        {/*        param.listThemes.map((theme, index) => {*/}
-                        {/*            return <option key={index} value={theme}>{theme}</option>*/}
-                        {/*        })*/}
-                        {/*    }*/}
-                        {/*</select>*/}
-                    </Menu>
-                }
                 <main>
                     <Router>
+                        {
+                            user.email !== "" &&
+                            <Menu pageWrapId="page-wrap" width="auto"
+                                  menuClassName={this.state.theme}
+                                  outerContainerId="body" customBurgerIcon={<BurgerButton/>}
+                                  burgerButtonClassName="burger-button"
+                                  customCrossIcon={<i className="fas fa-times fa-times-cross"></i>} disableAutoFocus right>
+
+                                <StartMenu
+                                    user={user}
+                                    param={param}
+                                    onChange={this.handleOnChange}
+                                />
+                                <EndMenu/>
+                            </Menu>
+                        }
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/moodboard" component={MoodBoard}/>

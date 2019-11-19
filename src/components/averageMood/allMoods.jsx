@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { getAll } from '../../services/manageMood';
+import "./moodStyles.scss";
 
 const listEmojis = [
     {name: "smile", value:"😄", score: 1},
@@ -44,11 +45,11 @@ export default class AverageMood extends Component{
         listMoods.map(mood =>{
             Object.entries(mood).forEach(fragment => {
                 score += compareMoods(fragment[1]);
-            })
+            });
             return null;
-        })
+        });
         this.calculateAverageMood(score);
-    }
+    };
     
     calculateAverageMood = (score) => {
         let generalMood = "";
@@ -60,10 +61,16 @@ export default class AverageMood extends Component{
             generalMood = "😄";
         }
         this.setState({averageMood: generalMood});
-    }
+    };
 
     render(){
-        return this.state.averageMood;
+        return (
+            <div className="emoji-size">
+                <span>
+                    {this.state.averageMood}
+                </span>
+            </div>
+        );
     }
 }
 
@@ -79,6 +86,6 @@ function compareMoods(valueToCompare){
             score = entry['score'];
         }
         return score;
-    })
+    });
     return score;
 }
