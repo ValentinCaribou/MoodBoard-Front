@@ -108,7 +108,7 @@ class Main extends Component {
                                   menuClassName={this.state.theme}
                                   outerContainerId="body" customBurgerIcon={<BurgerButton/>}
                                   burgerButtonClassName="burger-button"
-                                  customCrossIcon={<i className="fas fa-times fa-times-cross"></i>} disableAutoFocus right>
+                                  customCrossIcon={<i className="fas fa-times fa-times-cross"></i>} disableAutoFocus>
 
                                 <StartMenu
                                     user={user}

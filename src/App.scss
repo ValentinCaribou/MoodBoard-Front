@@ -64,6 +64,15 @@
     overflow: hidden;
   }
 
+  .ombre-div {
+    position: absolute;
+    height: 3.5em;
+    bottom: 8em;
+    right: 12.7em;
+    width: 101px;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
+  }
+
   .bouton-accueil {
     position: absolute;
     z-index: 10;
@@ -109,7 +118,87 @@
     }
   }
 
-  @media screen and (max-width: 800px) {
+  .fadeInDownDiv {
+    -webkit-animation-name: fadeInDownDiv;
+    animation-name: fadeInDownDiv;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInDownDiv {
+    0% {
+      opacity: 0.8;
+      -webkit-transform: translate3d(0, -250%, 0);
+      transform: translate3d(0, -250%, 0);
+    }
+    50% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInDownDiv {
+    0% {
+      opacity: 0.8;
+      -webkit-transform: translate3d(0, -250%, 0);
+      transform: translate3d(0, -250%, 0);
+    }
+    50% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  .fadeInOut {
+    -webkit-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    animation-delay: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInOut {
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    100% {opacity: 0;}
+  }
+  @keyframes fadeInOut {
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    100% {opacity: 0;}
+  }
+
+  .fadeOut {
+    -webkit-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+  @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+
+  @media screen and (max-height: 800px) {
     .title {
       color: white;
       font-family: bebas_neue;
@@ -119,12 +208,66 @@
     }
 
     .bouton-accueil {
-      position: relative;
-      margin-top: 15em;
-      margin-left: 7em;
+      position: absolute;
+      z-index: 10;
+      bottom: 12em;
+      right: 24em;
+      height: 120px;
 
       .image {
-        height: 150px;
+        height: 200px;
+      }
+    }
+
+    .ombre-div {
+      position: absolute;
+      height: 4.5em;
+      bottom: 8.4em;
+      right: 14.2em;
+      width: 101px;
+      background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
+    }
+    .fadeInDownDiv {
+      -webkit-animation-name: fadeInDownDiv;
+      animation-name: fadeInDownDiv;
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+      animation-delay: 0.1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeInDownDiv {
+      0% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0, -200%, 0);
+        transform: translate3d(0, -200%, 0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    @keyframes fadeInDownDiv {
+      0% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0, -200%, 0);
+        transform: translate3d(0, -200%, 0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: none;
+        transform: none;
       }
     }
   }

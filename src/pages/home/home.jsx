@@ -3,6 +3,7 @@ import '../../App.scss';
 import '../../App-bleu.scss';
 import Inscription from "../../components/acceuilModal/acceuilModal"
 import Soucoupe from "../../assets/app_launch_button3.png"
+import nuage from "../../assets/nuages.png"
 // import logoSII from "../../assets/logo.svg"
 import Fungenieur from "../../assets/logo_fungenieur.png"
 import Earth from "../../assets/kisspng-earth-drawing-cut.png"
@@ -49,6 +50,11 @@ class Home extends Component {
                             user={this.props.user}
                         />
                     }
+                    {/*<span className="trainer-1 fadeInDown"/>*/}
+                    {/*<span className="trainer-2 fadeInDown"/>*/}
+                    {/*<span className="trainer-3 fadeInDown"/>*/}
+                    <div className="ombre-div fadeInDownDiv"/>
+                    <input className="bouton-accueil fadeInOut" type="image" src={nuage} aria-label=""/>
                     <input className="bouton-accueil image fadeInDown" onClick={this.changeHide} type="image" src={Soucoupe} aria-label=""/>
                     <figure className="change-ratio">
                         <img src={Earth} className="earth" alt=""/>
