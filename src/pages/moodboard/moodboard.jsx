@@ -1,5 +1,6 @@
 import React, {Component}  from 'react';
 import {format, startOfWeek, endOfWeek} from 'date-fns';
+import { slide as Menu } from 'react-burger-menu'
 
 //CSS
 import '../../App.scss';
@@ -76,7 +77,13 @@ class MoodBoard extends Component {
       });
   };
 
-  changeStyle = (user) => {
+  componentDidUpdate(prevProps, prevState, snapshot) {
+      if(prevProps !== this.props){
+          this.changeStyle(this.props.user);
+      }
+  }
+
+    changeStyle = (user) => {
       if(user.theme !== "" && user.theme !== "default"){
           this.setState({AppHeader: 'App-header-bleu'});
           this.setState({border: 'border-bleu'});
@@ -199,17 +206,16 @@ class MoodBoard extends Component {
         return (
             <div className="App">
                 <div className={AppHeader}>
-                <img src={Fungenieur} height="280px" width="650px"/>
-                <Toolbar
-                    user={user}
-                    changeStyleParent={this.changeStyle}
-                />
-                <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
+                <img className="logo" src={Fungenieur}/>
+                {/*<h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>*/}
+                <h1 className="moodboard-week-title">Board de la semaine</h1>
                   <Week
-                    addMood={this.selectEmojis}
-                    row={this.state.row}
-                    idRows={this.state.idListe}
-                    themeBouton={this.state.addButton}
+                      debutSemaine={this.getStartofWeek()}
+                      finSemaine={this.getEndOfWeek()}
+                      addMood={this.selectEmojis}
+                      row={this.state.row}
+                      idRows={this.state.idListe}
+                      themeBouton={this.state.addButton}
                   />
                   {
                       !isHide &&

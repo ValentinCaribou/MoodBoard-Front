@@ -6,6 +6,9 @@ import "./week.scss";
 import {connect} from 'react-redux';
 import {deleteMood} from '../services/manageMood';
 import {balanceTonToast} from "../redux/toast/dispatch";
+import TextField from '@material-ui/core/TextField';
+import {createMuiTheme} from "@material-ui/core";
+import {ThemeProvider} from "@material-ui/styles";
 
 class Week extends Component{
 
@@ -98,12 +101,29 @@ class Week extends Component{
     renderRows = () => {
         let {addMood} = this.props;
 
+        const outerTheme = createMuiTheme({
+            palette: {
+                secondary: {
+                    light: '#ffffff',
+                    main: '#ffffff',
+                    dark: '#ffffff',
+                    contrastText: '#fff',
+                },
+                type: 'dark'
+            },
+        });
+
         return this.state.rowList.map((row, i) => {
             let keyName = "row_"+i;
             let rowList = this.state.rowList;
             return (
             <tr key={keyName} name={keyName}>
-                <td><input type="text" onChange={(e) => this.handleOnChange(e, row, i)} name="collabName" value={row.collabName}/></td>
+                <td>
+                    <ThemeProvider theme={outerTheme}>
+                        <TextField style ={{width: '100%'}} color="secondary" id="email" name="collabName" onChange={(e) => this.handleOnChange(e, row, i)} value={row.collabName} />
+                    </ThemeProvider>
+                </td>
+                {/*<td><input type="text" onChange={(e) => this.handleOnChange(e, row, i)} className="" name="collabName" value={row.collabName}/></td>*/}
                 {/** Lundi */}
                 <td onClick={() => addMood("mondayNoonMood", row, keyName)}>{row.mondayNoonMood}</td>
                 <td onClick={() => addMood("mondayAfternoonMood", row, keyName)}>{row.mondayAfternoonMood}</td>
@@ -127,9 +147,10 @@ class Week extends Component{
     };
 
     render(){
+        const {debutSemaine, finSemaine} = this.props;
         return (
-            <div name="moodboard_root" className="Moodboard">
-                <div name="addRow">
+            <div className="moodboard_root" className="Moodboard">
+                <div className="addRow">
                     <input type="submit" 
                             onClick={this.createRow} 
                             value="Ajouter"
@@ -138,8 +159,8 @@ class Week extends Component{
                 <table className="Moodboard-table">
                     <tbody>
                         {/** Jours de la semaine */}
-                        <tr name="dayHeader">
-                            <th></th>
+                        <tr className="dayHeader">
+                            <th>{debutSemaine} - {finSemaine}</th>
                             <th scope="col" colSpan="2">Lundi</th>
                             <th scope="col" colSpan="2">Mardi</th>
                             <th scope="col" colSpan="2">Mercredi</th>
@@ -147,18 +168,18 @@ class Week extends Component{
                             <th scope="col" colSpan="2">Vendredi</th>
                         </tr>
                         {/** Périodes de la journée */}
-                        <tr name="daytimeHeader">
-                            <td>Nom du collaborateur</td>
-                            <td>Matin</td>
-                            <td>Apres-midi</td>
-                            <td>Matin</td>
-                            <td>Apres-midi</td>
-                            <td>Matin</td>
-                            <td>Apres-midi</td>
-                            <td>Matin</td>
-                            <td>Apres-midi</td>
-                            <td>Matin</td>
-                            <td>Apres-midi</td>
+                        <tr className="daytimeHeader">
+                            <td>Nom</td>
+                            <td>M</td>
+                            <td>AM</td>
+                            <td>M</td>
+                            <td>AM</td>
+                            <td>M</td>
+                            <td>AM</td>
+                            <td>M</td>
+                            <td>AM</td>
+                            <td>M</td>
+                            <td>AM</td>
                         </tr>
                         {
                             //si le props est vide, alors on ne l'affiche pas (notation avec les esperluettes)

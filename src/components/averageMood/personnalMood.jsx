@@ -1,7 +1,7 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
 import {connect} from "react-redux";
 import { getAll } from '../../services/manageMood';
-import userReducer from "../../redux/user/reducers";
+import "./moodStyles.scss"
 
 const listEmojis = [
     {name: "smile", value:"😄", score: 1},
@@ -50,11 +50,11 @@ class PersonnalMood extends Component{
                 if(fragment[1] !== undefined && fragment[1] !== ""){
                     score += compareMoods(fragment[1]);
                 }
-            })
+            });
             return null;
-        })
+        });
         this.calculateAverageMood(score);
-    }
+    };
     
     calculateAverageMood = (score) => {
         let generalMood = "";
@@ -66,10 +66,16 @@ class PersonnalMood extends Component{
             generalMood = "😄";
         }
         this.setState({averageMood: generalMood});
-    }
+    };
 
     render(){
-        return this.state.averageMood;
+        return (
+            <div className="emoji-size">
+                <span>
+                    {this.state.averageMood}
+                </span>
+            </div>
+        );
     }
 }
 
@@ -86,7 +92,7 @@ function compareMoods(valueToCompare){
             }
         }
         return null;
-    })
+    });
     return score;
 }
 

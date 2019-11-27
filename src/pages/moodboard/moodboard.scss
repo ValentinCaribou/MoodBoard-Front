@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   padding-top: 100px;
   left: 0;
   top: 0;
@@ -16,11 +16,11 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 30%;
 
     .border {
       border-radius: 10px;
-      border: 5px solid #83317e;
+      border: 5px solid #e72284;
 
       .div-close {
         display: flow-root;
@@ -139,4 +139,10 @@
       }
     }
   }
+}
+
+.logo {
+  position: absolute;
+  top: 0.5em;
+  height: 5em;
 }

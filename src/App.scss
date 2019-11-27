@@ -4,8 +4,14 @@
   url("font/bebas_neue/BebasNeue-Regular.ttf") format("truetype");
 }
 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .App {
   text-align: center;
+
+  color-cross {
+    color: white;
+  }
 }
 
 .App-logo {
@@ -19,6 +25,7 @@
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
+  overflow: hidden;
 
   .title {
     color: white;
@@ -39,10 +46,38 @@
     }
   }
 
+  .texte-acceuil {
+    color: white;
+    font: 1.5em bebas_neue;
+  }
+
+  figure img{
+    display:block;
+  }
+
+  .change-ratio img{
+    //margin:0 0 -50% 0;
+    position: absolute;
+    right: 6em;
+    bottom: 0;
+    width: 500px;
+    overflow: hidden;
+  }
+
+  .ombre-div {
+    position: absolute;
+    height: 3.5em;
+    bottom: 8em;
+    right: 12.7em;
+    width: 101px;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
+  }
+
   .bouton-accueil {
-    position: relative;
-    margin-top: 13em;
-    margin-left: 40em;
+    position: absolute;
+    z-index: 10;
+    bottom: 12em;
+    right: 25.5em;
     height: 120px;
 
     .image {
@@ -50,7 +85,120 @@
     }
   }
 
-  @media screen and (max-width: 800px) {
+  .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -200%, 0);
+      transform: translate3d(0, -200%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -200%, 0);
+      transform: translate3d(0, -200%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  .fadeInDownDiv {
+    -webkit-animation-name: fadeInDownDiv;
+    animation-name: fadeInDownDiv;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInDownDiv {
+    0% {
+      opacity: 0.8;
+      -webkit-transform: translate3d(0, -250%, 0);
+      transform: translate3d(0, -250%, 0);
+    }
+    50% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInDownDiv {
+    0% {
+      opacity: 0.8;
+      -webkit-transform: translate3d(0, -250%, 0);
+      transform: translate3d(0, -250%, 0);
+    }
+    50% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  .fadeInOut {
+    -webkit-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    animation-delay: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInOut {
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    100% {opacity: 0;}
+  }
+  @keyframes fadeInOut {
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    100% {opacity: 0;}
+  }
+
+  .fadeOut {
+    -webkit-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+  @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+
+  @media screen and (max-height: 800px) {
     .title {
       color: white;
       font-family: bebas_neue;
@@ -60,12 +208,66 @@
     }
 
     .bouton-accueil {
-      position: relative;
-      margin-top: 15em;
-      margin-left: 7em;
+      position: absolute;
+      z-index: 10;
+      bottom: 12em;
+      right: 24em;
+      height: 120px;
 
       .image {
-        height: 150px;
+        height: 200px;
+      }
+    }
+
+    .ombre-div {
+      position: absolute;
+      height: 4.5em;
+      bottom: 8.4em;
+      right: 14.2em;
+      width: 101px;
+      background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
+    }
+    .fadeInDownDiv {
+      -webkit-animation-name: fadeInDownDiv;
+      animation-name: fadeInDownDiv;
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+      animation-delay: 0.1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeInDownDiv {
+      0% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0, -200%, 0);
+        transform: translate3d(0, -200%, 0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    @keyframes fadeInDownDiv {
+      0% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0, -200%, 0);
+        transform: translate3d(0, -200%, 0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: none;
+        transform: none;
       }
     }
   }
@@ -85,7 +287,15 @@
   td{
     border : 2px solid whitesmoke;
     width : 130px;
-    font-size: 14px;
+  }
+  tr{
+    font-size: 1em;
+  }
+  .dayHeader{
+    font-size: 0.8em;
+  }
+  .daytimeHeader{
+    font-size: 0.8em;
   }
 }
 
@@ -96,5 +306,6 @@
 }
 
 .moodboard-week-title{
-  color : whitesmoke;
+  margin-top: 3em;
+  color : white;
 }
