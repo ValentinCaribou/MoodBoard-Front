@@ -12,6 +12,9 @@
 /build
 
 .idea
+.idea/workspace.xml
+
+workspace.xml
 
 # misc
 .DS_Store
