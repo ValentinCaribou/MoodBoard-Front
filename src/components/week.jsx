@@ -4,8 +4,6 @@ import React, {Component} from 'react';
 import "./week.scss";
 
 import {connect} from 'react-redux';
-import {deleteMood} from '../services/manageMood';
-import {balanceTonToast} from "../redux/toast/dispatch";
 import TextField from '@material-ui/core/TextField';
 import {createMuiTheme} from "@material-ui/core";
 import {ThemeProvider} from "@material-ui/styles";
@@ -96,7 +94,6 @@ class Week extends Component{
 
         return this.state.rowList.map((row, i) => {
             let keyName = "row_"+i;
-            let rowList = this.state.rowList;
             return (
             <tr key={keyName} name={keyName}>
                 <td>
@@ -129,7 +126,7 @@ class Week extends Component{
     render(){
         const {debutSemaine, finSemaine} = this.props;
         return (
-            <div className="moodboard_root" className="Moodboard">
+            <div className="moodboard_root Moodboard">
                 <div className="addRow">
                     <input type="submit" 
                             onClick={this.createRow} 

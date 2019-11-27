@@ -1,6 +1,5 @@
 import React, {Component}  from 'react';
 import {format, startOfWeek, endOfWeek} from 'date-fns';
-import { slide as Menu } from 'react-burger-menu'
 
 //CSS
 import '../../App.scss';
@@ -9,7 +8,6 @@ import './moodboard.scss'
 import './moodboard-bleu.scss'
 
 //COMPONENTS
-import Toolbar from "../../components/toolbar/toolbar.jsx";
 import Week from '../../components/week.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
 
@@ -18,7 +16,6 @@ import {sendMood, getAll, updateMood, deleteMood} from "../../services/manageMoo
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
 import  { withRouter } from 'react-router-dom'
-import action from "../../redux/user/actions";
 
 class MoodBoard extends Component {
 
@@ -226,14 +223,12 @@ class MoodBoard extends Component {
     };
 
     render() {
-        let {isHide, AppHeader, keyName, idUser} = this.state;
+        let {isHide, AppHeader} = this.state;
         const {user} = this.props;
-        let indexTab = keyName.split("_");
-        let idUserMood = idUser[indexTab[1]];
         return (
             <div className="App">
                 <div className={AppHeader}>
-                <img className="logo" src={Fungenieur}/>
+                <img className="logo" src={Fungenieur} alt=""/>
                 {/*<h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>*/}
                 <h1 className="moodboard-week-title">Board de la semaine</h1>
                   <Week

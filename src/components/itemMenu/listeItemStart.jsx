@@ -9,17 +9,13 @@ import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import StyleIcon from '@material-ui/icons/Style';
 import ListItemText from "@material-ui/core/ListItemText";
-import Divider from "@material-ui/core/Divider";
 import {createMuiTheme, withStyles} from "@material-ui/core";
 import PersonIcon from '@material-ui/icons/Person';
-import action from "../../redux/user/actions";
-import {slide as Menu} from "react-burger-menu";
 import PersonnalMood from "../averageMood/personnalMood";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
-import grey from '@material-ui/core/colors/grey'
 import AverageMood from "../averageMood/allMoods";
 
 class StartMenu extends Component{

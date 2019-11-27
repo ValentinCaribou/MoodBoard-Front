@@ -1,41 +1,8 @@
-// import React from 'react';
-// import TextField from '@material-ui/core/TextField';
-// import '../acceuilModal.scss';
-//
-// class Connexion extends React.Component {
-//
-//     render() {
-//         const {user, handleOnChange, connexion} = this.props;
-//         return (
-//             <div>
-//                 <CssTextField className={classes.margin} id="custom-css-standard-input" label="Custom CSS" />
-//                 <div className="group">
-//                     <input type="text" id="email" className="inputText" required="required" onChange={handleOnChange} value={user.email}/>
-//                     <label htmlFor="email">Adresse mail : </label>
-//                     <div className="bar"></div>
-//                 </div>
-//                 <div className="group">
-//                     <input type="password" id="password" className="inputText" required="required" onChange={handleOnChange} value={user.password}/>
-//                     <label htmlFor="confirmePassword">Mot de passe : </label>
-//                     <div className="bar"></div>
-//                 </div>
-//                 <input type="submit" className="validate-button" value="Connexion" onClick={connexion}/>
-//             </div>
-//         );
-//     }
-// }
-//
-// export default Connexion;
-
 import React from 'react';
 import {
-    fade,
-    ThemeProvider,
     withStyles,
     makeStyles,
-    createMuiTheme,
 } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
 import clsx from 'clsx';
 import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -46,7 +13,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
-import { green, pink } from '@material-ui/core/colors';
+import { pink } from '@material-ui/core/colors';
 
 const CssTextField = withStyles({
     root: {

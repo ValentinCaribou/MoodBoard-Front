@@ -11,23 +11,8 @@ import administrationPanel from '../pages/administration/administrationPanel';
 import adminUser from '../pages/administration/administrationPanel';
 import {slide as Menu} from "react-burger-menu";
 import BurgerButton from '../components/burger-menu/burger-button'
-import PersonnalMood from "../components/averageMood/personnalMood";
-import AverageMood from "../components/averageMood/allMoods";
 import {getParameters} from "../services/manageParameters";
 import {userUpdate} from "../redux/user/dispatch";
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import SettingsIcon from '@material-ui/icons/Settings';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import InputLabel from "@material-ui/core/InputLabel";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import {withStyles} from "@material-ui/core";
 import EndMenu from "../components/itemMenu/listeItemEnd";
 import StartMenu from "../components/itemMenu/listeItemStart";
 

@@ -46,7 +46,7 @@ class AdminUser extends Component{
 
 
     render(){
-        const {users, checked} = this.state;
+        const {users} = this.state;
         return(
             <div className="parameter-item">
                 <p>Liste des utilisateurs : </p>
