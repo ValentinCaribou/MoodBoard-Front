@@ -14,7 +14,7 @@ import Week from '../../components/week.jsx';
 import Fungenieur from '../../assets/logo_fungenieur.png';
 
 //REDUX
-import {sendMood, getAll, updateMood} from "../../services/manageMood";
+import {sendMood, getAll, updateMood, deleteMood} from "../../services/manageMood";
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
 import  { withRouter } from 'react-router-dom'
@@ -160,6 +160,26 @@ class MoodBoard extends Component {
         this.setState({keyName});
     };
 
+    sendUpdateMood = (idMood, jsonRequest) => {
+        if(idMood === undefined){
+            sendMood(jsonRequest)
+                .then(response => {
+                    this.props.dispatch(balanceTonToast("success", "Ajout réussi"))
+                    this.getMood();
+                })
+                .catch(error => {
+                    this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie"))
+                });
+        } else {
+            updateMood(jsonRequest, idMood)
+                .then(response => {
+                    this.props.dispatch(balanceTonToast("success", "Ajout réussi"))
+                    this.getMood();
+                })
+                .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
+        }
+    };
+
     validateButton = (id) => {
         let {cellule, row, keyName, idUser, idListe} = this.state;
         const {user} = this.props;
@@ -177,32 +197,39 @@ class MoodBoard extends Component {
                 idUser: user._id,
                 weekMood:row
             };
-            if(idMood === undefined){
-                sendMood(jsonRequest)
-                    .then(response => {
-                        this.props.dispatch(balanceTonToast("success", "Ajout réussi"))
-                        this.getMood();
-                    })
-                    .catch(error => {
-                        this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie"))
-                    });
-            } else {
-                updateMood(jsonRequest, idMood)
-                    .then(response => {
-                        this.props.dispatch(balanceTonToast("success", "Ajout réussi"))
-                        this.getMood();
-                    })
-                    .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de l'envoie")));
-            }
+            this.sendUpdateMood(idMood, jsonRequest);
         } else {
             this.props.dispatch(balanceTonToast("error", "Vous ne pouvez pas modifier le mood des autres utilisateurs"));
         }
+    };
 
+    deleteRow = (row, i, keyName) => {
+        let {idUser, idListe} = this.state;
+        const {user} = this.props;
+        let rowId = idListe[i];
+        let indexTab = keyName.split("_");
+        let idUserMood = idUser[indexTab[1]];
+
+        if(rowId !== undefined){
+            console.log("ID parent : ", idUserMood);
+            if (idUserMood === user._id || idUserMood === undefined){
+                deleteMood(rowId)
+                    .then(response => {
+                        this.props.dispatch(balanceTonToast("success", "Suppression effectuée"))
+                        this.getMood();
+                    })
+                    .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de la suppression")));
+            } else {
+                this.props.dispatch(balanceTonToast("error", "Vous ne pouvez pas supprimer le mood des autres utilisateurs"));
+            }
+        }
     };
 
     render() {
-        let {isHide, AppHeader} = this.state;
+        let {isHide, AppHeader, keyName, idUser} = this.state;
         const {user} = this.props;
+        let indexTab = keyName.split("_");
+        let idUserMood = idUser[indexTab[1]];
         return (
             <div className="App">
                 <div className={AppHeader}>
@@ -213,7 +240,10 @@ class MoodBoard extends Component {
                       debutSemaine={this.getStartofWeek()}
                       finSemaine={this.getEndOfWeek()}
                       addMood={this.selectEmojis}
+                      deleteMood={this.deleteRow}
                       row={this.state.row}
+                      user={user}
+                      updateMood={this.getMood}
                       idRows={this.state.idListe}
                       themeBouton={this.state.addButton}
                   />

@@ -65,25 +65,6 @@ class Week extends Component{
         this.persistName(i);
     };
 
-    deleteRow = (row, i) => {
-        let rowList = this.state.rowList;
-        let {idRows} = this.props;
-        let rowId = idRows[i];
-
-        if(rowId !== undefined){
-            deleteMood(rowId)
-            .then(response => this.props.dispatch(balanceTonToast("success", "Suppression effectuée")))
-            .catch(error => this.props.dispatch(balanceTonToast("error", "Echec lors de la suppression")));
-
-            {/** a supprimer */}
-            rowList.splice(i,1);
-            idRows.splice(i,1);
-
-            this.setState({rowList});
-            this.setState({idRows});
-        }
-    }
-
     // Méthode persiste name qui va permettre de faire persister la valeur contenue dans le champ avec un setState
     persistName = (name, value, indexRow) => {
         const rowList = this.state.rowList;
@@ -99,7 +80,7 @@ class Week extends Component{
     };
 
     renderRows = () => {
-        let {addMood} = this.props;
+        let {addMood, deleteMood} = this.props;
 
         const outerTheme = createMuiTheme({
             palette: {
@@ -123,7 +104,6 @@ class Week extends Component{
                         <TextField style ={{width: '100%'}} color="secondary" id="email" name="collabName" onChange={(e) => this.handleOnChange(e, row, i)} value={row.collabName} />
                     </ThemeProvider>
                 </td>
-                {/*<td><input type="text" onChange={(e) => this.handleOnChange(e, row, i)} className="" name="collabName" value={row.collabName}/></td>*/}
                 {/** Lundi */}
                 <td onClick={() => addMood("mondayNoonMood", row, keyName)}>{row.mondayNoonMood}</td>
                 <td onClick={() => addMood("mondayAfternoonMood", row, keyName)}>{row.mondayAfternoonMood}</td>
@@ -140,7 +120,7 @@ class Week extends Component{
                 <td onClick={() => addMood("fridayNoonMood", row, keyName)}>{row.fridayNoonMood}</td>
                 <td onClick={() => addMood("fridayAfterNoonMood", row, keyName)}>{row.fridayAfterNoonMood}</td>
                 {/** Bouton de suppression de la ligne courante */}
-                <td><i className="fas fa-times-circle" onClick={() => this.deleteRow(row,i)}></i></td>
+                <td><i className="fas fa-times-circle" onClick={() => deleteMood(row,i,keyName)}></i></td>
             </tr>
             )
         })
