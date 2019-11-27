@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App-bleu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App-bleu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/itemMenu/listeItemEnd.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/itemMenu/listeItemEnd.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/itemMenu/listeItemStart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/itemMenu/listeItemStart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/week.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/week.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/week.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/week.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="US10_ChangerLeCSS" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,26 +35,29 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/Documents/Dev/INNERNET" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\valen\WebstormProjects\moodboard" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -96,6 +103,7 @@
       <workItem from="1570524985303" duration="1383000" />
       <workItem from="1571239705405" duration="11240000" />
       <workItem from="1572882468713" duration="2375000" />
+      <workItem from="1573950173681" duration="55566000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1570115203556</created>
@@ -349,7 +357,77 @@
       <option name="project" value="LOCAL" />
       <updated>1573206609410</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Correction bug dernière minute">
+      <created>1573220567333</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1573220567334</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Refonte de la connexion opérationnel">
+      <created>1573554511938</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1573554511938</updated>
+    </task>
+    <task id="LOCAL-00039" summary="COnnexion avec style Google opérationnel">
+      <created>1573634749671</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1573634749672</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Ajout d'une petite phrase sur la page de connexion + planete + annimation soucoupe">
+      <created>1573651790336</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1573651790337</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Style login fini">
+      <created>1573660686589</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1573660686589</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Ajout du burger menu">
+      <created>1573816528719</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1573816528719</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Changement du thème du burger menu opérationnel">
+      <created>1573829666408</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1573829666408</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Changement du thème dynamique sur page principale opérationnel">
+      <created>1573829905112</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1573829905112</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Changement liste burger menu">
+      <created>1574175395176</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1574175395176</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Animation sur la page d'accueil refaite">
+      <created>1574347166595</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1574347166595</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,16 +448,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CHangement du logo" />
-    <MESSAGE value="Formulaire d'inscription avec mis en place la vérif coté mail et mot de passe" />
-    <MESSAGE value="Formulaire d'inscription valider" />
-    <MESSAGE value="Inscription opérationnel" />
-    <MESSAGE value="Envoie du mood" />
-    <MESSAGE value="Envoie du mood semi-fonctionnel" />
-    <MESSAGE value="Update du mood" />
-    <MESSAGE value="Update du mood avec ajout" />
-    <MESSAGE value="Ajout de redux pour les toast" />
-    <MESSAGE value="Ajout d'un fichier de gestion des retour html" />
     <MESSAGE value="Ajout du toast lors de la création du compte" />
     <MESSAGE value="Correction de l'heure" />
     <MESSAGE value="Correction bug lors de la création d'une nouvelle ligne" />
@@ -395,6 +463,16 @@
     <MESSAGE value="Correction Merge branch" />
     <MESSAGE value="Correction format d'export" />
     <MESSAGE value="Correction bug mineur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction bug mineur" />
+    <MESSAGE value="Correction bug dernière minute" />
+    <MESSAGE value="Refonte de la connexion opérationnel" />
+    <MESSAGE value="COnnexion avec style Google opérationnel" />
+    <MESSAGE value="Ajout d'une petite phrase sur la page de connexion + planete + annimation soucoupe" />
+    <MESSAGE value="Style login fini" />
+    <MESSAGE value="Ajout du burger menu" />
+    <MESSAGE value="Changement du thème du burger menu opérationnel" />
+    <MESSAGE value="Changement du thème dynamique sur page principale opérationnel" />
+    <MESSAGE value="Changement liste burger menu" />
+    <MESSAGE value="Animation sur la page d'accueil refaite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Animation sur la page d'accueil refaite" />
   </component>
 </project>
