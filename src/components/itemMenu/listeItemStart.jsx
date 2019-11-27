@@ -26,6 +26,9 @@ class StartMenu extends Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            isOpen: false,
+        }
     }
 
     render(){
@@ -64,7 +67,16 @@ class StartMenu extends Component{
             },
         }))(Select);
 
+        const handleClose = () => {
+            this.setState({isOpen: false});
+        };
+
+        const handleOpen = () => {
+            this.setState({isOpen: true});
+        };
+
         const {user, param} = this.props;
+        const {isOpen} = this.state;
         return (
             <div style={{color: '#fff'}}>
                 <div className="h1 bm-item-class">Menu</div>
@@ -90,7 +102,7 @@ class StartMenu extends Component{
                             </ListItemIcon>
                             <ListItemText color="secondary" primary={"Votre Moyenne : "} /><AverageMood/>
                         </ListItem>
-                        <ListItem button>
+                        <ListItem button onClick={handleOpen}>
                             <ListItemIcon>
                                 <StyleIcon color="secondary"/>
                             </ListItemIcon>
@@ -103,6 +115,9 @@ class StartMenu extends Component{
                                     labelId="burger-menu-open-select-label"
                                     id="burger-menu-open-select"
                                     color="secondary"
+                                    open={isOpen}
+                                    onClose={handleClose}
+                                    onOpen={handleOpen}
                                     onChange={this.props.onChange}
                                 >
                                     <MenuItem disabled value="">
