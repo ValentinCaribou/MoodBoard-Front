@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/week.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/week.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/week.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/week.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,18 +34,18 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
+      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\valen\WebstormProjects\moodboard" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\services" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\redux" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components" />
       <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\database" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\services" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\components\inscription" />
-      <recent name="C:\Users\valen\WebstormProjects\moodboard\src\assets" />
     </key>
   </component>
   <component name="RunDashboard">
