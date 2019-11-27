@@ -287,7 +287,15 @@
   td{
     border : 2px solid whitesmoke;
     width : 130px;
-    font-size: 14px;
+  }
+  tr{
+    font-size: 1em;
+  }
+  .dayHeader{
+    font-size: 0.8em;
+  }
+  .daytimeHeader{
+    font-size: 0.8em;
   }
 }
 
@@ -298,5 +306,6 @@
 }
 
 .moodboard-week-title{
-  color : whitesmoke;
+  margin-top: 3em;
+  color : white;
 }

@@ -33,6 +33,7 @@ class EndMenu extends Component{
                     dark: '#ffffff',
                     contrastText: '#fff',
                 },
+                type: 'dark'
             },
         });
 

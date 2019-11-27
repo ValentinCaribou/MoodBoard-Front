@@ -19,6 +19,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
+import grey from '@material-ui/core/colors/grey'
 import AverageMood from "../averageMood/allMoods";
 
 class StartMenu extends Component{
@@ -36,6 +37,7 @@ class StartMenu extends Component{
                     dark: '#ffffff',
                     contrastText: '#fff',
                 },
+                type: 'dark'
             },
         });
 

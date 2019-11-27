@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45dd87db-1498-47da-b7ac-f30c69605975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/nuages.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App-bleu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App-bleu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/burger-menu/burger-button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/burger-menu/burger-button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/burger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/burger.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/itemMenu/listeItemEnd.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/itemMenu/listeItemEnd.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/itemMenu/listeItemStart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/itemMenu/listeItemStart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/week.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/week.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moodboard/moodboard.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +103,7 @@
       <workItem from="1570524985303" duration="1383000" />
       <workItem from="1571239705405" duration="11240000" />
       <workItem from="1572882468713" duration="2375000" />
-      <workItem from="1573950173681" duration="38636000" />
+      <workItem from="1573950173681" duration="55566000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1570115203556</created>
@@ -420,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574175395176</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Animation sur la page d'accueil refaite">
+      <created>1574347166595</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1574347166595</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +448,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Ajout d'un fichier de gestion des retour html" />
     <MESSAGE value="Ajout du toast lors de la création du compte" />
     <MESSAGE value="Correction de l'heure" />
     <MESSAGE value="Correction bug lors de la création d'une nouvelle ligne" />
@@ -466,6 +472,7 @@
     <MESSAGE value="Changement du thème du burger menu opérationnel" />
     <MESSAGE value="Changement du thème dynamique sur page principale opérationnel" />
     <MESSAGE value="Changement liste burger menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changement liste burger menu" />
+    <MESSAGE value="Animation sur la page d'accueil refaite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Animation sur la page d'accueil refaite" />
   </component>
 </project>

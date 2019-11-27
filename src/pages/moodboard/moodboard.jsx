@@ -206,13 +206,16 @@ class MoodBoard extends Component {
         return (
             <div className="App">
                 <div className={AppHeader}>
-                <img src={Fungenieur} height="280px" width="650px"/>
-                <h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>
+                <img className="logo" src={Fungenieur}/>
+                {/*<h1 className="moodboard-week-title">Board de la semaine du {this.getStartofWeek()} au {this.getEndOfWeek()}</h1>*/}
+                <h1 className="moodboard-week-title">Board de la semaine</h1>
                   <Week
-                    addMood={this.selectEmojis}
-                    row={this.state.row}
-                    idRows={this.state.idListe}
-                    themeBouton={this.state.addButton}
+                      debutSemaine={this.getStartofWeek()}
+                      finSemaine={this.getEndOfWeek()}
+                      addMood={this.selectEmojis}
+                      row={this.state.row}
+                      idRows={this.state.idListe}
+                      themeBouton={this.state.addButton}
                   />
                   {
                       !isHide &&
