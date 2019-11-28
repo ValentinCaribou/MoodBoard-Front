@@ -16,6 +16,7 @@ import {sendMood, getAll, updateMood, deleteMood} from "../../services/manageMoo
 import {balanceTonToast} from "../../redux/toast/dispatch";
 import {connect} from 'react-redux';
 import  { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 class MoodBoard extends Component {
 
@@ -37,7 +38,9 @@ class MoodBoard extends Component {
             button: 'validate-button',
             div: 'div-close',
             addButton: 'AddRowButton',
-        }
+        };
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
     getStartofWeek = () => {
@@ -47,15 +50,30 @@ class MoodBoard extends Component {
         return format(start, "dd/MM");
     };
 
-  componentDidMount() {
-      const {user} = this.props;
-      if(user.email === ""){
+    componentDidMount() {
+        const {user} = this.props;
+        if(user.email === ""){
           this.props.history.push("/");
-      } else {
+        } else {
           this.changeStyle(user);
           this.getMood();
-      }
-  }
+        }
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    setWrapperRef(node) {
+        this.wrapperRef = node;
+    }
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+            this.setState({isHide: true})
+        }
+    }
 
   getMood = () => {
       let newListe = [];
@@ -237,15 +255,13 @@ class MoodBoard extends Component {
                       addMood={this.selectEmojis}
                       deleteMood={this.deleteRow}
                       row={this.state.row}
-                      user={user}
-                      updateMood={this.getMood}
                       idRows={this.state.idListe}
                       themeBouton={this.state.addButton}
                   />
                   {
                       !isHide &&
                       <div id="myModal" className="modal">
-                          <div className="modal-content">
+                          <div className="modal-content" ref={this.setWrapperRef}>
                               <div className={this.state.border}>
                                   <div className={this.state.div}>
                                       <span className="close" onClick={this.changeHide}>&times;</span>
@@ -295,6 +311,10 @@ class MoodBoard extends Component {
             </div>
         );
     }
+}
+
+MoodBoard.propTypes = {
+    children: PropTypes.element.isRequired,
 };
 
 const mapStateToProps = (state) => {
