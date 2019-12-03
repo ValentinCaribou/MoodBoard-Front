@@ -271,6 +271,103 @@
       }
     }
   }
+
+  @media screen and (max-width: 450px) {
+    .logo-acceuil {
+      width: 23em;
+    }
+
+    .texte-acceuil {
+      color: white;
+      margin-top: 2em;
+      padding-left: 0.7em;
+      padding-right: 0.7em;
+      font: 1.5em bebas_neue;
+    }
+
+    .change-ratio img{
+      //margin:0 0 -50% 0;
+      position: absolute;
+      right: -3em;
+      bottom: 0;
+      width: 500px;
+      overflow: hidden;
+    }
+
+    .title {
+      color: white;
+      font-family: bebas_neue;
+      margin-top: 2em;
+      margin-left: 0;
+      font-size: 4em;
+    }
+
+    .bouton-accueil {
+      position: absolute;
+      z-index: 10;
+      bottom: 12em;
+      right: 8em;
+      //right: 28vw;
+      height: 120px;
+
+      .image {
+        height: 200px;
+      }
+    }
+
+    .ombre-div {
+      position: absolute;
+      height: 5.5em;
+      bottom: 13em;
+      right: 7.5em;
+      //right: 25.5vw;
+      width: 101px;
+      background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
+    }
+    .fadeInDownDiv {
+      -webkit-animation-name: fadeInDownDiv;
+      animation-name: fadeInDownDiv;
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+      animation-delay: 0.1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeInDownDiv {
+      0% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0, -200%, 0);
+        transform: translate3d(0, -200%, 0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    @keyframes fadeInDownDiv {
+      0% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0, -200%, 0);
+        transform: translate3d(0, -200%, 0);
+      }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+  }
 }
 
 .App-link {

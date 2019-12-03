@@ -37,7 +37,7 @@ class Home extends Component {
                 <header>
                 </header>
                 <div className="App-header">
-                    <img src={Fungenieur} alt=""/>
+                    <img src={Fungenieur} alt="" className="logo-acceuil"/>
                     {/*<div className="title">*/}
                     {/*    <span className="oval">#MOOD</span>*/}
                     {/*    <span>GENIEUR</span>*/}
@@ -50,9 +50,6 @@ class Home extends Component {
                             user={this.props.user}
                         />
                     }
-                    {/*<span className="trainer-1 fadeInDown"/>*/}
-                    {/*<span className="trainer-2 fadeInDown"/>*/}
-                    {/*<span className="trainer-3 fadeInDown"/>*/}
                     <div className="ombre-div fadeInDownDiv"/>
                     <input className="bouton-accueil fadeInOut" type="image" src={nuage} aria-label=""/>
                     <input className="bouton-accueil image fadeInDown" onClick={this.changeHide} type="image" src={Soucoupe} aria-label=""/>
